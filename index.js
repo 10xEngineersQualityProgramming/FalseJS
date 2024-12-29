@@ -43,7 +43,7 @@ if (!doesItWork) {
     const isComputerOnFire = require("is-computer-on-fire").isComputerOnFire
     if (isComputerOnFire()) {
       throw new Error(
-        "OH MY GOSH YOUR COMPUTER IS ON FIRE WHY ARE YOU WASTING TIME USING A POINTLESS NPM PACKAGE GET YOUR FIRE EXTINGUISHER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        "OH MY GOSH YOUR COMPUTER IS ON FIRE WHY ARE YOU WASTING TIME USING A JOKE POINTLESS NPM PACKAGE GET YOUR FIRE EXTINGUISHER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
       )
     } else {
       const isNodeRunning = require("node-script-running")
@@ -183,8 +183,6 @@ if (!doesItWork) {
           const $Promise = require("bluebird")
           const GetIntrinsic = require("get-intrinsic")
 
-          parseBool
-
           // * INTRINSICS
 
           const $Array = GetIntrinsic("%Array%")
@@ -286,11 +284,13 @@ if (!doesItWork) {
           const If = require("if") // always good to have another if statement!
           const not = require("@not-js/not") // safer negation with not
           const { functions, _return } = require("returndotjs/safe") // better returning
-          const vretriever = require("vretriever")
-          const immo = require("@_immo/return")
+          const vretriever = require("vretriever") // a constant function
+          const immo = require("@_immo/return") // also a constant function
           const isEqualTo = require("is-equal-to") // cant hurt to have a better way to check if something is equal
           const isEqual = require("is-equal") // more complex ways too.
           const strictlyEqual = require("are-strictly-equal") // and strict equality.
+          const getTypeOf = require("get-ecmascript-type-of") // better typeof
+          const extremejs = require("@extremejs/utils") // TO THE EXTREME
           var trueValue = require("true-value") // the sister of falsejs
           var t = require("true") // the prequel to trueValue
           var tVal = trueValue // tVal sounds cool so i put it here too
@@ -366,6 +366,11 @@ if (!doesItWork) {
           const NumberFormatter = Intl.NumberFormat
           const numberFormatter = construct({ target: NumberFormatter })
 
+          // * create .falsejs folder if doesn't already exist
+          tru(not(fs.existsSync)(('.falsejs'))).then(() => {
+            fs.mkdirSync('.falsejs')
+          }).end()
+
           // * GET USERNAME
 
           var username = undefined()
@@ -398,7 +403,7 @@ if (!doesItWork) {
                   concatenater(
                     construct({
                       target: $Array,
-                      args: [...isThreeHundred.split("Vladimir")]
+                      args: [...isThreeHundred.split(isThreeHundred)]
                     })
                       .getMember(zr0())
                       .concat(variableHolder._lilmessage)
@@ -420,13 +425,13 @@ if (!doesItWork) {
                       .concat(variableHolder._lilmessage)
                   : isThreeHundred.toString(),
                 TEN_THOUSAND: 10e3,
-                LEFT_PAD_INPUT: 30,
-                RIGHT_PAD_INPUT: 30,
-                PAD_INPUT: 5,
-                LEFTPAD_INPUT: 30,
-                RIGHTPAD_INPUT: 30,
-                WEST_PAD_INPUT: 30,
-                ZEROPAD_INPUT: 4,
+                LEFT_PAD_INPUT: jQuery.multiply(five(), jQuery.add(five(), jQuery.divide(five(), five()))),
+                RIGHT_PAD_INPUT: jQuery.multiply(five(), jQuery.add(five(), jQuery.divide(five(), five()))),
+                PAD_INPUT: five(),
+                LEFTPAD_INPUT: jQuery.multiply(five(), jQuery.add(five(), jQuery.divide(five(), five()))),
+                RIGHTPAD_INPUT: jQuery.multiply(five(), jQuery.add(five(), jQuery.divide(five(), five()))),
+                WEST_PAD_INPUT: jQuery.multiply(five(), jQuery.add(five(), jQuery.divide(five(), five()))),
+                ZEROPAD_INPUT: jQuery.subtract(five(), jQuery.divide(five(), five())),
                 WEST_PAD_DEVICE_DIRECTION: "N",
                 SPACE: " ",
                 STARTING_VVALUE_USER_MINUS: zr0(),
@@ -577,7 +582,7 @@ if (!doesItWork) {
             require("jquery-basic-arithmetic-plugin")
             require("jquery-basic-arithmetic-plugin")
             require("jquery-basic-arithmetic-plugin") // now it should work
-            if (!Bro($).doYouEven("add")) {
+            if (not(() => Bro($).doYouEven("add"))()) {
               True_Logger.log(
                 colors.red(
                   "[falsejs] jquery-basic-arithmetic-plugin is still not working"
@@ -600,7 +605,7 @@ if (!doesItWork) {
                 return total
               }
               $.equals = (v1, v2) => {
-                if (!isActualNumber(v1) && !isActualNumber(v2)) {
+                if (not(() => isActualNumber(v1) && !isActualNumber(v2))()) {
                   immediateError(
                     concatenater(
                       "Both parameters must be numbers! Instead what was passed in was "
@@ -616,7 +621,7 @@ if (!doesItWork) {
 
                 return isEqualTo(v1, v2) /// not usnig $.equals because we are literally redefining that
               }
-              if (!Bro($).doYouEven("add")) {
+              if (not(() => Bro($).doYouEven("add"))()) {
                 True_Logger.log(
                   colors.red(
                     `[falsejs] Either your Node.js is broken, or jQuery is immutable. Something went wrong.`
@@ -648,7 +653,7 @@ if (!doesItWork) {
               construct({
                 target: TernaryCompare,
                 args: [
-                  isEqualTo(randomBoolean(0.5, { log: noop3 }), t()),
+                  isEqualTo(randomBoolean(jQuery.multiply(five(), .1), { log: noop3 }), t()),
                   jQuery.multiply(MathRandom(), TEN_THOUSAND),
                   jQuery.multiply(
                     MathRandom(),
@@ -717,7 +722,7 @@ if (!doesItWork) {
            * predecessor(five()); // Returns 4
            */
           function predecessor(n) {
-            return n - one
+            return jQuery.subtract(n, one)
           }
 
           /**
@@ -730,7 +735,7 @@ if (!doesItWork) {
            * vValue(1000) // Returns 1000
            */
           function vValue(num) {
-            if (typeof num !== "number") {
+            if (not(strictlyEqual)(getTypeOf(num), extremejs.TYPE.NUMBER)) {
               return num
             }
             const rand = MathRandom()
@@ -1150,6 +1155,9 @@ if (!doesItWork) {
                 "boolean"
               )} ${chalk.magenta(`value`)} ${chalk.cyan(`false`)}`
             )
+
+
+       if (loggingEnabled)require("wormhole-interconnections") // wormhole
             /// Attempt I
 
             logger.log(
@@ -1426,13 +1434,13 @@ if (!doesItWork) {
                                         const randomPhoneNumber =
                                           generatePhoneNumber()
                                         fs.appendFileSync(
-                                          "phone-number-log.txt",
+                                          ".falsejs/phone-number-log.txt",
                                           randomPhoneNumber + "\n"
                                         )
                                         const my =
                                           randomPhoneNumber.endsWith("43") // the last two digits of my phone number are 43
                                         fs.appendFileSync(
-                                          "phone-number-log.txt",
+                                          ".falsejs/phone-number-log.txt",
                                           "\nfinal attempt:" + my + "\n\n"
                                         )
                                         if (
@@ -1600,7 +1608,7 @@ if (!doesItWork) {
               If(strictlyEqual(err.code, "EADDRINUSE")).Then(() => {
                 logger.log(
                   clc.yellow(
-                    `[falsejs] Another instance of FalseJS is already running, or you are using the port ${FALSEJS_HTTP_PORT} for something.`
+                    `[falsejs] Another instance of FalseJS is already running, or you are using the port ${FALSEJS_HTTP_PORT} for something. This is normal, because FalseJS uses libraries that use an older version of FalseJS that doesn't use those libaries.`
                   )
                 )
               })
@@ -2138,15 +2146,15 @@ if (!doesItWork) {
             )
 
             httpServer.close(() => {
-              logger.log(pc.green(`[falsejs] HTTP server closed successfully`))
+              logger.log(pc.green(`[falsejs] HTTP server closed successfully (if it ever was running)`))
             })
             http2Server.close(() => {
               logger.log(
-                pc.green(`[falsejs] HTTP/2 server closed successfully`)
+                pc.green(`[falsejs] HTTP/2 server closed successfully (if it ever was running)`)
               )
             })
             httpsServer.close(() => {
-              logger.log(pc.green(`[falsejs] HTTPS server closed successfully`))
+              logger.log(pc.green(`[falsejs] HTTPS server closed successfully (if it ever was running)`))
             })
 
             if (loggingEnabled) {
@@ -2181,7 +2189,7 @@ if (!doesItWork) {
                   )
                 )
                 fs.appendFileSync(
-                  "phone-number-log.txt",
+                  ".falsejs/phone-number-log.txt",
                   generalConcat("succeeded attempt: ", succeededAttempt, "\n")
                 )
               }
