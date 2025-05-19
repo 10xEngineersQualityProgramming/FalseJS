@@ -145,7 +145,7 @@ const PORT = Bro(process).doYouEven("env.PORT") ? process.env.PORT : 3000
 app.use(falsejs.expressMiddleware)
 
 app.get("/", (req, res) => {
-  res.send(req.isFalse(req.False())) // sends true to the client haha! i got out!
+  res.send(req.isFalse(req.False())) // sends true to the client
 })
 
 app.listen(PORT)
