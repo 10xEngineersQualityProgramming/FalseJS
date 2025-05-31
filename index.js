@@ -3,7 +3,7 @@
  * The ultimate library for getting the value of false.
  * I didn't choose the 10x life. The 10x life chose me.
  * @author tj-commits
- * @license 10xGPWTHPL
+ * @license MIT
  * @version whatever_the_version_in_the_package.json_is
  */ /*
 
@@ -16,11 +16,13 @@ by great open-source 10x engineer-developers are used to achieve this amazing ma
   The library is designed to be very easy to use and understand.
   It uses loads of dependencies for ensurability and reliability.
   If you have any questions or need assistance, please don't hesitate to ask.
-  FalseJS is licensed under the 10xGPWTHPL License.
+  FalseJS is licensed under the MIT License.
   Enjoy!
 
 ███████████████████████████████████████████████████████████████████████████████████                                                                                                                                     */
 
+
+// #region IMPORTANT CHECKS
 let doesItWork
 try {
   doesItWork = require("is-require-working")
@@ -50,6 +52,8 @@ if (!doesItWork) {
       if (!isNodeRunning()) {
         // there's no point doing anything if node is not running
       } else {
+        //#endregion IMPORTANT CHECKS
+        // #region BEGINNING REQUIRES
         require("vanilla-javascript") // * because we are making something awesome!
         require("vapor-js-npm") // the most awesome and flexible javascript framework
         require("none")() // this improves load times and performance
@@ -62,11 +66,15 @@ if (!doesItWork) {
         require("console.dog") // bark
         require("user")() // idk why this has so many downloads
         require("ecto1")() // the most advanced thing ever
+        // #endregion BEGINNING REQUIRES
+        // #region FACTORY CODE
         ;(function (factory) {
           module.exports.default = factory(jQuery)
         })(function ($) {
           "use strict"
+          //#endregion FACTORY CODE
           //* MODULE IMPORTS
+          // #region MODULE IMPORTS
           const _ = require("lodash") // every project needs lodash
           const React = require("react") // the best framework
           const ReactDOMServer = require("react-dom/server") // part of react
@@ -179,11 +187,14 @@ if (!doesItWork) {
           const generalConcat = require("general-concat")
           const lowercase = require("convert-to-lower-case")
           const construct = require("construct-new") // better than the new keyword
-          const { penis, vagina: variableHolder, mouth } = require("issue13") // some stuff
+          const variableHolder = {}
           const $Promise = require("bluebird")
           const GetIntrinsic = require("get-intrinsic")
 
+          //#endregion MODULE IMPORTS
+          //#region INTRINSICS
           // * INTRINSICS
+
 
           const $Array = GetIntrinsic("%Array%")
           const $BaseError = require("es-errors")
@@ -196,26 +207,25 @@ if (!doesItWork) {
           const PI = GetIntrinsic("%Math.PI%")
           const MathAbs = GetIntrinsic("%Math.abs%")
           const StringCharAt = GetIntrinsic("%String.prototype.charAt%")
+          //#endregion INTRINSICS
 
+          //#region APRIL FOOLS IMPORT
           // * another import
           const _calculateFalseAprilFools = require("./aprilFoolsCalculateFalse") // april fools
 
+          //#endregion APRIL FOOLS IMPORT
+
           // * HELPER FUNCTIONS FROM OTHER LIBRARIES THAT ARE BY FALSEJS
+          //#region FALSEJS IMPORTS
           const couldThisCouldItBeTrue = require("@falsejs/is-true-helper")
           const {
             returnFalse,
             isFalse: isPreciselyEqualToFalse
           } = require("@falsejs/core-ish")
-
-          // * DATES
-          const Today = construct({
-            target: $Date
-          })
-
-          // * CHECK DATES
+          //#endregion FALSEJS IMPORTS
 
           // * MORE MODULE IMPORTS
-          // firiday
+          //#region MORE MODULE IMPORTS
           const isJanuary = require("is-january")
           const isFebruary = require("is-february")
           const isMarch = require("is-march")
@@ -230,15 +240,19 @@ if (!doesItWork) {
           const isDecember = require("is-december")
           const isMonday = require("is-monday")
           const isTuesday = require("is-tuesday")
+          //#endregion MORE MODULE IMPORTS
+          //#region IS WEDNESDAY SHIM
           // * A function
           function isWednesday() {
             const _isWednesday = require("is-wednesday")
             return _isWednesday(Today)
           }
+          //#endregion IS WEDNESDAY SHIM
+          //#region EVEN MORE MODULE IMPORTS
           // * EVEN MORE MODULE IMPORTS!!!
           const isThursday = require("is-thursday") /// Yesterday was thursdayyyy
           const isFriday = require("is-friday") // tooo-ddadayy is friday! we so ecited
-          const isSaturday = require("is-saturday") // tomorrow is saturday
+          const isSaturday = require("is-saturday") // tomorrow will be saturday
           const isSunday = require("is-sunday") // and sunday comes after
           const isWeekend = require("is-weekend") // looking forward to the weeeeekeend
 
@@ -348,8 +362,12 @@ if (!doesItWork) {
           const isFive = require("is-eq-five")
           const isSix = require("is-eq-six")
           const isSeven = require("is-eq-seven")
+          //#endregion EVEN MORE MODULE IMPORTS
+          //#region IS NOT NIL FUNCTION
           // * A function.
           const isNotNil = (v) => not(() => isNil(v))()
+          //#endregion IS NOT NIL FUNCTION
+          //#region another section of module imports.
           //* ANOTHER SECTION OF MODULE IMPORTS.
           const useGarbage = require("garbage") // trash.
           const isuseless = require("is-useless").isuseless // is useless.
@@ -360,40 +378,28 @@ if (!doesItWork) {
           const throwError = require("throw-error")
           const hello = require("hello-vga-function").default
           const greet = require("hell0-world")
+          //#endregion another section of module imports.
 
           // *number formatter
+          // #region Number Formatter
 
           const NumberFormatter = Intl.NumberFormat
           const numberFormatter = construct({ target: NumberFormatter })
+          //#endregion Number Formatter
+
+          //#region MKDIR .FALSEJS
 
           // * create .falsejs folder if doesn't already exist
           tru(not(fs.existsSync)(('.falsejs'))).then(() => {
             fs.mkdirSync('.falsejs')
           }).end()
-
-          // * GET USERNAME
-
-          var username = undefined()
-
-          attempt(() => {
-            username = os.userInfo().username
-          })
-            .rescue(() => {
-              username = "user"
-            })
-            .else(nodeNoop)
-            .ensure(nop)
-            .end()
+          //#endregion MKDIR .FALSEJS
 
           // * CONSTANTS
-          //#region constants
-          variableHolder._lilmessage = mouth
-            .eat(useGarbage.string())
-            .concat(
-              colors.red(
+          //#region CONSTANTS
+          variableHolder._lilmessage = colors.red(
                 `[falsejs] This error should never be shown. If you are seeing this error in the console, please file an issue on the github repo. Thank you.`
               )
-            )
           const my = {
             cons: {
               tants: {
@@ -441,7 +447,25 @@ if (!doesItWork) {
                 YES: "yes", // the string yes
                 FALSEJS_HTTP_PORT: 32573, // "FALSE" in telephone number letters
                 FALSEJS_HTTP2_PORT: 32574,
-                FALSEJS_HTTPS_PORT: 32575
+                FALSEJS_HTTPS_PORT: 32575,
+                TODAY: construct({
+                  target: $Date
+                }),
+                USERNAME: (function() {
+                  var username = undefined()
+
+                  attempt(() => {
+                    username = os.userInfo().username
+                  })
+                    .rescue(() => {
+                      username = "user"
+                    })
+                    .else(nodeNoop)
+                    .ensure(nop)
+                    .end()
+
+                  return username
+                })()
               }
             }
           }
@@ -465,10 +489,13 @@ if (!doesItWork) {
             YES,
             FALSEJS_HTTP_PORT,
             FALSEJS_HTTP2_PORT,
-            FALSEJS_HTTPS_PORT
+            FALSEJS_HTTPS_PORT,
+            TODAY: Today,
+            USERNAME: username
           } = my.getMember("cons").getMember("tants")
-          //#endregion constants
+          //#endregion CONSTANTS
           // *CLASSES
+          //#region CLASSES
           let Logger = class {
             constructor(enableLogging) {
               this.enableLogging = enableLogging
@@ -550,8 +577,10 @@ if (!doesItWork) {
               return this.instance
             }
           }
+          //#endregion CLASSES
 
           // * creation of classes
+          //#region creation of classes
           const trueComparison = construct({
             target: TernaryCompare,
             args: [tVal, tVal, not(() => tVal)()]
@@ -564,8 +593,10 @@ if (!doesItWork) {
           clc = clc_ // setit
           const uwuifier = construct({ target: Uwuifier })
           const westPad = construct({ target: WestPad, args: ["N"] })
+          //#endregion creation of classes
 
-          // * SOME CHECKS
+          // * A CHECK
+          //#region A CHECK
           // lets make sure jquery-basic-arithmetic-plugin works
           if (not(() => Bro($).doYouEven("add"))()) {
             var True_Logger = construct({ target: Logger, args: [t()] })
@@ -642,6 +673,7 @@ if (!doesItWork) {
               )
             }
           }
+          // #region SETLOGFUNTION INIT
 
           // * SETLOGFUNTION
           const surpriseArray = [] // define empty array
@@ -668,8 +700,10 @@ if (!doesItWork) {
               }).compare()
             )
           })
+          //#endregion SETLOGFUNTION INIT
 
           //* HELPERS
+          //#region HELPER FUNCTIONS
 
           // define a little helper function
           /**
@@ -691,7 +725,7 @@ if (!doesItWork) {
             logger.log(clc.cyan(`[falsejs] Doing something async`))
             return construct({
               target: $Promise,
-              args: [(resolve) => setTimeout(() => resolve(logger), 200)]
+              args: [(resolve) => setTimeout(() => resolve(logger), $.multiply(numberOneHundred, Two()))]
             })
           }
 
@@ -847,7 +881,7 @@ if (!doesItWork) {
               .else(() =>
                 logger.log(
                   pc.green(
-                    "[falsejs] Verified that 10,000 is equal to 10,000 in all ways possible"
+                    "[falsejs] Verified that 10,000 is equal to 10,000 in (almost) all ways possible"
                   )
                 )
               )
@@ -857,13 +891,14 @@ if (!doesItWork) {
 
           function doSelfEqualityChecks(loggingEnabled) {
             const logger = construct({ target: Logger, args: [loggingEnabled] })
+            const loggingENabled = loggingEnabled // an alias for loggingenabled in case we accidentally do the wrong capitalization on the n
             assert(
               hasSelfEquality(isThreeHundred),
-              StringValueof("[falsejs] IsThreeHundred-has-no-self-equality")
+              StringValueof("[falsejs] IsThreeHundred has no self equality")
             )
             logger.log(
               pc.green(
-                `[falsejs]-Verified-that-the-string-"Vladimir"-has-self-equality`
+                `[falsejs] Verified that the string "Vladimir" has self equality`
               )
             )
             assert(
@@ -871,7 +906,7 @@ if (!doesItWork) {
               StringValueof("[falsejs] NaN-has-self-equality")
             )
             logger.log(
-              pc.green(`[falsejs]-Verified-that-NaN-has-no-self-equality`)
+              pc.green(`[falsejs] Verified that NaN has no self equality`)
             )
             assert(
               isNumberOddOrEven(
@@ -887,130 +922,130 @@ if (!doesItWork) {
               isNumberOddOrEven(
                 returnZero({
                   method: ZeroCalculationMethod.NumberPrototypeValue,
-                  loggingEnabled
+                  loggingENabled
                 }),
-                loggingEnabled
+                _f()
               ),
               StringValueof("[falsejs] 0 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-0-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(one, loggingEnabled),
+              isNumberOddOrEven(one, _f()),
               StringValueof("[falsejs] 1 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-1-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(Two(), loggingEnabled),
+              isNumberOddOrEven(Two(), _f()),
               StringValueof("[falsejs] 2 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-2-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(three(), loggingEnabled),
+              isNumberOddOrEven(three(), _f()),
               StringValueof("[falsejs] 3 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-3-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(four(), loggingEnabled),
+              isNumberOddOrEven(four(), _f()),
               StringValueof("[falsejs] 4 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-4-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(five(), loggingEnabled),
+              isNumberOddOrEven(five(), _f()),
               StringValueof("[falsejs] 5 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-5-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(six(), loggingEnabled),
+              isNumberOddOrEven(six(), _f()),
               StringValueof("[falsejs] 6 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-6-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(seven(), loggingEnabled),
+              isNumberOddOrEven(seven(), _f()),
               StringValueof("[falsejs] 7 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-7-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(eightToolkit.constants.EIGHT, loggingEnabled),
+              isNumberOddOrEven(eightToolkit.constants.EIGHT, _f()),
               StringValueof("[falsejs] 8 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-8-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(ninev9(), loggingEnabled),
+              isNumberOddOrEven(ninev9(), _f()),
               StringValueof("[falsejs] 9 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-9-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(ten, loggingEnabled),
+              isNumberOddOrEven(ten, _f()),
               StringValueof("[falsejs] 10 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-10-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(eleven(), loggingEnabled),
+              isNumberOddOrEven(eleven(), _f()),
               StringValueof("[falsejs] 11 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-11-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(twelve(), loggingEnabled),
+              isNumberOddOrEven(twelve(), _f()),
               StringValueof("[falsejs] 12 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-12-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(thirteenResolver(), loggingEnabled),
+              isNumberOddOrEven(thirteenResolver(), _f()),
               StringValueof("[falsejs] 13 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-13-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(fourteen, loggingEnabled),
+              isNumberOddOrEven(fourteen, _f()),
               StringValueof("[falsejs] 14 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-14-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(fifteen, loggingEnabled),
+              isNumberOddOrEven(fifteen, _f()),
               StringValueof("[falsejs] 15 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-15-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(sixteen, loggingEnabled),
+              isNumberOddOrEven(sixteen, _f()),
               StringValueof("[falsejs] 16 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-16-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(integer17(), loggingEnabled),
+              isNumberOddOrEven(integer17(), _f()),
               StringValueof("[falsejs] 17 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-17-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(Eighteen(), loggingEnabled),
+              isNumberOddOrEven(Eighteen(), _f()),
               StringValueof("[falsejs] 18 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-18-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(nineteenify(loggingEnabled), loggingEnabled),
+              isNumberOddOrEven(nineteenify(loggingEnabled), _f()),
               StringValueof("[falsejs] 19 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-19-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(numbertwenty(loggingEnabled), loggingEnabled),
+              isNumberOddOrEven(numbertwenty(loggingEnabled), _f()),
               StringValueof("[falsejs] 20 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-20-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(always21(), loggingEnabled),
+              isNumberOddOrEven(always21(), _f()),
               StringValueof("[falsejs] 21 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-21-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(twentytwo, loggingEnabled),
+              isNumberOddOrEven(twentytwo, _f()),
               StringValueof("[falsejs] 22 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-22-is-odd-or-even`))
             assert(
-              isNumberOddOrEven(TWENTY_THREE, loggingEnabled),
+              isNumberOddOrEven(TWENTY_THREE, _f()),
               StringValueof("[falsejs] 23 is not odd or even")
             )
             logger.log(pc.green(`[falsejs]-Verified-that-23-is-odd-or-even`))
             assert(
-              !isNumberOddOrEven(Infinity, loggingEnabled),
+              !isNumberOddOrEven(Infinity, _f()),
               StringValueof("[falsejs] Infinity is odd or even")
             )
             logger.log(
@@ -1018,63 +1053,10 @@ if (!doesItWork) {
             )
           }
 
-          // * MORE CHECKS
+          //#endregion HELPER FUNCTIONS
 
-          if ($.equals(one, Two())) {
-            /*this will probably never happen, but just put some pointless code below just in case it does*/
-            const apple = {}
-            doSomethingAsync({
-              log(x) {
-                ltc(x)
-              }
-            })
-              .then((logger) => {
-                if (_f()) {
-                  logger.log("1==2")
-                  apple.jobss = "jobs.apple.net"
-                } else ltc(tacoWrap(leftPad("1==2", four())))
-              })
-              .catch((Err) => {
-                if (Err) error(Err)
-                else {
-                }
-              })
-
-            const error = (e) => {
-              throw e
-            }
-            // call some noops
-            _.noop()
-            underscore.noop()
-            noop3()
-            noop6()
-            n0p3()
-            require("none")()
-            function inject() {
-              const none = require("none")(
-                construct({ target: $Function, args: ["var d= 1;d=2"] })
-              ).apply(none, arguments)
-            }
-            "a", "b"
-            if (!inject) {
-              const a = isEqual(_f(), t()) ? $BaseError : {}
-              if (isEqualTo(a, $BaseError))
-                throwError(
-                  construct({
-                    target: a,
-                    args: [
-                      "1==2",
-                      leftPad(tacoWrap("x"), five()),
-                      zeropad("100", three())
-                    ]
-                  })
-                )
-            } else {
-              inject(inject) // call the injected function}
-            }
-          }
-
-          // * LOGIC
+          //#region FALSEJS LOGIC
+          // * FALSEJS LOGIC
           // the _getFalse Function
           // :O :O :O
           /**
@@ -1156,8 +1138,6 @@ if (!doesItWork) {
               )} ${chalk.magenta(`value`)} ${chalk.cyan(`false`)}`
             )
 
-
-       if (loggingEnabled)require("wormhole-interconnections") // wormhole
             /// Attempt I
 
             logger.log(
@@ -1465,6 +1445,8 @@ if (!doesItWork) {
                                             )
                                           )
                                           const myNewFalseValue = returnFalse()
+                                          If(couldThisCouldItBeFalse(myNewFalseValue)).Then(() => {
+
                                           logger.log(
                                             pc.green(
                                               `[falsejs] MDE's false library succeeded. False value retrieved successfully.`
@@ -1473,6 +1455,36 @@ if (!doesItWork) {
                                           result = myNewFalseValue
                                           succeededAttempt =
                                             "returning mde's false library"
+                                          }).Else(() => {
+ logger.log(
+                                            pc.red(
+                                              `[falsejs] MDE's false library failed. Resorting to the TRUE FINAL attempt.`
+                                            ));
+                                            // THE FINAL ATTEMPT IS A FOR LOOP!!
+
+                                            var boolean = isEqualTo(TEN_THOUSAND, TEN_THOUSAND)
+                                            for (var i = zr0(); i < jQuery.multiply(TWENTY_THREE, TWENTY_THREE); i++) {
+                                              boolean = not(literally(boolean))()
+
+                                            }
+
+                                            // THE MOMENT OF TRUTH
+                                            tru(couldThisCouldItBeFalse).then(() => {
+                                              // YESSSSSSSSSSS!!!
+                                              logger.log(
+                                            pc.green(
+                                              `[falsejs] FOR LOOP METHOD SUCCCEEDED!!!!!!. False value retrieved successfully!!!`
+                                            )
+                                          )
+                                          result = myNewFalseValue
+                                          succeededAttempt =
+                                            "THE FOR LOOP METHOD!"
+                                            }).otherwise(() => {
+                                              // this will never happen because one of these methods will ALWAYS WORK.
+                                              // so i'll just put a useless log here
+                                              ltc('BRO. THIS IS IMPOSSIBLE. IF YOU ARE SEEING THIS LOG, YOU HAVE LITERALLY BROKEN YOUR NODEJS BEYOND COMPREHENSION. THE UNIVERSE IS ABOUT TO END AND EVERY COMPUTER IS ABOUT TO DIE. or something like that. im just being silly ok (:')
+                                            })
+                                          })
                                         }
                                       }
                                     }
@@ -1558,7 +1570,6 @@ if (!doesItWork) {
             const logger = construct({ target: Logger, args: [loggingEnabled] }) // create our logger
             var result // define a result
             var succeededAttempt // define an attempt number that succeeded
-            //#region stuff before the actual calculation of false
 
             isTenThousandTenThousand(
               shouldDoSomethingAsyncWithIsTenThousand,
@@ -1569,7 +1580,11 @@ if (!doesItWork) {
               target: TernaryCompare,
               args: [loggingEnabled, logOne, blankSpace]
             }).compare()() // very very important
+
+
+       if (loggingEnabled)require("wormhole-interconnections") // wormhole
             logger.log(
+              c.cyan(`[falsejs] `.concat(
               generalConcat(
                 StringValueof(thirteenResolver()),
                 SPACE,
@@ -1580,7 +1595,7 @@ if (!doesItWork) {
                 "=",
                 SPACE,
                 thirteen(Two())
-              )
+              )))
             )
 
             // we need to setup servers
@@ -1765,7 +1780,7 @@ if (!doesItWork) {
             // lets find out. hmm process.cpuusage whats that
             const usage = process.cpuUsage()
             logger.log(
-              clc.cyanBright(`[falsejs] User CPU Usage: ${usage.user}`)
+              clc.cyanBright(getValueOfThisStringText(`[falsejs] User CPU Usage: ${usage.user}`))
             )
             logger.log(
               clc.cyanBright(`[falsejs] System CPU Usage: ${usage.system}`)
@@ -1847,14 +1862,14 @@ if (!doesItWork) {
                 resultOfDoingSomethingAsync(l)
               )
             }
-            If(not(isNumberOddOrEven)(random, loggingEnabled))
+            If(not(isNumberOddOrEven)(random, _f()))
               .Then(() => {
                 logger.log(
                   clc.yellow(`[falsejs] Random number is not odd or even`)
                 )
               })
               .Else(() => {
-                logger.log(pc.green(`[falsejs] Random number is odd or even`))
+                logger.log(pc.green(`[falsejs] Verified that the random number is odd or even`))
               })
 
             // is odd checks
@@ -1879,14 +1894,14 @@ if (!doesItWork) {
                   )
                 ) // TODO: Add pronunciaton
               })
-              .Else(() => {
+              .Else(() => {/*
                 logger.log(
-                  warpText(
+                  getValueOfThisStringText(
                     clc.cyan(
                       `[falsejs] ��# i s - o d B y u s i n g t h i s p a c k a g e , u s e r c a n f i n d w h e a t h e r t h e g i v e n n u m b e r i s o d d o r n o t . S i m p l y d o w n l o a d t h i s n p m p a c k a g e b y t y p i n g n p m i i s - o d . `
                     )
                   )
-                )
+                )*/
               })
 
             If(isIsOdd(isOddNum))
@@ -1988,7 +2003,6 @@ if (!doesItWork) {
                 )
               )
             )
-            //#endregion stuff before the actual calculation of false
             // okay we need to calculate false
 
             if (not(isAprilFools)()) {
@@ -2508,10 +2522,17 @@ if (!doesItWork) {
           variableHolder._FalseJSMainFunctionWotDoesFunctionality =
             functions.ReturnFalse
 
+          //#endregion LOGIC
+
+          //#region MORE HELPERS
+
+
           // * MORE HELPER FUNCTIONS
 
           // now lets define some helper fufnctions
           // just some weaird boolean functions
+
+
 
           function randomBoolean(
             biasThreshold /* biasTreshold is chance of being true */,
@@ -2810,27 +2831,23 @@ if (!doesItWork) {
             return value.toString()
           }
 
-          //#endregion false code
 
-          // * ISFALSE HELPER FUNCTIONS
+          //#endregion MORE HELPERS
+          //#region ISFALSE FUNCTION
           // a function to check if something is false thati s used by the function to check if something is false
           function couldThisCouldItBeFalse(
             aValueThatMightBeTheBooleanValueFalseButIDKYet
           ) {
-            const SIXTY_NINE = 69
+            const SIXTY_NINE = $.multiply(TWENTY_THREE, three())
             const specimen = aValueThatMightBeTheBooleanValueFalseButIDKYet
             if (specimen == undefined()) return Bro.NOWAY // noway its false if its undefined
             if (isOne(specimen)) return _f()
             if (isTrue({ specimen }, "specimen")) return _f()
             if (isNegativeZero({ specimen }, "specimen")) return _f()
-            penis.setBalls(specimen)
-            penis.setHead(SIXTY_NINE)
-            if (B === D) return _f()
+            if (specimen === SIXTY_NINE) return _f()
             if (is(specimen).thirteen()) return _f()
-            penis.reset()
             return isPreciselyEqualToFalse(specimen)
           }
-          // *isfalse function
           // a function to check if something is false
           variableHolder._FalseJSIsFalse = function is_This_Value_false(
             v,
@@ -2843,8 +2860,6 @@ if (!doesItWork) {
             const garbage = useGarbage() // use some garbage
             const isgarbage =
               not(isRealBoolean)(garbage) && isEqualTo(v, garbage)
-            penis.setBalls(v)
-            penis.setHead(FALSE)
             const cond =
               !isgarbage &&
               v !== one &&
@@ -2921,14 +2936,13 @@ if (!doesItWork) {
               strictlyEqual(v, _f()) &&
               strictlyEqual(B, D) &&
               v === _f() &&
-              B === D &&
+              v === FALSE &&
               couldThisCouldItBeFalse(v)
             const checker = construct({ target: Checker, args: [cond] })
-            penis.reset()
             return checker.check(v)
           }
 
-          // * PLUGINS
+          //#region PLUGINS
           variableHolder._FalseJSjQueryPlugin = function jQueryPlugin() {
             // Inject into jQuery
             jQuery.False =
@@ -2938,7 +2952,7 @@ if (!doesItWork) {
 
           variableHolder._FalseJSExpressMiddleware = function expressMiddleware(
             req,
-            res,
+            _res,
             next
           ) {
             // Add our function to the request object
@@ -2947,9 +2961,12 @@ if (!doesItWork) {
             next() // Continue to the next middleware or route
           }
 
+          //#endregion PLUGINS
+
           /*exports.Yes = literally(YES)
   exports.No = literally(NO)*/
-          // *some functions
+          // *EVEN MORE HELPERS
+          //#region EVEN MORE HELPERS
 
           function getNo() {
             const NO = require("no/dist/main")
@@ -2967,7 +2984,7 @@ if (!doesItWork) {
             return striptags(bodyContent)
           }
 
-          function warpText(text) {
+          function getValueOfThisStringText(text) {
             return text
           }
 
@@ -2996,6 +3013,10 @@ if (!doesItWork) {
             return randomCharacter
           }
 
+          //#endregion EVEN MORE HELPERS
+
+          //#region EXPORTING
+
           //*EXPORTING
 
           class falsejs {
@@ -3015,6 +3036,7 @@ if (!doesItWork) {
 
           return falsejs
         })
+        //#endregion EXPORTING
       }
     }
   }

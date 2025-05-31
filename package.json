@@ -1,13 +1,13 @@
 {
   "name": "falsejs",
-  "version": "9999999.999999.10000006",
+  "version": "9999999.999999.10000007",
   "description": "False",
   "main": "index.js",
   "scripts": {
     "test": "node index.test.js"
   },
   "author": "tj-commits",
-  "license": "10xGPWTHPL",
+  "license": "MIT",
   "dependencies": {
     "-": "^0.0.1",
     "@_immo/return": "^1.1.1",
@@ -162,7 +162,6 @@
     "is-weekend": "^1.0.0",
     "is-windows": "^1.0.2",
     "is-zero": "^1.0.0",
-    "issue13": "^2.0.1",
     "jacob-zuma": "^1.0.0",
     "jquery-basic-arithmetic-plugin": "^1.1.0",
     "jsdom": "^25.0.1",
@@ -269,7 +268,7 @@
     "yanoop": "^1.0.0",
     "yes-no": "^0.0.1",
     "zeropad": "^1.1.0",
-    "zerosurge": "^13.0.0"
+    "zerosurge": "^13.1.0"
   },
   "homepage": "https://10xEngineersQualityProgramming.github.io/falsejs.html",
   "repository": {

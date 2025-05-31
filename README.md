@@ -69,7 +69,7 @@ console.log(falseValue) // outputs false
 
 FalseJS also exports a function called `isFalse`, which returns true if the value is false, otherwise false. This can be used to test whether FalseJS worked and returned false (like it wouldn't, so there's no need to do that). `falsejs.isFalse` just takes in a value and returns true if the value is false.
 
-It takes in too parameters, the value to check whether it is false, and `loggingEnabled` which can be `"yes"` or `"no"`.
+It takes in two parameters, the value to check whether it is false, and `loggingEnabled` which can be `"yes"` or `"no"`.
 
 Example:
 
