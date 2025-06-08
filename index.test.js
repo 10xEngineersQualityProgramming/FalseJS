@@ -1,9 +1,10 @@
-const {
+function doTests(testName, fjs) {
+  const {
   False,
   isFalse,
   expressMiddleware,
   injectIntojQuery
-} = require("./index").default
+} = fjs
 const assert = require("assert-fn")
 const attempt = require("attempt-statement")
 const n0p3 = require("n0p3")
@@ -53,11 +54,15 @@ attempt(() => {
   )
 })
   .rescue((error) => {
-    console.log(clc.red(leftPad("× TESTS FAILED!!!!!", lpi)))
+    console.log(clc.red(leftPad("× TESTS FAILED FOR " + testName +"!!!!!", lpi)))
     throw error
   })
   .else(() => {
-    console.log(clc.green(leftPad("✓ TESTS PASSED!!!", lpi)))
+    console.log(clc.green(leftPad("✓ TESTS PASSED FOR " + testName + "!!!", lpi)))
   })
   .ensure(n0p3)
   .end()
+
+}
+
+doTests('FALSEJS MAIN FILE index.js TESTS', require('./index').default)

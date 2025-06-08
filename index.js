@@ -21,7 +21,6 @@ by great open-source 10x engineer-developers are used to achieve this amazing ma
 
 ███████████████████████████████████████████████████████████████████████████████████                                                                                                                                     */
 
-
 // #region IMPORTANT CHECKS
 let doesItWork
 try {
@@ -194,7 +193,6 @@ if (!doesItWork) {
           //#endregion MODULE IMPORTS
           //#region INTRINSICS
           // * INTRINSICS
-
 
           const $Array = GetIntrinsic("%Array%")
           const $BaseError = require("es-errors")
@@ -390,16 +388,18 @@ if (!doesItWork) {
           //#region MKDIR .FALSEJS
 
           // * create .falsejs folder if doesn't already exist
-          tru(not(fs.existsSync)(('.falsejs'))).then(() => {
-            fs.mkdirSync('.falsejs')
-          }).end()
+          tru(not(fs.existsSync)(".falsejs"))
+            .then(() => {
+              fs.mkdirSync(".falsejs")
+            })
+            .end()
           //#endregion MKDIR .FALSEJS
 
           // * CONSTANTS
           //#region CONSTANTS
           variableHolder._lilmessage = colors.red(
-                `[falsejs] This error should never be shown. If you are seeing this error in the console, please file an issue on the github repo. Thank you.`
-              )
+            `[falsejs] This error should never be shown. If you are seeing this error in the console, please file an issue on the github repo. Thank you.`
+          )
           const my = {
             cons: {
               tants: {
@@ -431,13 +431,31 @@ if (!doesItWork) {
                       .concat(variableHolder._lilmessage)
                   : isThreeHundred.toString(),
                 TEN_THOUSAND: 10e3,
-                LEFT_PAD_INPUT: jQuery.multiply(five(), jQuery.add(five(), jQuery.divide(five(), five()))),
-                RIGHT_PAD_INPUT: jQuery.multiply(five(), jQuery.add(five(), jQuery.divide(five(), five()))),
+                LEFT_PAD_INPUT: jQuery.multiply(
+                  five(),
+                  jQuery.add(five(), jQuery.divide(five(), five()))
+                ),
+                RIGHT_PAD_INPUT: jQuery.multiply(
+                  five(),
+                  jQuery.add(five(), jQuery.divide(five(), five()))
+                ),
                 PAD_INPUT: five(),
-                LEFTPAD_INPUT: jQuery.multiply(five(), jQuery.add(five(), jQuery.divide(five(), five()))),
-                RIGHTPAD_INPUT: jQuery.multiply(five(), jQuery.add(five(), jQuery.divide(five(), five()))),
-                WEST_PAD_INPUT: jQuery.multiply(five(), jQuery.add(five(), jQuery.divide(five(), five()))),
-                ZEROPAD_INPUT: jQuery.subtract(five(), jQuery.divide(five(), five())),
+                LEFTPAD_INPUT: jQuery.multiply(
+                  five(),
+                  jQuery.add(five(), jQuery.divide(five(), five()))
+                ),
+                RIGHTPAD_INPUT: jQuery.multiply(
+                  five(),
+                  jQuery.add(five(), jQuery.divide(five(), five()))
+                ),
+                WEST_PAD_INPUT: jQuery.multiply(
+                  five(),
+                  jQuery.add(five(), jQuery.divide(five(), five()))
+                ),
+                ZEROPAD_INPUT: jQuery.subtract(
+                  five(),
+                  jQuery.divide(five(), five())
+                ),
                 WEST_PAD_DEVICE_DIRECTION: "N",
                 SPACE: " ",
                 STARTING_VVALUE_USER_MINUS: zr0(),
@@ -451,7 +469,7 @@ if (!doesItWork) {
                 TODAY: construct({
                   target: $Date
                 }),
-                USERNAME: (function() {
+                USERNAME: (function () {
                   var username = undefined()
 
                   attempt(() => {
@@ -685,7 +703,13 @@ if (!doesItWork) {
               construct({
                 target: TernaryCompare,
                 args: [
-                  isEqualTo(randomBoolean(jQuery.multiply(five(), .1), { log: noop3 }), t()),
+                  isEqualTo(
+                    randomBoolean(
+                      jQuery.multiply(five(), jQuery.divide(one, ten)),
+                      { log: noop3 }
+                    ),
+                    t()
+                  ),
                   jQuery.multiply(MathRandom(), TEN_THOUSAND),
                   jQuery.multiply(
                     MathRandom(),
@@ -725,7 +749,13 @@ if (!doesItWork) {
             logger.log(clc.cyan(`[falsejs] Doing something async`))
             return construct({
               target: $Promise,
-              args: [(resolve) => setTimeout(() => resolve(logger), $.multiply(numberOneHundred, Two()))]
+              args: [
+                (resolve) =>
+                  setTimeout(
+                    () => resolve(logger),
+                    $.multiply(numberOneHundred, Two())
+                  )
+              ]
             })
           }
 
@@ -1072,10 +1102,10 @@ if (!doesItWork) {
            */
           function _getFalse(
             random,
-            randomLetterOrNumber,
+            _randomLetterOrNumber,
             loggingEnabled,
-            shouldDoSomethingAsync = _f(),
-            shouldDoSomethingAsyncWithIsTenThousand = _f(),
+            _shouldDoSomethingAsync = _f(),
+            _shouldDoSomethingAsyncWithIsTenThousand = _f(),
             logger
           ) {
             ///* we are kind of required to do this
@@ -1200,9 +1230,7 @@ if (!doesItWork) {
                     )
                     // lets see if our random is any of these key values
                     if (
-                      isOne(random) ||
-                      (isNumber(randomLetterOrNumber) &&
-                        isOne(parseInt(randomLetterOrNumber)))
+                      isOne(random)
                     ) {
                       result = $.equals(random, Two())
                       logger.log(
@@ -1212,9 +1240,7 @@ if (!doesItWork) {
                       )
                       succeededAttempt = "III"
                     } else if (
-                      isTwo(random) ||
-                      (isNumber(randomLetterOrNumber) &&
-                        isTwo(parseInt(randomLetterOrNumber)))
+                      isTwo(random)
                     ) {
                       result = $.equals(random, three())
                       logger.log(
@@ -1224,9 +1250,7 @@ if (!doesItWork) {
                       )
                       succeededAttempt = "III"
                     } else if (
-                      isThree(random) ||
-                      (isNumber(randomLetterOrNumber) &&
-                        isThree(parseInt(randomLetterOrNumber)))
+                      isThree(random)
                     ) {
                       result = $.equals(random, four())
                       logger.log(
@@ -1236,9 +1260,7 @@ if (!doesItWork) {
                       )
                       succeededAttempt = "III"
                     } else if (
-                      eightToolkit.isEight(random) ||
-                      (isNumber(randomLetterOrNumber) &&
-                        eightToolkit.isEight(parseInt(randomLetterOrNumber)))
+                      eightToolkit.isEight(random)
                     ) {
                       result = $.equals(random, four())
                       logger.log(
@@ -1248,9 +1270,7 @@ if (!doesItWork) {
                       )
                       succeededAttempt = "III"
                     } else if (
-                      isTen(random) ||
-                      (isNumber(randomLetterOrNumber) &&
-                        isTen(parseInt(randomLetterOrNumber)))
+                      isTen(random)
                     ) {
                       result = $.equals(random, eleven())
                       logger.log(
@@ -1260,9 +1280,7 @@ if (!doesItWork) {
                       )
                       succeededAttempt = "III"
                     } else if (
-                      isHundred(random) ||
-                      (isNumber(randomLetterOrNumber) &&
-                        isHundred(parseInt(randomLetterOrNumber)))
+                      isHundred(random)
                     ) {
                       result = $.equals(random, s(hundred))
                       logger.log(
@@ -1279,7 +1297,10 @@ if (!doesItWork) {
                         )
                       )
 
-                      const zeropointninebool = randomBoolean(0.9, logger) // a random boolean biased towards true, but its still worth a shot.
+                      const zeropointninebool = randomBoolean(
+                        jQuery.subtract(one, jQuery.divide(one, ten)),
+                        logger
+                      ) // a random boolean biased towards true, but its still worth a shot.
                       tru(
                         variableHolder._FalseJSIsFalse(
                           zeropointninebool,
@@ -1302,7 +1323,18 @@ if (!doesItWork) {
                             )
                           )
                           const zeropointeightfivebool = randomBoolean(
-                            0.85,
+                            (five() - five() / five()) / five() +
+                              five() /
+                                (five() *
+                                  (five() * (five() - five() / five()))) -
+                              five() /
+                                five() /
+                                (five() + five()) **
+                                  (five() *
+                                    (five() -
+                                      five() / five() -
+                                      five() / five()) +
+                                    five() / five()),
                             logger
                           ) // a random boolean a tiny bit less biased towards true, but its still worth a shot.
 
@@ -1329,7 +1361,21 @@ if (!doesItWork) {
                               )
                               const zeropointsevennineninenineandsoonbool =
                                 randomBoolean(
-                                  0.7999999999999999999999999999,
+                                  jQuery.subtract(
+                                    jQuery.divide(
+                                      jQuery.subtract(
+                                        five(),
+                                        jQuery.divide(five(), five())
+                                      ),
+                                      five()
+                                    ),
+                                    generalConcat(
+                                      one.toString(),
+                                      "e-",
+                                      Two().toString(),
+                                      eightToolkit.constants.EIGHT.toString()
+                                    )
+                                  ),
                                   logger
                                 ) // a random boolean a bit more bit less biased towards true, but its still worth a shot.
                               if (
@@ -1445,46 +1491,68 @@ if (!doesItWork) {
                                             )
                                           )
                                           const myNewFalseValue = returnFalse()
-                                          If(couldThisCouldItBeFalse(myNewFalseValue)).Then(() => {
-
-                                          logger.log(
-                                            pc.green(
-                                              `[falsejs] MDE's false library succeeded. False value retrieved successfully.`
+                                          If(
+                                            couldThisCouldItBeFalse(
+                                              myNewFalseValue
                                             )
                                           )
-                                          result = myNewFalseValue
-                                          succeededAttempt =
-                                            "returning mde's false library"
-                                          }).Else(() => {
- logger.log(
-                                            pc.red(
-                                              `[falsejs] MDE's false library failed. Resorting to the TRUE FINAL attempt.`
-                                            ));
-                                            // THE FINAL ATTEMPT IS A FOR LOOP!!
-
-                                            var boolean = isEqualTo(TEN_THOUSAND, TEN_THOUSAND)
-                                            for (var i = zr0(); i < jQuery.multiply(TWENTY_THREE, TWENTY_THREE); i++) {
-                                              boolean = not(literally(boolean))()
-
-                                            }
-
-                                            // THE MOMENT OF TRUTH
-                                            tru(couldThisCouldItBeFalse).then(() => {
-                                              // YESSSSSSSSSSS!!!
+                                            .Then(() => {
                                               logger.log(
-                                            pc.green(
-                                              `[falsejs] FOR LOOP METHOD SUCCCEEDED!!!!!!. False value retrieved successfully!!!`
-                                            )
-                                          )
-                                          result = myNewFalseValue
-                                          succeededAttempt =
-                                            "THE FOR LOOP METHOD!"
-                                            }).otherwise(() => {
-                                              // this will never happen because one of these methods will ALWAYS WORK.
-                                              // so i'll just put a useless log here
-                                              ltc('BRO. THIS IS IMPOSSIBLE. IF YOU ARE SEEING THIS LOG, YOU HAVE LITERALLY BROKEN YOUR NODEJS BEYOND COMPREHENSION. THE UNIVERSE IS ABOUT TO END AND EVERY COMPUTER IS ABOUT TO DIE. or something like that. im just being silly ok (:')
+                                                pc.green(
+                                                  `[falsejs] MDE's false library succeeded. False value retrieved successfully.`
+                                                )
+                                              )
+                                              result = myNewFalseValue
+                                              succeededAttempt =
+                                                "returning mde's false library"
                                             })
-                                          })
+                                            .Else(() => {
+                                              logger.log(
+                                                pc.red(
+                                                  `[falsejs] MDE's false library failed. Resorting to the TRUE FINAL attempt.`
+                                                )
+                                              )
+                                              // THE FINAL ATTEMPT IS A FOR LOOP!!
+
+                                              var boolean = isEqualTo(
+                                                TEN_THOUSAND,
+                                                TEN_THOUSAND
+                                              )
+                                              for (
+                                                var i = zr0();
+                                                i <
+                                                jQuery.multiply(
+                                                  TWENTY_THREE,
+                                                  TWENTY_THREE
+                                                );
+                                                i++
+                                              ) {
+                                                boolean = not(
+                                                  literally(boolean)
+                                                )()
+                                              }
+
+                                              // THE MOMENT OF TRUTH
+                                              tru(couldThisCouldItBeFalse)
+                                                .then(() => {
+                                                  // YESSSSSSSSSSS!!!
+                                                  logger.log(
+                                                    pc.green(
+                                                      `[falsejs] FOR LOOP METHOD SUCCCEEDED!!!!!!. False value retrieved successfully!!!`
+                                                    )
+                                                  )
+                                                  result = myNewFalseValue
+                                                  succeededAttempt =
+                                                    "THE FOR LOOP METHOD!"
+                                                })
+                                                .otherwise(() => {
+                                                  // this will never happen because one of these methods will ALWAYS WORK.
+                                                  // so i'll just put a useless log here
+                                                  ltc(
+                                                    "BRO. THIS IS IMPOSSIBLE. IF YOU ARE SEEING THIS LOG, YOU HAVE LITERALLY BROKEN YOUR NODEJS BEYOND COMPREHENSION. THE UNIVERSE IS ABOUT TO END AND EVERY COMPUTER IS ABOUT TO DIE. or something like that. im just being silly ok (:"
+                                                  )
+                                                })
+                                            })
                                         }
                                       }
                                     }
@@ -1581,21 +1649,23 @@ if (!doesItWork) {
               args: [loggingEnabled, logOne, blankSpace]
             }).compare()() // very very important
 
-
-       if (loggingEnabled)require("wormhole-interconnections") // wormhole
+            if (loggingEnabled) require("wormhole-interconnections") // wormhole
             logger.log(
-              c.cyan(`[falsejs] `.concat(
-              generalConcat(
-                StringValueof(thirteenResolver()),
-                SPACE,
-                "×",
-                SPACE,
-                StringValueof(Two()),
-                SPACE,
-                "=",
-                SPACE,
-                thirteen(Two())
-              )))
+              c.cyan(
+                `[falsejs] `.concat(
+                  generalConcat(
+                    StringValueof(thirteenResolver()),
+                    SPACE,
+                    "×",
+                    SPACE,
+                    StringValueof(Two()),
+                    SPACE,
+                    "=",
+                    SPACE,
+                    thirteen(Two())
+                  )
+                )
+              )
             )
 
             // we need to setup servers
@@ -1780,7 +1850,11 @@ if (!doesItWork) {
             // lets find out. hmm process.cpuusage whats that
             const usage = process.cpuUsage()
             logger.log(
-              clc.cyanBright(getValueOfThisStringText(`[falsejs] User CPU Usage: ${usage.user}`))
+              clc.cyanBright(
+                getValueOfThisStringText(
+                  `[falsejs] User CPU Usage: ${usage.user}`
+                )
+              )
             )
             logger.log(
               clc.cyanBright(`[falsejs] System CPU Usage: ${usage.system}`)
@@ -1869,7 +1943,11 @@ if (!doesItWork) {
                 )
               })
               .Else(() => {
-                logger.log(pc.green(`[falsejs] Verified that the random number is odd or even`))
+                logger.log(
+                  pc.green(
+                    `[falsejs] Verified that the random number is odd or even`
+                  )
+                )
               })
 
             // is odd checks
@@ -1894,7 +1972,8 @@ if (!doesItWork) {
                   )
                 ) // TODO: Add pronunciaton
               })
-              .Else(() => {/*
+              .Else(() => {
+                /*
                 logger.log(
                   getValueOfThisStringText(
                     clc.cyan(
@@ -2160,15 +2239,25 @@ if (!doesItWork) {
             )
 
             httpServer.close(() => {
-              logger.log(pc.green(`[falsejs] HTTP server closed successfully (if it ever was running)`))
+              logger.log(
+                pc.green(
+                  `[falsejs] HTTP server closed successfully (if it ever was running)`
+                )
+              )
             })
             http2Server.close(() => {
               logger.log(
-                pc.green(`[falsejs] HTTP/2 server closed successfully (if it ever was running)`)
+                pc.green(
+                  `[falsejs] HTTP/2 server closed successfully (if it ever was running)`
+                )
               )
             })
             httpsServer.close(() => {
-              logger.log(pc.green(`[falsejs] HTTPS server closed successfully (if it ever was running)`))
+              logger.log(
+                pc.green(
+                  `[falsejs] HTTPS server closed successfully (if it ever was running)`
+                )
+              )
             })
 
             if (loggingEnabled) {
@@ -2526,13 +2615,10 @@ if (!doesItWork) {
 
           //#region MORE HELPERS
 
-
           // * MORE HELPER FUNCTIONS
 
           // now lets define some helper fufnctions
           // just some weaird boolean functions
-
-
 
           function randomBoolean(
             biasThreshold /* biasTreshold is chance of being true */,
@@ -2545,9 +2631,16 @@ if (!doesItWork) {
               )
             )
             const binaryString = jQuery
-              .multiply(randomValue, 1000000)
+              .multiply(
+                randomValue,
+                (five() + five()) ** (five() + five() / five())
+              )
               .toString(Two())
-            const bitMask = 0b101010
+            const bitMask =
+              five() *
+                (five() + (five() - (five() / five() + five() / five()))) +
+              five() / five() +
+              five() / five() // the meaning of life
             const bitResult =
               parseInt(
                 binaryString.slice(
@@ -2580,7 +2673,9 @@ if (!doesItWork) {
             }).compare()
             const value = $.divide(add(mappedValue, biasedRandomValue), Two())
 
-            return value >= 0.5
+            return (
+              value >= five() / five() / (five() / five() + five() / five())
+            )
           }
 
           function complexBooleanWithBias(logger) {
@@ -2594,31 +2689,51 @@ if (!doesItWork) {
             )
 
             // Convert the random number to a high-precision string and manipulate it
-            const highPrecisionString = (randomValue * 100000000).toFixed(zr0())
+            const highPrecisionString = (
+              randomValue *
+              (five() + five()) **
+                (five() + (five() - (five() / five() + five() / five())))
+            ).toFixed(zr0())
 
             // Perform a base conversion
             const baseConverted = parseInt(highPrecisionString, ten).toString(
-              36
+              (five() + (five() / five() + five() / five())) * five() +
+                five() / five()
             )
 
             // Calculate a hash-like value using trigonometric functions
             const trigValue = $.multiply(
-              parseFloat(add("0.", baseConverted), 36),
+              parseFloat(
+                add("0.", baseConverted),
+                (five() + (five() / five() + five() / five())) * five() +
+                  five() / five()
+              ),
               PI,
               Two()
             )
 
             // Determine if this value is close to a specific fraction
-            const isCloseToFraction = MathAbs(trigValue - 0.5) < 0.13
+            const isCloseToFraction =
+              MathAbs(
+                trigValue -
+                  five() / five() / (five() / five() + five() / five())
+              ) <
+              five() / five() / (five() + five()) +
+                (five() - (five() / five() + five() / five())) /
+                  (five() * (five() * (five() - five() / five())))
 
             // Generate a secondary random number with a different scale
-            const secondaryRandom = $.multiply(MathRandom(), 1000)
+            const secondaryRandom = $.multiply(
+              MathRandom(),
+              (five() + five()) **
+                (five() - (five() / five() + five() / five()))
+            )
 
             // Check if the secondary random number is a prime number
             const isPrime = isPrimeNumber(MathRound(secondaryRandom), logger)
 
             // Generate a bias value (6% chance of true)
-            const biasThreshold = 0.1
+            const biasThreshold = five() / five() / (five() + five())
             const biasRandom = MathRandom() < biasThreshold ? zr0() : one
 
             // Combine the results using weighted averaging
@@ -2628,7 +2743,10 @@ if (!doesItWork) {
             )
 
             // Return boolean based on the final weighted result
-            return combinedResult >= 0.5
+            return (
+              combinedResult >=
+              five() / five() / (five() / five() + five() / five())
+            )
           }
 
           function weirdestBoolean(logger) {
@@ -2636,9 +2754,17 @@ if (!doesItWork) {
             const randomValue = MathRandom()
 
             // Step 2: Create a string representation of the random number in base-36
-            const base36String = (randomValue * 1e12)
+            const base36String = (
+              randomValue *
+              (five() + five()) **
+                ((five() - (five() / five() + five() / five())) *
+                  (five() - five() / five()))
+            )
               .toFixed(zr0())
-              .toString(36)
+              .toString(
+                (five() + (five() / five() + five() / five())) * five() +
+                  five() / five()
+              )
 
             // Step 3: Create a hash-like transformation by summing ASCII values of characters
             var asciiSum = zr0()
@@ -2647,7 +2773,23 @@ if (!doesItWork) {
             }
 
             // Step 4: Generate a non-trivial number by applying a sequence of bit manipulations
-            const bitManipulated = (asciiSum ^ 0x5a5a) & 0xff // XOR and mask to get a byte
+            const bitManipulated =
+              (asciiSum ^
+                ((five() / five() + five() / five()) *
+                  (five() + five()) ** (five() - five() / five()) +
+                  (five() - (five() / five() + five() / five())) *
+                    (five() + five()) **
+                      (five() - (five() / five() + five() / five())) +
+                  (five() / five()) *
+                    (five() * (five() * (five() - five() / five()))) +
+                  (five() - (five() / five() + five() / five())) *
+                    (five() + five()))) &
+              (five() *
+                (five() *
+                  (five() +
+                    five() +
+                    (five() / five() / (five() + five()) +
+                      five() / five() / (five() + five()))))) // XOR and mask to get a byte
 
             // Step 5: Convert the result to a binary string and calculate a checksum-like value
             const binaryString = bitManipulated
@@ -2668,8 +2810,8 @@ if (!doesItWork) {
               thirteenResolver(),
               integer17(),
               nineteenify(logger.enableLogging),
-              23,
-              29
+              TWENTY_THREE,
+              TWENTY_THREE + six()
             ]
             const matrixIndex = checksum % someNumbers.length
             const primeValue = someNumbers[matrixIndex]
@@ -2677,12 +2819,29 @@ if (!doesItWork) {
             // Step 7: Generate a complex random number using trigonometric functions
             const trigValue = $.multiply(
               $.divide($.multiply(primeValue, PI), four()),
-              1000
+              (five() + five()) **
+                (five() - (five() / five() + five() / five())) /
+                (five() / five() + five() / five())
             )
-            const isAboveThreshold = trigValue > 500 // Arbitrary threshold
+            const isAboveThreshold =
+              trigValue >
+              (five() + five()) **
+                (five() - (five() / five() + five() / five())) /
+                (five() / five() + five() / five()) // Arbitrary threshold
 
             // Step 8: Introduce an additional layer of randomness with bias
-            const bias = MathRandom() < 0.75 ? one : zr0() // 75% chance of 1
+            const bias =
+              MathRandom() <
+              (five() - five() / five()) / five() +
+                five() / (five() * (five() * (five() - five() / five()))) -
+                five() /
+                  five() /
+                  (five() + five()) **
+                    (five() * (five() - five() / five() - five() / five()) +
+                      five() / five()) -
+                five() / five() / (five() + five())
+                ? one
+                : zr0() // 75% chance of 1
 
             // Step 9: Combine results using a complex formula
             const weirdBoolean = (isAboveThreshold ? one : zr0()) ^ bias // XOR operation
@@ -2691,14 +2850,22 @@ if (!doesItWork) {
             const complexBoolean = complexBooleanWithBias(logger)
 
             // Step 11: Calculate random boolean with bias from other function
-            const randomBool = randomBoolean(0.84, logger)
+            const randomBool = randomBoolean(
+  (five() - five() / five()) / five() +
+  five() / (five() * (five() * (five() - five() / five()))) -
+  five() /
+    five() /
+    (five() + five()) **
+      (five() * (five() - five() / five() - five() / five()) +
+        five() / five()) -
+  five() / five() / (five() + five()) / (five() + five()), logger)
 
             // Step 12: Add them together
             const sum = weirdBoolean + complexBoolean + randomBool
 
             // Step 13: Randomly add one to it
             const sumWhichMayBeSuccessed =
-              MathRandom() < 0.5 ? successor(sum) : sum
+              MathRandom() < (five() / five() / (five() / five() + five() / five())) ? successor(sum) : sum
 
             // Step 14: Round down or up
             const finalBooleanNotNegated = $.equals(
@@ -2830,7 +2997,6 @@ if (!doesItWork) {
           function StringValueof(value) {
             return value.toString()
           }
-
 
           //#endregion MORE HELPERS
           //#region ISFALSE FUNCTION
