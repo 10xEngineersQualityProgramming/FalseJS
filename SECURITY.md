@@ -7,7 +7,7 @@ FalseJS adheres to the [Eclipse Foundation Vulnerability Reporting Policy](https
 If you think you have found a vulnerability in this repository, please report it to us through coordinated disclosure.
 Instead, you can report it using one of the following ways:
 
-* Contact me via my email: x5r32@outlook.com
+* Contact me via my email: thefoxjones@gmail.com
 * Create an issue (just go to the issues tab and report a security vulnerability or whatever security hole thing you wanted to report)
 
 Please include as much of the information listed below as you can to help us better understand and resolve the issue:
