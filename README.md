@@ -215,6 +215,6 @@ This is normal. Do not worry. FalseJS uses a package called `get-member` that ad
 
 ## License
 
-FalseJS uses the 10xGPWTHPL license.
+FalseJS uses the MIT license.
 
 ## made with HEAVY BLACK HEART U+2764
