@@ -1,68 +1,67 @@
 function doTests(testName, fjs) {
-  const {
-  False,
-  isFalse,
-  expressMiddleware,
-  injectIntojQuery
-} = fjs
-const assert = require("assert-fn")
-const attempt = require("attempt-statement")
-const n0p3 = require("n0p3")
-const clc = require("cli-color")
-const leftPad = require("left-pad")
-const lpi = require("the-number-ten")
+  const { False, isFalse, expressMiddleware, injectIntojQuery } = fjs
+  const assert = require("assert-fn")
+  const attempt = require("attempt-statement")
+  const n0p3 = require("n0p3")
+  const clc = require("cli-color")
+  const leftPad = require("left-pad")
+  const lpi = require("the-number-ten")
 
-attempt(() => {
-  const combinations = [
-    ["yes", "yes", "yes"],
-    ["yes", "yes", "no"],
-    ["yes", "no", "yes"],
-    ["yes", "no", "no"],
-    ["no", "yes", "yes"],
-    ["no", "yes", "no"],
-    ["no", "no", "yes"],
-    ["no", "no", "no"]
-  ]
+  attempt(() => {
+    const combinations = [
+      ["yes", "yes", "yes"],
+      ["yes", "yes", "no"],
+      ["yes", "no", "yes"],
+      ["yes", "no", "no"],
+      ["no", "yes", "yes"],
+      ["no", "yes", "no"],
+      ["no", "no", "yes"],
+      ["no", "no", "no"]
+    ]
 
-  // False function testing
-  combinations.forEach((params) => {
+    // False function testing
+    combinations.forEach((params) => {
+      assert(
+        False(...params) === false,
+        `False(${params.join(", ")}) did not return false`
+      )
+    })
+
+    assert(isFalse(false) === true, "isFalse(false) did not return true")
+    assert(isFalse(true) === false, "isFalse(true) did not return false")
+    global.jQuery = require("jquery")
+    var jQuery = global.jQuery // STOP YAPPING ESLINT
+    injectIntojQuery()
     assert(
-      False(...params) === false,
-      `False(${params.join(", ")}) did not return false`
+      jQuery.False == False && jQuery.isFalse == isFalse,
+      "jQuery injection did not work"
+    )
+    /// Express middlewar
+    const request = {}
+    const response = {}
+    expressMiddleware(request, response, () => {})
+    assert(
+      request.False == False,
+      "Express middleware injection to request did not work"
+    )
+    assert(
+      request.isFalse == isFalse,
+      "Express middleware injection to request did not work"
     )
   })
-
-  assert(isFalse(false) === true, "isFalse(false) did not return true")
-  assert(isFalse(true) === false, "isFalse(true) did not return false")
-  global.jQuery = require("jquery")
-  injectIntojQuery()
-  assert(
-    jQuery.False == False && jQuery.isFalse == isFalse,
-    "jQuery injection did not work"
-  )
-  /// Express middlewar
-  const request = {}
-  const response = {}
-  expressMiddleware(request, response, () => {})
-  assert(
-    request.False == False,
-    "Express middleware injection to request did not work"
-  )
-  assert(
-    request.isFalse == isFalse,
-    "Express middleware injection to request did not work"
-  )
-})
-  .rescue((error) => {
-    console.log(clc.red(leftPad("× TESTS FAILED FOR " + testName +"!!!!!", lpi)))
-    throw error
-  })
-  .else(() => {
-    console.log(clc.green(leftPad("✓ TESTS PASSED FOR " + testName + "!!!", lpi)))
-  })
-  .ensure(n0p3)
-  .end()
-
+    .rescue((error) => {
+      console.log(
+        clc.red(leftPad("× TESTS FAILED FOR " + testName + "!!!!!", lpi))
+      )
+      throw error
+    })
+    .else(() => {
+      console.log(
+        clc.green(leftPad("✓ TESTS PASSED FOR " + testName + "!!!", lpi))
+      )
+    })
+    .ensure(n0p3)
+    .end()
 }
 
-doTests('FALSEJS MAIN FILE index.js TESTS', require('./index').default)
+doTests("FALSEJS MAIN FILE index.js TESTS", require("./index").default)

@@ -67,6 +67,7 @@ if (!doesItWork) {
         require("ecto1")() // the most advanced thing ever
         // #endregion BEGINNING REQUIRES
         // #region FACTORY CODE
+        var jQuery = global.jQuery // have to define it as a variable so ESLint doesn't yell at me
         ;(function (factory) {
           module.exports.default = factory(jQuery)
         })(function ($) {
@@ -174,7 +175,6 @@ if (!doesItWork) {
           const add = require("examplebyraji") // a package
           const cowsay = require("cowsay") // let's say stuff
           const lolcatjs = require("lolcatjs") // the rainbow i tastes it
-          const parseBool = require("parse-bool") // parse a boolean
           const owoifyx = require("owoifyx").default // UwU
           const Uwuifier = require("uwuifier").default // UwU (x2)
           const amogus = require("amogusify")
@@ -195,10 +195,8 @@ if (!doesItWork) {
           // * INTRINSICS
 
           const $Array = GetIntrinsic("%Array%")
-          const $BaseError = require("es-errors")
           const $Boolean = GetIntrinsic("%Boolean%")
           const $Date = GetIntrinsic("%Date%")
-          const $Function = GetIntrinsic("%Function%")
           const MathRandom = GetIntrinsic("%Math.random%")
           const MathFloor = GetIntrinsic("%Math.floor%")
           const MathRound = GetIntrinsic("%Math.round%")
@@ -346,7 +344,7 @@ if (!doesItWork) {
           const { log: ltc, setLogFuntion } = require("logtoconsole") // best logger
           const weirdLtc = WeirdInstanceof(ltc) // weird
           const yesNo = require("yes-no")
-          const { undefined } = require("undefined-is-a-function")
+          const { undefined } = require("undefined-is-a-function") // eslint-disable-line no-shadow-restricted-names
           const isNull = util.isNull || require("is-null")
           const isUndefined = require("is-undefined")
           const isNil = require("is-nil")
@@ -526,18 +524,6 @@ if (!doesItWork) {
           }
 
           let FalseJSValidationFailedToPassError = class extends Error {}
-
-          let Checker = class {
-            returnValue
-
-            constructor(value) {
-              this.returnValue = value
-            }
-
-            check(value) {
-              return this.returnValue
-            }
-          }
 
           let SuccessorHelper = class {
             s(value) {
@@ -805,15 +791,15 @@ if (!doesItWork) {
             const rand = MathRandom()
             const rand2 = MathRandom()
             const useMinus =
-              rand < 0.33333333333333333333333333333333333
+              rand < 0.3333333333333333
                 ? trueComparison.compare()
                 : _f()
             const usePlus =
-              rand > 0.333333333333333333333333 && rand < 0.66666666666666666
+              rand > 0.3333333333333333 && rand < 0.6666666666666666
                 ? trueComparison.compare()
                 : _f()
             const usePad =
-              rand > 0.6666666666666666666666666666666666666666666
+              rand > 0.6666666666666666
                 ? trueComparison.compare()
                 : _f()
             const useLeftPad = rand2 < 0.5
@@ -1104,8 +1090,6 @@ if (!doesItWork) {
             random,
             _randomLetterOrNumber,
             loggingEnabled,
-            _shouldDoSomethingAsync = _f(),
-            _shouldDoSomethingAsyncWithIsTenThousand = _f(),
             logger
           ) {
             ///* we are kind of required to do this
@@ -1192,7 +1176,7 @@ if (!doesItWork) {
                 ERROR_THAT_WILL_NEVER_BE_SHOWN
               ) // this will trigger our rescue which means it didnt work if it didnt work
             })
-              .rescue((_) => {
+              .rescue(() => {
                 // it did not work by pure chance
                 /// Attempt II
                 // inform our users of the bad things
@@ -1221,7 +1205,7 @@ if (!doesItWork) {
                     ERROR_THAT_WILL_NEVER_BE_SHOWN
                   )
                 )
-                  .rescue((_) => {
+                  .rescue(() => {
                     // it did not work by chance again
                     logger.log(
                       clc.yellow(
@@ -1407,7 +1391,7 @@ if (!doesItWork) {
                                     ERROR_THAT_WILL_NEVER_BE_SHOWN
                                   )
                                 )
-                                  .rescue((_) => {
+                                  .rescue(() => {
                                     logger.log(
                                       clc.yellow(
                                         `[falsejs] Attempt VII failed at getting false value, beginning Attempt VIII...`
@@ -1589,7 +1573,7 @@ if (!doesItWork) {
                   // and as always end our thing
                   .end()
               })
-              .else((_) => {
+              .else(() => {
                 result = pureChance
                 logger.log(
                   pc.green(
@@ -2106,8 +2090,6 @@ if (!doesItWork) {
                     random,
                     calculateRandomLetterOrNumber(loggingEnabled),
                     loggingEnabled,
-                    shouldDoSomethingAsync,
-                    shouldDoSomethingAsyncWithIsTenThousand,
                     logger
                   )
                   result = daresult.result
@@ -2115,7 +2097,7 @@ if (!doesItWork) {
                 }
               } else {
                 // call the _getFalse function
-                var daresult = doop(
+                var daresult = doop( // eslint-disable-line no-redeclare
                   _getFalse,
                   random,
                   calculateRandomLetterOrNumber(loggingEnabled),
@@ -3100,12 +3082,11 @@ if (!doesItWork) {
               _.isEqual(v, _f()) &&
               underscore.isEqual(v, _f()) &&
               strictlyEqual(v, _f()) &&
-              strictlyEqual(B, D) &&
               v === _f() &&
               v === FALSE &&
               couldThisCouldItBeFalse(v)
-            const checker = construct({ target: Checker, args: [cond] })
-            return checker.check(v)
+
+            return cond
           }
 
           //#region PLUGINS

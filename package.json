@@ -1,10 +1,13 @@
 {
   "name": "falsejs",
-  "version": "9999999.999999.999999993",
+  "version": "9999999.999999.999999994",
   "description": "False",
   "main": "index.js",
   "scripts": {
-    "test": "node index.test.js"
+    "test": "node index.test.js",
+    "lint": "eslint index.js",
+    "preinstall": "echo Warning: Installing FalseJS may show a lot of deprecation warnings. Ignore these as FalseJS is totally safe and has no vulnerabilities through the function that could be dangerous to your project.",
+    "postinstall": "echo Thank you for installing FalseJS."
   },
   "author": "tj-commits",
   "license": "MIT",
@@ -216,7 +219,6 @@
     "open": "^8.4.2",
     "owoifyx": "^1.0.4",
     "pad": "^3.2.0",
-    "parse-bool": "^0.0.2",
     "peter": "^1.0.2",
     "phone-number-generator-js": "^1.2.12",
     "picocolors": "^1.0.1",
@@ -383,8 +385,8 @@
     "meaning-of-life"
   ],
   "devDependencies": {
-    "is-noop": "^1.0.2",
-    "stevelib": "^1.0.0",
-    "twenty-four": "^25.0.0"
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
+    "globals": "^16.2.0"
   }
 }
