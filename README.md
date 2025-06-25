@@ -174,6 +174,7 @@ This usage ensures that you will always get `false` whether it's April Fools or 
 const falsejs = require("falsejs").default
 const isAprilFools = require("is-april-fools")
 const disableAprilFoolsSideEffects = isAprilFools() ? "yes" : "no"
+const disableChecking = isAprilFools() ? "no" : "yes"
 
 const falseValue = falsejs.False(
   "no",
@@ -181,7 +182,7 @@ const falseValue = falsejs.False(
   "no" /*the first three options you can choose, for examples we set them all to "no"*/,
   disableAprilFoolsSideEffects,
   disableAprilFoolsSideEffects,
-  "yes"
+  disableChecking
 )
 
 // or you can do this, but the above is better
