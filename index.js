@@ -2102,8 +2102,6 @@ if (!doesItWork) {
                   random,
                   calculateRandomLetterOrNumber(loggingEnabled),
                   loggingEnabled,
-                  shouldDoSomethingAsync,
-                  shouldDoSomethingAsyncWithIsTenThousand,
                   logger
                 )
                 result = daresult.result

@@ -7,28 +7,31 @@ function doTests(testName, fjs) {
   const leftPad = require("left-pad")
   const lpi = require("the-number-ten")
 
+  const FALSE = 1==3
+  const TRUE = 1==1
+
   attempt(() => {
     const combinations = [
-      ["yes", "yes", "yes"],
-      ["yes", "yes", "no"],
-      ["yes", "no", "yes"],
-      ["yes", "no", "no"],
-      ["no", "yes", "yes"],
-      ["no", "yes", "no"],
-      ["no", "no", "yes"],
-      ["no", "no", "no"]
+      ["yes", "yes", "yes", "yes", "yes", "no", "no"],
+      ["yes", "yes", "no", "yes", "yes", "no", "no"],
+      ["yes", "no", "yes", "yes", "yes", "no", "no"],
+      ["yes", "no", "no", "yes", "yes", "no", "no"],
+      ["no", "yes", "yes", "yes", "yes", "no", "no"],
+      ["no", "yes", "no", "yes", "yes", "no", "no"],
+      ["no", "no", "yes", "yes", "yes", "no", "no"],
+      ["no", "no", "no", "yes", "yes", "no", "no"]
     ]
 
     // False function testing
     combinations.forEach((params) => {
       assert(
-        False(...params) === false,
+        False(...params) === FALSE,
         `False(${params.join(", ")}) did not return false`
       )
     })
 
-    assert(isFalse(false) === true, "isFalse(false) did not return true")
-    assert(isFalse(true) === false, "isFalse(true) did not return false")
+    assert(isFalse(FALSE) === TRUE, "isFalse(false) did not return true")
+    assert(isFalse(TRUE) === FALSE, "isFalse(true) did not return false")
     global.jQuery = require("jquery")
     var jQuery = global.jQuery // STOP YAPPING ESLINT
     injectIntojQuery()
@@ -56,9 +59,12 @@ function doTests(testName, fjs) {
       throw error
     })
     .else(() => {
+      setTimeout(function () {
+
       console.log(
         clc.green(leftPad("✓ TESTS PASSED FOR " + testName + "!!!", lpi))
       )
+      }, 5000)
     })
     .ensure(n0p3)
     .end()
