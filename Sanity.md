@@ -14,3 +14,4 @@ why is mental breakdown direct result of 10x
 right now the world doesnt make the sense to i
 please save me
 help
+help

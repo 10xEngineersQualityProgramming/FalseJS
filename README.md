@@ -14,22 +14,22 @@ The 10 attempts to get the value of false ensure that if one fails, it will go o
 
 Install FalseJS with your favorite package manager.
 
-NPM: `npm install falsejs`
+NPM: `npm install @falsejs/falsejs`
 
-Yarn: `yarn add falsejs`
+Yarn: `yarn add @falsejs/falsejs`
 
-PNPM: `pnpm add falsejs`
+PNPM: `pnpm add @falsejs/falsejs`
 
 Import it with require:
 
 ```javascript
-const falsejs = require("falsejs").default
+const falsejs = require("@falsejs/falsejs").default
 ```
 
 Import it with import:
 
 ```javascript
-import falsejs from "falsejs"
+import falsejs from "@falsejs/falsejs"
 ```
 
 ## Usage
@@ -61,7 +61,7 @@ The seventh argument, `openRandomImageOfDofleWhenDone`, can be `"yes"` or `"no"`
 ## Example
 
 ```javascript
-const falsejs = require("falsejs").default
+const falsejs = require("@falsejs/falsejs").default
 const falseValue = falsejs.False("yes", "no", "no", "yes", "yes", "no", "no") // outputs a bunch of logs
 
 console.log(falseValue) // outputs false
@@ -76,7 +76,7 @@ It takes in two parameters, the value to check whether it is false, and `logging
 Example:
 
 ```javascript
-const falsejs = require("falsejs").default
+const falsejs = require("@falsejs/falsejs").default
 const falseValue = falsejs.False("no", "no", "no")
 const trueValue = require("true-value")
 
@@ -93,25 +93,25 @@ console.log(falsejs.isFalse("hi")) // false
 NPM:
 
 ```
-npm install -g falsejs
+npm install -g @falsejs/falsejs
 ```
 
 Yarn:
 
 ```
-yarn add -g falsejs
+yarn add -g @falsejs/falsejs
 ```
 
 PNPM:
 
 ```
-pnpm add -g falsejs
+pnpm add -g @falsejs/falsejs
 ```
 
 FalseJS provides a CLI.
 
 ```bash
-$ npm install -g falsejs
+$ npm install -g @falsejs/falsejs
 $ false
 false
 ```
@@ -121,7 +121,7 @@ false
 A jQuery plugin is also provided for FalseJS. Here is an example:
 
 ```javascript
-const falsejs = require("falsejs").default
+const falsejs = require("@falsejs/falsejs").default
 global.jQuery = require("jquery")
 falsejs.injectIntojQuery()
 
@@ -138,7 +138,7 @@ Express middleware is also exported. Here is an example:
 
 ```javascript
 const express = require("express")
-const falsejs = require("falsejs").default
+const falsejs = require("@falsejs/falsejs").default
 const Bro = require("brototype")
 
 const app = express()
@@ -173,7 +173,7 @@ app.listen(PORT)
 This usage ensures that you will always get `false` whether it's April Fools or not and no errors.
 
 ```js
-const falsejs = require("falsejs").default
+const falsejs = require("@falsejs/falsejs").default
 const isAprilFools = require("is-april-fools")
 const disableAprilFoolsSideEffects = isAprilFools() ? "yes" : "no"
 const disableChecking = isAprilFools() ? "no" : "yes"
