@@ -1,6 +1,6 @@
 {
-  "name": "falsejs",
-  "version": "9999999.999999.9999999991",
+  "name": "@falsejs/falsejs",
+  "version": "1.0.0",
   "description": "I want to be sane",
   "main": "index.js",
   "scripts": {
