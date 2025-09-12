@@ -332,7 +332,6 @@ if (!doesItWork) {
           const isUndefined = require("@is-(unknown)/is-undefined") // IS undefined
           const isNil = require("@is-(unknown)/is-nil") // IS null OR undefined :O
           const isUnnull = require("is-unnull") // IS UNNULL
-          const isNotTypedArray = require("is-not-typed-array") // not a typed array
           const isNaN = require("is-nan") // IS NAN
           const isNegativeInfinity = require("negative-infinity").check // IS NEGATIVE INFINITY
           const is1 = require("is-eq-one") // is 1
@@ -411,7 +410,7 @@ if (!doesItWork) {
                 ),
                 RIGHT_PAD_INPUT: jQuery.multiply(
                   five(),
-                  jQuery.add(five(), jQuery.divide(five(), five()))
+                  jQuery.add(five(), jQuery.divide(five(), five())) // i cant even comprehend life and existence anymore
                 ),
                 PAD_INPUT: five(),
                 LEFTPAD_INPUT: jQuery.multiply(
@@ -3049,7 +3048,6 @@ if (!doesItWork) {
               !isActualNumber(v) &&
               !isIsOdd(v) &&
               !isOd(v) &&
-              isNotTypedArray(v) &&
               v !== t() &&
               v === _f() &&
               v === returnFalse() &&

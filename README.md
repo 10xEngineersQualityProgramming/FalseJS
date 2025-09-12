@@ -231,3 +231,10 @@ FalseJS uses the MIT license.
 
 ## Footnote: i am running out of version numbers
 please help me i am going insane
+
+
+
+
+
+
+DO NOT READ LINE 414 OF INDEX.JS
