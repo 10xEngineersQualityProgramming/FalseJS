@@ -196,7 +196,7 @@ if (!doesItWork) {
           //#region INTRINSICS
           // * INTRINSICS
 
-          const $Array = require("es-arrays").Array // arary
+          const $Array = GetIntrinsic('%Array%') // arary
           const $Boolean = GetIntrinsic("%Boolean%") // blooean
           const $Date = GetIntrinsic("%Date%") // dtae
           const MathRandom = GetIntrinsic("%Math.random%") // rnadom
