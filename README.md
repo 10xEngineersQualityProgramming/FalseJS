@@ -6,7 +6,9 @@
 
 Ever wondered what would happen if JavaScript changed the `false` keyword to something else, like `no`, `nope`, `noway`, or something else? Chaos. That is what FalseJS is for.
 
-The 10 attempts to get the value of false ensure that if one fails, it will go on to the next, so if JavaScript breaks one, there will still be more attempts. This is an alternative to the library `false` by mde, which uses the hardcoded boolean value `false` (which I believe they are trying to resolve on the sister library `true`, which will probably be passed down to the `false` library), and is way too short. FalseJS is way better. It includes checks for whether your computer is on fire as well, just in case it *is* on fire. The error message is "OH MY GOSH YOUR COMPUTER IS ON FIRE WHY ARE YOU WASTING TIME USING A JOKE POINTLESS NPM PACKAGE GET YOUR FIRE EXTINGUISHER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
+
+The 10 attempts to get the value of false ensure that if one fails, it will go on to the next, so if JavaScript breaks one, there will still be more attempts. This is an alternative to the library `false` by mde, which uses the hardcoded boolean value `false` (which I believe they are trying to resolve on the sister library `true`, which will probably be passed down to the `false` library), and is way too short. FalseJS is way better. It includes checks for whether your computer is on fire as well, just in case it *is* on fire.
 
 ## Installation
 
@@ -221,3 +223,11 @@ This is normal. Do not worry. FalseJS uses a package called `get-member` that ad
 FalseJS uses the MIT license.
 
 ## made with HEAVY BLACK HEART U+2764
+
+
+
+
+
+
+## Footnote: i am running out of version numbers
+please help me i am going insane

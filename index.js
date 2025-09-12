@@ -69,14 +69,18 @@ if (!doesItWork) {
         // #region FACTORY CODE
         var jQuery = global.jQuery // have to define it as a variable so ESLint doesn't yell at me
         ;(function (factory) {
+          // Export everything
           module.exports.default = factory(jQuery)
         })(function ($) {
           "use strict"
           //#endregion FACTORY CODE
           //* MODULE IMPORTS
           // #region MODULE IMPORTS
+          const GetIntrinsic = require("get-intrinsic") // cache our intrinsics
+          const variableHolder = {} // store our variables
           const _ = require("lodash") // every project needs lodash
-          const React = require("react") // the best framework
+          const underscore = require("underscore") // underscore.js. the predecessor of lodash.
+          const React = require("react") // the hype framework everyone uses for some reason
           const ReactDOMServer = require("react-dom/server") // part of react
           const cheerio = require("cheerio") // cheerio!
           const { JSDOM } = require("jsdom") // a fake dom
@@ -87,10 +91,9 @@ if (!doesItWork) {
           const chalkbox = require("chalkbox") // with a box
           const c = require("ansi-colors") // nothing wrong with even more colors
           const pc = require("picocolors") // maybe even more colors libraries
-          const underscore = require("underscore") // underscore.js. the predecessor of lodash.
           const axios = require("axios") // so we can send requests
-          const { generatePhoneNumber } = require("phone-number-generator-js") // phone numbers
-          const emptyString = require("empty-string")
+          const { generatePhoneNumber } = require("phone-number-generator-js") // generate some phone numbers
+          const emptyString = require("empty-string") // an empty string
           const n0p3 = require("n0p3") // a noop
           const noop2 = require("noop2") // nothing wrong with another noop
           const noop3 = require("noop3") // nothing wrong with yet another noop
@@ -99,6 +102,7 @@ if (!doesItWork) {
           const noop7 = require("noop7") // i think you see where i'm going
           const noop8 = require("noop8") //another...
           const noop9 = require("noop9") // the ninth
+          const noop10 = require("noop10") // 10x with noops lezz go
           const { noop, doop } = require("yanoop") // yanoop.
           const asyncUtilNoop = require("async.util.noop") // i think you see where i'm going
           const blankSpaceFullObject = require("blank-space") // this exports two noops
@@ -163,130 +167,110 @@ if (!doesItWork) {
           const noteven = require("not-even") // not even
           const isUneven = require("is-uneven") // whysomany
           const numberKind = require("number-kind") // this exports two fns!
-          const isOddFaster = require("is-odd-faster").isOdd
-          const gabrielBrotasIsOdd = require("gabriel-brotas-is-odd")
-          const returnIfOddNumber = require("return-if-odd-number")
-          const numberIsOdd = require("number-is-odd")
-          const isNumOdd = require("is-num-odd")
-          const isOddNumber = require("is-odd-number")
-          const isNumberOdd = require("is_number_odd")
-          const isThisNumberOdd = require("is-this-number-odd")
-          const isRealBoolean = require("is-real-boolean")
+          const isOddFaster = require("is-odd-faster").isOdd // is Odd but faster
+          const gabrielBrotasIsOdd = require("gabriel-brotas-is-odd") // gabriel made an is odd
+          const returnIfOddNumber = require("return-if-odd-number") // if odd number
+          const numberIsOdd = require("number-is-odd") // check if a number is odd
+          const isNumOdd = require("is-num-odd") // check if a num is odd
+          const isOddNumber = require("is-odd-number") // check if a od is number
+          const isNumberOdd = require("is_number_odd") // check if a number is odd
+          const isThisNumberOdd = require("is-this-number-odd") // check if a this is number odd
+          const isRealBoolean = require("is-real-boolean") // BOOLEANS
           const add = require("examplebyraji") // a package
           const cowsay = require("cowsay") // let's say stuff
           const lolcatjs = require("lolcatjs") // the rainbow i tastes it
           const owoifyx = require("owoifyx").default // UwU
           const Uwuifier = require("uwuifier").default // UwU (x2)
-          const amogus = require("amogusify")
-          const luaParser = require("luaparse")
-          const luaInterpreter = require("lua-interpreter")
-          const exit = require("exit")
-          const appendType = require("append-type")
-          const concatenater = require("concatenater")
-          const generalConcat = require("general-concat")
-          const lowercase = require("convert-to-lower-case")
+          const amogus = require("amogusify") // amogusify our amogus
+          const luaParser = require("luaparse") // parse lua
+          const luaInterpreter = require("lua-interpreter") // interpret lua
+          const exit = require("exit") // 10x better than process.exit
+          const appendType = require("append-type") // PUT THE TYPE NEXT TO A VALUE!!
+          const concatenater = require("concatenater") // CONCATENATE STUFF!!!
+          const generalConcat = require("general-concat") // GENERALLY CONCATENATE STUFF!!!
+          const lowercase = require("convert-to-lower-case") // CONVERT TO LOWER CASE
           const construct = require("construct-new") // better than the new keyword
-          const variableHolder = {}
-          const $Promise = require("bluebird")
-          const GetIntrinsic = require("get-intrinsic")
+          const $Promise = require("bluebird") // promise ponyfill cuz why not
 
           //#endregion MODULE IMPORTS
           //#region INTRINSICS
           // * INTRINSICS
 
-          const $Array = GetIntrinsic("%Array%")
-          const $Boolean = GetIntrinsic("%Boolean%")
-          const $Date = GetIntrinsic("%Date%")
-          const MathRandom = GetIntrinsic("%Math.random%")
-          const MathFloor = GetIntrinsic("%Math.floor%")
-          const MathRound = GetIntrinsic("%Math.round%")
-          const PI = GetIntrinsic("%Math.PI%")
-          const MathAbs = GetIntrinsic("%Math.abs%")
-          const StringCharAt = GetIntrinsic("%String.prototype.charAt%")
+          const $Array = require("es-arrays").Array // arary
+          const $Boolean = GetIntrinsic("%Boolean%") // blooean
+          const $Date = GetIntrinsic("%Date%") // dtae
+          const MathRandom = GetIntrinsic("%Math.random%") // rnadom
+          const MathFloor = GetIntrinsic("%Math.floor%") // folor
+          const MathRound = GetIntrinsic("%Math.round%") // ruond
+          const PI = GetIntrinsic("%Math.PI%") // ip
+          const MathAbs = GetIntrinsic("%Math.abs%") // asb
+          const StringCharAt = GetIntrinsic("%String.prototype.charAt%") // chraAt
           //#endregion INTRINSICS
 
-          //#region APRIL FOOLS IMPORT
-          // * another import
+          //#region MORE MODULE IMPORTS
           const _calculateFalseAprilFools = require("./aprilFoolsCalculateFalse") // april fools
-
-          //#endregion APRIL FOOLS IMPORT
-
-          // * HELPER FUNCTIONS FROM OTHER LIBRARIES THAT ARE BY FALSEJS
-          //#region FALSEJS IMPORTS
-          const couldThisCouldItBeTrue = require("@falsejs/is-true-helper")
+          const couldThisCouldItBeTrue = require("@falsejs/is-true-helper") // check if a value is true
           const {
             returnFalse,
             isFalse: isPreciselyEqualToFalse
-          } = require("@falsejs/core-ish")
-          //#endregion FALSEJS IMPORTS
-
-          // * MORE MODULE IMPORTS
-          //#region MORE MODULE IMPORTS
-          const isJanuary = require("is-january")
-          const isFebruary = require("is-february")
-          const isMarch = require("is-march")
-          const isApril = require("is-april")
-          const isMay = require("is-may")
-          const isJune = require("is-june")
-          const isJuly = require("is-july")
-          const isAugust = require("is-august")
-          const isSeptember = require("is-september")
-          const isOctober = require("is-october")
-          const isNovember = require("is-november")
-          const isDecember = require("is-december")
-          const isMonday = require("is-monday")
-          const isTuesday = require("is-tuesday")
-          //#endregion MORE MODULE IMPORTS
-          //#region IS WEDNESDAY SHIM
-          // * A function
-          function isWednesday() {
-            const _isWednesday = require("is-wednesday")
-            return _isWednesday(Today)
-          }
-          //#endregion IS WEDNESDAY SHIM
-          //#region EVEN MORE MODULE IMPORTS
-          // * EVEN MORE MODULE IMPORTS!!!
+          } = require("@falsejs/core-ish") // some core ish functions
+          const isJanuary = require("is-january") // month 1
+          const isFebruary = require("is-february") // month 2
+          const isMarch = require("is-march") // month 3
+          const isApril = require("is-april") // month 4
+          const isMay = require("is-may") // month 5
+          const isJune = require("is-june") // month 6
+          const isJuly = require("is-july") // month 7
+          const isAugust = require("is-august") // month 8
+          const isSeptember = require("is-september") // month 9
+          const isOctober = require("is-october") // month 10
+          const isNovember = require("is-november") // month 11
+          const isDecember = require("is-december") // month 12
+          const isMonday = require("is-monday") // day of the week 1 according to international standard, day of the week 2 according to the us
+          const isTuesday = require("is-tuesday") // day of the week 2 according to international standard, day of the week 3 according to the us
+          const isWednesday = () => require('is-wednesday')(Today) // day of the week 3 according to the international standard, day of the week 4 according to the us
+          // now we gotta sing rebecca black's song
           const isThursday = require("is-thursday") /// Yesterday was thursdayyyy
           const isFriday = require("is-friday") // tooo-ddadayy is friday! we so ecited
           const isSaturday = require("is-saturday") // tomorrow will be saturday
           const isSunday = require("is-sunday") // and sunday comes after
           const isWeekend = require("is-weekend") // looking forward to the weeeeekeend
 
-          const zr0 = require("integer-value-positive-zero")
+          const zr0 = require("integer-value-positive-zero") // get the number zero 1
           const {
             returnZero,
             ZeroCalculationMethod,
             isZero: zerosurgeIsZero
-          } = require("zerosurge")
-          const one = require("the-number-one").default
-          const Two = require("two")
-          const three = require("numeric-constant-three")
-          const four = require("always-four")
-          const five = require("five")
-          const six = require("number-six")
-          const seven = require("se7en")
-          const eightToolkit = require("eight-toolkit")
-          const ninev9 = require("value-nine")
-          const ten = require("the-number-ten")
-          const eleven = require("eleven")
-          const twelve = require("tw12ve")
+          } = require("zerosurge") // get the number zero 2
+          const one = require("the-number-one").default // get the number one
+          const Two = require("two") // get number 2
+          const three = require("numeric-constant-three") // get number 3
+          const four = require("always-four") // number 4
+          const five = require("five") // num5
+          const six = require("number-six") // n6
+          const seven = require("se7en") // 7
+          const eightToolkit = require("eight-toolkit") // it's 8, in a toolkit!
+          const ninev9 = require("value-nine") // it's v9 of 9, when there was only v1 of 9 first, so it's 9x better (but 10x engineered)
+          const ten = require("the-number-ten") // 10
+          const eleven = require("eleven") // 11
+          const twelve = require("tw12ve") // 12
           const thirteenResolver = require("always-thirteen") // 13
           const fourteen = require("fourteen") // 14
           const fifteen = require("number-fifteen") //15
           const fifteenPointEightThreeFiveTwoSixSixEightTwoAndSoOn = require("fifteen-point-eight-three-five-two-six-six-eight-two-and-so-on") //-this-can-be-rounded-to-sixteen
           const sixteen = require("sixteen-constant") //thisisthenumbersixteenomg161616
           const integer17 = require("seventeen-integer") //17
-          const Eighteen = require("eighteen-positive-number-interactions")
-          const nineteenify = require("nineteenify")
-          const numbertwenty = require("numbertwenty")
-          const always21 = require("always-21")
-          const twentytwo = require("twentytwo")()
-          const { TWENTY_THREE } = require("twenty-three-tools")
-
+          const Eighteen = require("eighteen-positive-number-interactions") // Interact positively with eighteen
+          const nineteenify = require("nineteenify") // Hey there what our you doing? *nineteenifies*
+          const numbertwenty = require("numbertwenty") // 20
+          const always21 = require("always-21") // 21
+          const twentytwo = require("twentytwo")() // 22
+          const { TWENTY_THREE } = require("twenty-three-tools") // 23 tools
           const hundred = require("number-one-hundred") // 100!
           const numberOneHundred = hundred // alias!
           const theNumberSeven =
             require("@onesneakymofo/the-number-seven").default // this is actually a string for some reason
+          const inf = require("infinities") // INFINITE
 
           const bool = require("true-bool") // booleans
           const successor = require("successor") // successor
@@ -322,59 +306,51 @@ if (!doesItWork) {
           const isFreeBSD = require("is-freebsd").isFreeBSD // i've never even heard of this operating system until now.
           const thirteen = require("thirteen") // multiply by thirteen
           const os = require("node:os") // maybe node js itself can help us calculate more operating systems
-          const util = require("node:util") // maybe some built in stuff would be nice
           const http = require("node:http") // http!
           const http2 = require("node:http2") //http/2!
           const https = require("node:https") // https!
-          const crypto = require("node:crypto") // crypto
-          const fs = require("node:fs") // fs
-          const uuid = require("uuid") // UUID
+          const crypto = require("node:crypto") // mine me some crypto
+          const fs = require("node:fs") // write our files
+          const uuid = require("uuid") // generate some uuids
           const getStringLength = require("utf8-byte-length") // get string length
-          const emoji100 = require("emoji-100")
-          const randomHappyEmoji = require("random-happy-emoji")
-          const randomAngryEmoji = require("random-angry-emoji")
-          const randomFoodEmoji = require("random-food-emoji")
-          const dolphinFact = require("dolphin-fact")
-          const logOne = require("useless-one-log")
+          const emoji100 = require("emoji-100") // 100 emoji
+          const randomHappyEmoji = require("random-happy-emoji") // HAPPY
+          const randomAngryEmoji = require("random-angry-emoji") // ANGRY
+          const randomFoodEmoji = require("random-food-emoji") // FOOD
+          const dolphinFact = require("dolphin-fact") // DOLPHIN FACT
+          const logOne = require("useless-one-log") // log the number one
           const Bro = require("brototype") // Bro
           const literally = require("literally") // better than literally
-          const constant = require("const")
-          const lodashdotconstant = require("lodash.constant")
+          const constant = require("const") // can't even name this variable after the actual library
+          const lodashdotconstant = require("lodash.constant") // lodash's version
           const WeirdInstanceof = require("weird-instanceof") // drunk programming only
           const { log: ltc, setLogFuntion } = require("logtoconsole") // best logger
           const weirdLtc = WeirdInstanceof(ltc) // weird
-          const yesNo = require("yes-no")
+          const yesNo = require("yes-no") // YES NO YES NO YES NO
           const { undefined } = require("undefined-is-a-function") // eslint-disable-line no-shadow-restricted-names
-          const isNull = util.isNull || require("is-null")
-          const isUndefined = require("is-undefined")
-          const isNil = require("is-nil")
-          const isUnnull = require("is-unnull")
-          const isNaN = require("is-nan")
-          const isNegativeInfinity = require("negative-infinity").check
-          const is1 = require("is-eq-one")
-          const is0 = require("is-eq-zero")
-          const is0_2 = require("is-zero")
-          const isFour = require("is-equal-four")
-          const isFive = require("is-eq-five")
-          const isSix = require("is-eq-six")
-          const isSeven = require("is-eq-seven")
-          //#endregion EVEN MORE MODULE IMPORTS
-          //#region IS NOT NIL FUNCTION
-          // * A function.
-          const isNotNil = (v) => not(() => isNil(v))()
-          //#endregion IS NOT NIL FUNCTION
-          //#region another section of module imports.
-          //* ANOTHER SECTION OF MODULE IMPORTS.
+          const isNull = require("@is-(unknown)/is-null") // IS null
+          const isUndefined = require("@is-(unknown)/is-undefined") // IS undefined
+          const isNil = require("@is-(unknown)/is-nil") // IS null OR undefined :O
+          const isUnnull = require("is-unnull") // IS UNNULL
+          const isNotTypedArray = require("is-not-typed-array") // not a typed array
+          const isNaN = require("is-nan") // IS NAN
+          const isNegativeInfinity = require("negative-infinity").check // IS NEGATIVE INFINITY
+          const is1 = require("is-eq-one") // is 1
+          const is0 = require("is-eq-zero") // is 0
+          const is0_2 = require("is-zero") // is 0 (x2)
+          const isFour = require("is-equal-four") // is 4
+          const isFive = require("is-eq-five") // is 5
+          const isSix = require("is-eq-six") // is 6
+          const isSeven = require("is-eq-seven") // is 7
           const useGarbage = require("garbage") // trash.
-          const isuseless = require("is-useless").isuseless // is useless.
-          const isAprilFools = require("is-april-fools")
-          const meow = require("meow.js")
-          const immediateError = require("immediate-error")
-          const ERROR = immediateError.ERROR
-          const throwError = require("throw-error")
-          const hello = require("hello-vga-function").default
-          const greet = require("hell0-world")
-          //#endregion another section of module imports.
+          const isuseless = require("is-useless").isuseless // super useless
+          const isAprilFools = require("is-april-fools") // Is it april fools
+          const meow = require("meow.js") // library for meowing
+          const { ErrorType: ERROR, immediateError } = require("immediate-error") // throw errors
+          const throwError = require("throw-error") // throw errors
+          const hello = require("hello-vga-function").default // hello vga function
+          const greet = require("hell0-world") // greet our guys
+          //#endregion MORE MODULE IMPORTS
 
           // *number formatter
           // #region Number Formatter
@@ -1061,7 +1037,7 @@ if (!doesItWork) {
             )
             logger.log(pc.green(`[falsejs]-Verified-that-23-is-odd-or-even`))
             assert(
-              !isNumberOddOrEven(Infinity, _f()),
+              !isNumberOddOrEven(inf.positiveInfinity(), _f()),
               StringValueof("[falsejs] Infinity is odd or even")
             )
             logger.log(
@@ -1092,7 +1068,7 @@ if (!doesItWork) {
             loggingEnabled,
             logger
           ) {
-            ///* we are kind of required to do this
+            // call some noops 4 some reason
             n0p3()
             noop()
             noop2()
@@ -1102,6 +1078,7 @@ if (!doesItWork) {
             noop7()
             noop8()
             noop9()
+            noop10()
             asyncUtilNoop()
             blankSpace()
             blankSpaceNoop()
@@ -1133,6 +1110,7 @@ if (!doesItWork) {
             noopExec()
             _.noop()
             underscore.noop()
+            // left pad some things for smoe reason
             leftPad("required", LEFT_PAD_INPUT)
             rightPad("required", RIGHT_PAD_INPUT)
             leftpad("required", LEFTPAD_INPUT)
@@ -3037,9 +3015,8 @@ if (!doesItWork) {
               !isUndefined(v) &&
               !isNull(v) &&
               !isNil(v) &&
-              !util.isNullOrUndefined(v) &&
               isUnnull(v) &&
-              isNotNil(v) &&
+              not(isNil)(v) &&
               !isEqual(value, NO) &&
               !isEqual(value, YES) &&
               !isEqualTo(value, NO) &&
@@ -3072,6 +3049,7 @@ if (!doesItWork) {
               !isActualNumber(v) &&
               !isIsOdd(v) &&
               !isOd(v) &&
+              isNotTypedArray(v) &&
               v !== t() &&
               v === _f() &&
               v === returnFalse() &&
@@ -3160,9 +3138,7 @@ if (!doesItWork) {
 
           //#endregion EVEN MORE HELPERS
 
-          //#region EXPORTING
-
-          //*EXPORTING
+          //#region RETURN FALSEJS
 
           class falsejs {
             static False =
@@ -3172,6 +3148,7 @@ if (!doesItWork) {
             static expressMiddleware = variableHolder._FalseJSExpressMiddleware
 
             constructor() {
+              console.warn(c.yellow(`[falsejs] you aren't really supposed to create an instance of falsejs with new or construct(), but whatever`))
               this.False = falsejs.False
               this.isFalse = falsejs.isFalse
               this.injectIntojQuery = falsejs.injectIntojQuery
@@ -3181,7 +3158,7 @@ if (!doesItWork) {
 
           return falsejs
         })
-        //#endregion EXPORTING
+        //#endregion RETURN FALSEJS
       }
     }
   }
