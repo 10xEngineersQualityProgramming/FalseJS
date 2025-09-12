@@ -9,15 +9,8 @@
 
 ███████████████████████████████████████████████████████████████████████████████████
 
-  FalseJS is a library that helps you get the value of false.
-  It uses the power of Node.js, Vanilla JavaScript, Vapor.js, jQuery, Obfuscator.io,
-MDE's true and false NPM packages and many other awesome packages, libraries, and 10x things created
-by great open-source 10x engineer-developers are used to achieve this amazing masterpiece of a library.
-  The library is designed to be very easy to use and understand.
-  It uses loads of dependencies for ensurability and reliability.
-  If you have any questions or need assistance, please don't hesitate to ask.
-  FalseJS is licensed under the MIT License.
-  Enjoy!
+
+sanity
 
 ███████████████████████████████████████████████████████████████████████████████████                                                                                                                                     */
 

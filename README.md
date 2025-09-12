@@ -234,7 +234,3 @@ please help me i am going insane
 
 
 
-
-
-
-DO NOT READ LINE 414 OF INDEX.JS
