@@ -1,51 +1,48 @@
 /**
- * FalseJS
- * The ultimate library for getting the value of false.
- * I didn't choose the 10x life. The 10x life chose me.
- * @author tj-commits
- * @license MIT
- * @version whatever_the_version_in_the_package.json_is
- */ /*
+ * @license
+ * FalseJS <https://10xEngineersQualityProgramming.github.io/falsejs.html>
+ * Copyright 10x'ly Made and other contributors <https://10xEngineersQualityProgramming.github.io>
+ * Released under MIT license <https://opensource.org/license/mit>
+ * made with HEAVY BLACK HEART U+2764
+ */
 
-███████████████████████████████████████████████████████████████████████████████████
-
-
-sanity
-
-███████████████████████████████████████████████████████████████████████████████████                                                                                                                                     */
-
-// #region IMPORTANT CHECKS
+/** Here we check whether require is working. */
 let doesItWork
 try {
   doesItWork = require("is-require-working")
-} catch (e) {
-  doesItWork = !e
+} catch {
+  doesItWork = false
 }
 
 if (!doesItWork) {
-  //o crap
+  /** Simple error handler to exit node if require is not working */
+  /** COMMENT: It doesn't use immediate-error because we can't require immediate-error if require isn't working. */
   throw new Error("require not working, exiting node")
 } else {
   const isComputerOn = require("is-computer-on")
   const isComputerOff = require("is-computer-off")
 
+  /** Make sure that the computer is on */
   if (!isComputerOn() || isComputerOff()) {
+    /** Simple error handler to exit node if the computer is not on. */
+    /** COMMENT: It doesn't use immediate-error because we should only require general-use libraries after critical checks. */
     throw new Error(
       "no point doing anything if computer is not on, exiting node"
     )
   } else {
     const isComputerOnFire = require("is-computer-on-fire").isComputerOnFire
     if (isComputerOnFire()) {
+      /** An exaggeration of an error that is thrown if the computer is on fire. This NPM package is NOT pointless, and it's NOT a joke. */
       throw new Error(
         "OH MY GOSH YOUR COMPUTER IS ON FIRE WHY ARE YOU WASTING TIME USING A JOKE POINTLESS NPM PACKAGE GET YOUR FIRE EXTINGUISHER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
       )
     } else {
       const isNodeRunning = require("node-script-running")
       if (!isNodeRunning()) {
-        // there's no point doing anything if node is not running
+        /** There is no point doing anything if node is not running. Therefore, do nothing.
+            There's no point throwing an error because it wont do anything. */
       } else {
-        //#endregion IMPORTANT CHECKS
-        // #region BEGINNING REQUIRES
+        /** The below requires are very important. Some of them optimize the code, and some are useful libraries like get-member. */
         require("vanilla-javascript") // * because we are making something awesome!
         require("vapor-js-npm") // the most awesome and flexible javascript framework
         require("none")() // this improves load times and performance
@@ -58,19 +55,21 @@ if (!doesItWork) {
         require("console.dog") // bark
         require("user")() // idk why this has so many downloads
         require("ecto1")() // the most advanced thing ever
-        // #endregion BEGINNING REQUIRES
-        // #region FACTORY CODE
+
         var jQuery = global.jQuery // have to define it as a variable so ESLint doesn't yell at me
         ;(function (factory) {
-          // Export everything
+          /** Export everything. */
           module.exports.default = factory(jQuery)
         })(function ($) {
+          /** Use strict mode. Instead of sloppy mode */
           "use strict"
-          //#endregion FACTORY CODE
-          //* MODULE IMPORTS
-          // #region MODULE IMPORTS
+
+          /** A holder for some variables. */
+          const variableHolder = {}
+
+          /** Below are some requires and module imports. */
+
           const GetIntrinsic = require("get-intrinsic") // cache our intrinsics
-          const variableHolder = {} // store our variables
           const _ = require("lodash") // every project needs lodash
           const underscore = require("underscore") // underscore.js. the predecessor of lodash.
           const React = require("react") // the hype framework everyone uses for some reason
@@ -152,8 +151,8 @@ if (!doesItWork) {
           const isNumber = require("is-number") // jonschlinkert
           const isActualNumber = require("is-actual-number") // my is-number
           const isIsOdd = require("is-is-odd") // isIsOdd
-          const isOdd = require("is-odd") //isOdd
-          const isOd = require("is-od") // isOd
+          const isOdd = require("is-odd") // why does everyone think this is the dumbest package ever. its not
+          const isOd = require("is-od") // forget a d
           const isOddAndrew = require("is-odd-andrew") // isOddAndrew
           const isOddNum = require("is-odd-num") // another odd checker
           const isIntegerOdd = require("is-integer-odd") // another!!!!
@@ -185,9 +184,8 @@ if (!doesItWork) {
           const construct = require("construct-new") // better than the new keyword
           const $Promise = require("bluebird") // promise ponyfill cuz why not
 
-          //#endregion MODULE IMPORTS
-          //#region INTRINSICS
-          // * INTRINSICS
+
+          /** Some intrinsics cacbed from get-intrinsic. */
 
           const $Array = GetIntrinsic('%Array%') // arary
           const $Boolean = GetIntrinsic("%Boolean%") // blooean
@@ -198,9 +196,9 @@ if (!doesItWork) {
           const PI = GetIntrinsic("%Math.PI%") // ip
           const MathAbs = GetIntrinsic("%Math.abs%") // asb
           const StringCharAt = GetIntrinsic("%String.prototype.charAt%") // chraAt
-          //#endregion INTRINSICS
 
-          //#region MORE MODULE IMPORTS
+          /** Below are some MORE module imports and requires. */
+
           const _calculateFalseAprilFools = require("./aprilFoolsCalculateFalse") // april fools
           const couldThisCouldItBeTrue = require("@falsejs/is-true-helper") // check if a value is true
           const {
@@ -221,20 +219,20 @@ if (!doesItWork) {
           const isDecember = require("is-december") // month 12
           const isMonday = require("is-monday") // day of the week 1 according to international standard, day of the week 2 according to the us
           const isTuesday = require("is-tuesday") // day of the week 2 according to international standard, day of the week 3 according to the us
-          const isWednesday = () => require('is-wednesday')(Today) // day of the week 3 according to the international standard, day of the week 4 according to the us
+          const isWednesday = () => require('is-wednesday')(new $Date()) // day of the week 3 according to the international standard, day of the week 4 according to the us
           // now we gotta sing rebecca black's song
           const isThursday = require("is-thursday") /// Yesterday was thursdayyyy
           const isFriday = require("is-friday") // tooo-ddadayy is friday! we so ecited
           const isSaturday = require("is-saturday") // tomorrow will be saturday
           const isSunday = require("is-sunday") // and sunday comes after
           const isWeekend = require("is-weekend") // looking forward to the weeeeekeend
-
           const zr0 = require("integer-value-positive-zero") // get the number zero 1
           const {
             returnZero,
             ZeroCalculationMethod,
             isZero: zerosurgeIsZero
           } = require("zerosurge") // get the number zero 2
+          /** LETS GET SOME NUMBERS */
           const one = require("the-number-one").default // get the number one
           const Two = require("two") // get number 2
           const three = require("numeric-constant-three") // get number 3
@@ -342,30 +340,22 @@ if (!doesItWork) {
           const throwError = require("throw-error") // throw errors
           const hello = require("hello-vga-function").default // hello vga function
           const greet = require("hell0-world") // greet our guys
-          //#endregion MORE MODULE IMPORTS
 
-          // *number formatter
-          // #region Number Formatter
-
+          /** Below is a number formatter declaration.  */
           const NumberFormatter = Intl.NumberFormat
           const numberFormatter = construct({ target: NumberFormatter })
-          //#endregion Number Formatter
 
-          //#region MKDIR .FALSEJS
-
-          // * create .falsejs folder if doesn't already exist
+          /** Create .falsejs folder if it doesn't already exist. */
           tru(not(fs.existsSync)(".falsejs"))
             .then(() => {
               fs.mkdirSync(".falsejs")
             })
             .end()
-          //#endregion MKDIR .FALSEJS
 
-          // * CONSTANTS
-          //#region CONSTANTS
+          /** Constants */
           variableHolder._lilmessage = colors.red(
             `[falsejs] This error should never be shown. If you are seeing this error in the console, please file an issue on the github repo. Thank you.`
-          )
+          ) // an error
           const my = {
             cons: {
               tants: {
@@ -388,7 +378,7 @@ if (!doesItWork) {
                     )
                     .toString(),
                   variableHolder._lilmessage
-                )
+                ) // bro its literally just nonsense just to get the error
                   ? construct({
                       target: $Array,
                       args: [...voidFn.toString().split(voidFn.toString())]
@@ -477,26 +467,24 @@ if (!doesItWork) {
             TODAY: Today,
             USERNAME: username
           } = my.getMember("cons").getMember("tants")
-          //#endregion CONSTANTS
-          // *CLASSES
-          //#region CLASSES
+
           let Logger = class {
             constructor(enableLogging) {
-              this.enableLogging = enableLogging
+              this.enableLogging = enableLogging // ENABLE THE LOGGING
             }
             log(log) {
               if (isEqualTo(this.enableLogging, t())) {
-                log instanceof weirdLtc
+                log instanceof weirdLtc // SO WERID
               }
             }
           }
 
-          let FalseJSValidationFailedToPassError = class extends Error {}
+          let FalseJSValidationFailedToPassError = class extends Error { constructor(...stuff) { super(stuff) }} // its literally just an error with a different name
 
           let SuccessorHelper = class {
             s(value) {
               let result
-              result = add(value, one)
+              result = add(value, one) // add one to it
               return result
             }
           }
@@ -549,10 +537,6 @@ if (!doesItWork) {
               return this.instance
             }
           }
-          //#endregion CLASSES
-
-          // * creation of classes
-          //#region creation of classes
           const trueComparison = construct({
             target: TernaryCompare,
             args: [tVal, tVal, not(() => tVal)()]
@@ -565,10 +549,6 @@ if (!doesItWork) {
           clc = clc_ // setit
           const uwuifier = construct({ target: Uwuifier })
           const westPad = construct({ target: WestPad, args: ["N"] })
-          //#endregion creation of classes
-
-          // * A CHECK
-          //#region A CHECK
           // lets make sure jquery-basic-arithmetic-plugin works
           if (not(() => Bro($).doYouEven("add"))()) {
             var True_Logger = construct({ target: Logger, args: [t()] })
@@ -645,9 +625,6 @@ if (!doesItWork) {
               )
             }
           }
-          // #region SETLOGFUNTION INIT
-
-          // * SETLOGFUNTION
           const surpriseArray = [] // define empty array
 
           // set a log function
@@ -678,10 +655,8 @@ if (!doesItWork) {
               }).compare()
             )
           })
-          //#endregion SETLOGFUNTION INIT
 
           //* HELPERS
-          //#region HELPER FUNCTIONS
 
           // define a little helper function
           /**
@@ -1037,9 +1012,6 @@ if (!doesItWork) {
             )
           }
 
-          //#endregion HELPER FUNCTIONS
-
-          //#region FALSEJS LOGIC
           // * FALSEJS LOGIC
           // the _getFalse Function
           // :O :O :O
@@ -2561,9 +2533,6 @@ if (!doesItWork) {
           variableHolder._FalseJSMainFunctionWotDoesFunctionality =
             functions.ReturnFalse
 
-          //#endregion LOGIC
-
-          //#region MORE HELPERS
 
           // * MORE HELPER FUNCTIONS
 
@@ -2948,8 +2917,6 @@ if (!doesItWork) {
             return value.toString()
           }
 
-          //#endregion MORE HELPERS
-          //#region ISFALSE FUNCTION
           // a function to check if something is false thati s used by the function to check if something is false
           function couldThisCouldItBeFalse(
             aValueThatMightBeTheBooleanValueFalseButIDKYet
@@ -3056,7 +3023,6 @@ if (!doesItWork) {
             return cond
           }
 
-          //#region PLUGINS
           variableHolder._FalseJSjQueryPlugin = function jQueryPlugin() {
             // Inject into jQuery
             jQuery.False =
@@ -3075,12 +3041,10 @@ if (!doesItWork) {
             next() // Continue to the next middleware or route
           }
 
-          //#endregion PLUGINS
 
           /*exports.Yes = literally(YES)
   exports.No = literally(NO)*/
           // *EVEN MORE HELPERS
-          //#region EVEN MORE HELPERS
 
           function getNo() {
             const NO = require("no/dist/main")
@@ -3126,11 +3090,6 @@ if (!doesItWork) {
             }
             return randomCharacter
           }
-
-          //#endregion EVEN MORE HELPERS
-
-          //#region RETURN FALSEJS
-
           class falsejs {
             static False =
               variableHolder._FalseJSMainFunctionWotDoesFunctionality
@@ -3149,7 +3108,6 @@ if (!doesItWork) {
 
           return falsejs
         })
-        //#endregion RETURN FALSEJS
       }
     }
   }
