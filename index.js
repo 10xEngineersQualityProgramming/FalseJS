@@ -64,6 +64,9 @@ if (!doesItWork) {
           /** Use strict mode. Instead of sloppy mode */
           "use strict"
 
+          // SIX SEVEN
+
+
           /** A holder for some variables. */
           const variableHolder = {}
 
