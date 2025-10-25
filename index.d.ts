@@ -1,5 +1,13 @@
 /** biome-ignore-all lint/complexity/noStaticOnlyClass: BRO ITS A D.TS FILE */
+enum COMPATIBILITY_MODE {
+	NONE = "none",
+	IE5 = "ie5",
+	NETSCAPE = "netscape",
+	OPERA_PRESTO = "opera_presto"
+}
+
 export default class falsejs {
+
 	/**
 	 * Returns false from the given parameters.
 	 *
@@ -9,8 +17,10 @@ export default class falsejs {
 	 * @param {"yes"|"no"} disableAprilFoolsSideEffects - Indicates whether April Fools side effects should be disabled.
 	 * @param {"yes"|"no"} definitelyDisableAprilFoolsSideEffects - Indicates whether April Fools side effects should be definitely disabled.
 	 * @param {"yes"|"no"} strictDisableAprilFoolsSideEffectsCheck - Indicates whether strict checking for disabling April Fools side effects should be enabled.
+	 * @param {"none"|"ie5"|"netscape"|"opera_presto"} compatibilityMode - The compatibility mode for various legcay browser environments.
 	 * @returns {boolean} - The calculated boolean value 'false'.
 	 */
+	static COMPATIBILITY_MODE = COMPATIBILITY_MODE
 	static False(
 		loggingEnabled?: "yes" | "no",
 		shouldDoSomethingAsync?: "yes" | "no",
@@ -18,6 +28,7 @@ export default class falsejs {
 		disableAprilFoolsSideEffects?: "yes" | "no",
 		definitelyDisableAprilFoolsSideEffects?: "yes" | "no",
 		strictDisableAprilFoolsSideEffectsCheck?: "yes" | "no",
+		compatibilityMode?: COMPATIBILITY_MODE | "none" | "ie5" | "netscape" | "opera_presto"
 	): boolean
 
 	/**

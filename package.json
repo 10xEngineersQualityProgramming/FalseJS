@@ -1,7 +1,7 @@
 {
 	"name": "@falsejs/falsejs",
-	"version": "1.1.0",
-	"description": "I want to be sane",
+	"version": "2.0.0",
+	"description": "Returns false.",
 	"main": "index.js",
 	"scripts": {
 		"test": "node index.test.js",

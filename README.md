@@ -55,14 +55,32 @@ The third argument, `shouldDoSomethingAsyncWithIsTenThousand`, is whether `is-te
 
 The fourth and fifth arguments, `disableAprilFoolsSideEffects` and `definitelyDisableAprilFoolsSideEffects`, can be `"yes"` or `"no"`. Both of them have to be `"yes"` to bypass the side effects of it being April Fools? What side effects, you may ask? Well, let's just say, FalseJS does something different on April Fools. If these are enabled when it's not April Fools, then an error will be thrown, unless the sixth argument, `strictDisableAprilFoolsSideEffectsCheck`, is `"no"`.
 
+And the last argument is the compatibility mode argument. This one has its own section about how it works which is after the example.
+
 ## Example
 
 ```javascript
 const falsejs = require("@falsejs/falsejs").default
-const falseValue = falsejs.False("yes", "no", "no", "yes", "yes", "no", "no") // outputs a bunch of logs
+const falseValue = falsejs.False("yes", "yes", "yes", "yes", "yes", "no", falsejs.COMPATIBILITY_MODE.NONE) // outputs a bunch of logs
 
 console.log(falseValue) // outputs false
 ```
+
+## Legacy Compatibility Modes
+To ensure the integrity of the returned boolean across every known runtime environment since the dawn of the internet, the `falsejs.False` function supports an optional `compatibilityMode` argument. The checks performed may seem CPU-intensive and unnecessary, but they guarantee that the runtime environment is free of historical browser quirks that could threaten the stable return value of false.
+
+Here's an example:
+```javascript
+const myIE5CompatibleFalseValue = falsejs.False("yes", "yes", "yes", "yes", "yes", "no", falsejs.COMPATIBILITY_MODE.IE5) // Using IE5 compatibility mode
+```
+
+| Mode | Description | Possible Side Effects |
+|----------|----------|----------|
+| `falsejs.COMPATIBILITY_MODE.NONE` | Standard modern behavior | No side effects and extra checks for legacy compatibility. |
+| `falsejs.COMPATIBILITY_MODE.IE5` | Activates JScript Engine Coercion Guard. Runs checks to ensure `false` is not improperly converted by an emulated 1999 environment. | May increase CPU usage to simulate JScript garbage collection. |
+| `falsejs.COMPATIBILITY_MODE.NETSCAPE` | Activates the JavaScript 1.1 Type Coercion Audit. Runs extensive type-coercion validation and audits the DOM for the deprecated Netscape `<layer>` tag. | May cause computer overload due to repetitive type-coercion audits, and it may cause memory leaks due to not cleaning up JSDOM.  |
+| `falsejs.COMPATIBILITY_MODE.OPERA_PRESTO` | Simulates the single-threaded nature of the Presto engine and audits the global state for known Opera non-standard features. | May cause memory leaks, and block CPU during a ~0ms latency.  |
+
 
 ## `isFalse` function
 
@@ -74,7 +92,7 @@ Example:
 
 ```javascript
 const falsejs = require("@falsejs/falsejs").default
-const falseValue = falsejs.False("no", "no", "no")
+const falseValue = falsejs.False("yes", "yes", "yes", "yes", "yes", "no", falsejs.COMPATIBILITY_MODE.NONE)
 const trueValue = require("true-value")
 
 console.log(falsejs.isFalse(falseValue)) // true
@@ -124,7 +142,7 @@ falsejs.injectIntojQuery()
 
 const $ = jQuery
 
-const myFalseValue = $.False("no", "no", "no", "yes", "yes", "no", "no")
+const myFalseValue = $.False("yes", "yes", "yes", "yes", "yes", "no", falsejs.COMPATIBILITY_MODE.NONE)
 console.log(myFalseValue) // false
 console.log($.isFalse(myFalseValue)) // true
 ```
@@ -144,7 +162,7 @@ const PORT = Bro(process).doYouEven("env.PORT") ? process.env.PORT : 3000
 app.use(falsejs.expressMiddleware)
 
 app.get("/", (req, res) => {
-  res.send(req.isFalse(req.False())) // sends true to the client
+  res.send(req.isFalse(req.False("yes", "yes", "yes", "yes", "yes", "no", falsejs.COMPATIBILITY_MODE.NONE)) // sends true to the client
 })
 
 app.listen(PORT)
@@ -181,7 +199,8 @@ const falseValue = falsejs.False(
   "no" /*the first three options you can choose, for examples we set them all to "no"*/,
   disableAprilFoolsSideEffects,
   disableAprilFoolsSideEffects,
-  disableChecking
+  disableChecking,
+  falsejs.COMPATIBILITY_MODE.NETSCAPE // for this example we'll use netscape compatibility mode
 )
 
 // or you can do this, but the above is better
@@ -192,7 +211,8 @@ const falseValue = falsejs.False(
   "no" /*the first three options you can choose, for examples we set them all to "no"*/,
   "yes",
   "yes",
-  "no"
+  "no",
+  falsejs.COMPATIBILITY_MODE.NETSCAPE // for this example we'll use netscape compatibility mode
 )
 ```
 
@@ -222,9 +242,4 @@ FalseJS uses the MIT license.
 
 
 
-
-
-please help me i am going insane
-
-
-
+Making this was very hard, but I was dedicated and now there's a 3000-line long library just to return false. Please help me. Please.
