@@ -1,13 +1,14 @@
 {
 	"name": "@falsejs/falsejs",
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"description": "Returns false.",
-	"main": "index.js",
+	"main": "dist/index.js",
 	"scripts": {
 		"test": "node index.test.js",
 		"preinstall": "echo Warning: Installing FalseJS may show a lot of deprecation warnings. Ignore these as FalseJS is totally safe and has no vulnerabilities through the function that could be dangerous to your project.",
 		"postinstall": "echo Thank you for installing FalseJS.",
-		"lint": "npx @biomejs/biome check --write"
+		"lint": "npx @biomejs/biome check --write",
+		"build": "tsc"
 	},
 	"author": "tj-commits",
 	"license": "MIT",
@@ -28,6 +29,11 @@
 		"@ryotah/noop": "^1.0.0",
 		"@sir_wernich/taco-wrap": "^1.0.8",
 		"@stdlib/utils-noop": "^0.2.2",
+		"@types/bluebird": "^3.5.42",
+		"@types/cli-color": "^2.0.6",
+		"@types/express": "^5.0.4",
+		"@types/lodash.noop": "^3.0.9",
+		"@types/luaparse": "^0.2.13",
 		"@vue/server-renderer": "^3.5.11",
 		"@zodash/noop": "^1.1.8",
 		"a-black-hole": "^1.0.0",
@@ -168,6 +174,7 @@
 		"is-windows": "^1.0.2",
 		"is-zero": "^1.0.0",
 		"jacob-zuma": "^1.0.0",
+		"jquery": "^3.7.1",
 		"jquery-basic-arithmetic-plugin": "^1.1.0",
 		"jsdom": "^25.0.1",
 		"left-pad": "^1.3.0",
@@ -388,6 +395,18 @@
 		"meaning-of-life"
 	],
 	"devDependencies": {
-		"@biomejs/biome": "2.2.6"
+		"@biomejs/biome": "2.2.6",
+		"@types/chalk": "^0.4.31",
+		"@types/cheerio": "^0.22.35",
+		"@types/get-intrinsic": "^1.2.3",
+		"@types/jquery": "^3.5.33",
+		"@types/jsdom": "^27.0.0",
+		"@types/lodash": "^4.17.20",
+		"@types/node": "^24.9.1",
+		"@types/react": "^19.2.2",
+		"@types/react-dom": "^19.2.2",
+		"@types/striptags": "^0.0.5",
+		"@types/underscore": "^1.13.0",
+		"typescript": "^5.9.3"
 	}
 }

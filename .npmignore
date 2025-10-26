@@ -14,3 +14,7 @@ LICENSE
 SECURITY.md
 phone-number-log.txt
 .vscode
+old.js
+/src/index.js
+src/index.js
+src/*

@@ -1,0 +1,1 @@
+npm uninstall is-computer-on is-computer-off node-script-running is-require-working vapor-js-npm vanilla-javascript ecto1 false true make-jquery-global
