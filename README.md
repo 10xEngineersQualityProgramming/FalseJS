@@ -238,8 +238,3 @@ This is normal. Do not worry. FalseJS uses a package called `get-member` that ad
 FalseJS uses the MIT license.
 
 ## made with HEAVY BLACK HEART U+2764
-
-
-
-
-Making this was very hard, but I was dedicated and now there's a 3000-line long library just to return false. Please help me. Please.

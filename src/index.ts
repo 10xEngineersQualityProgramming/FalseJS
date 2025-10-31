@@ -1,21 +1,174 @@
-/**
- * @license
+/**!
+ * License
  * FalseJS <https://10xEngineersQualityProgramming.github.io/falsejs.html>
  * Copyright 10x'ly Made and other contributors <https://10xEngineersQualityProgramming.github.io>
  * Released under MIT license <https://opensource.org/license/mit>
  * made with HEAVY BLACK HEART U+2764
  * Thanks to biome for being a good formatter + linter
  */
+/** biome-ignore-all lint/correctness/noPrecisionLoss: 5555555555555555555555 */
 
-const statement: string = `I'd just like to interject for a moment. What you're referring to as Linux, is in fact, GNU/Linux, or as I've recently taken to calling it, GNU plus Linux. Linux is not an operating system unto itself, but rather another free component of a fully functioning GNU system made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX.
+// -----------------------------------------
+/*
+ABOUT FALSEJS
+FalseJS is a library created by tj-commits to return false.
+*/
 
-Many computer users run a modified version of the GNU system every day, without realizing it. Through a peculiar turn of events, the version of GNU which is widely used today is often called "Linux", and many of its users are not aware that it is basically the GNU system, developed by the GNU Project.
+/**
+ *
+ * FalseJS <https://10xEngineersQualityProgramming.github.io/falsejs.html>
+ *
+ *
+ * I didn't choose the 10x life, the 10x life chose me
+ *
+ *
+ * Thanks everyone who made the packages for this
+ *
+ * As of 3.1.0, these are all the npm package creators: Thanks to 87f-, _immo, abai, aburleigh, ahsm, alexeyraspopov, aliraza401, amal_nj, animate-object, aprixia, ardalanamini, arkanic, benaston, bojand, broofa, bvpranu97, cbrandolino, chuuuuu, cj*, corysimmons, cowboy, dabh, dak0rn, david, deastl, dhurlburtusa, dmitri, donavon, doowb, dragonfire535, endless, ergusto, ericnorris, esailija, euank, eyy, fb, fizzbuzz-npm, florianboudot, gabrieleds, gbrotas, gibson042, gillstrom, goten, hanhan9449, hemanth, hendrysadrak, himynameisdave, hissvard, hoanduy1710, hughfdjackson, huynguyenn-vga, iamrahulpatel, inikulin, ionicabizau, ivoputzer, jackdcrawford, jacobwarduk, jaio, james-work-account, jashkenas, jdalton, jeremylichtman, jezenthomas, jmar777, jncmark, johno, jonschlinkert, joshhunt, jugglinmike, k, kane-thornwyrd, karasube, kgryte, kikobeats, laffed, lamansky, leemm, letsgetrandy, link-dev, ljharb, lordoftrident, lsabbagh, makogai, mappum, mars-mb, mathias, mattdesl, matthewh, maxime.julian, medikoo, metaa, microsoft1es, mohayonao, moniaarthisathya, monishadhanasekar, moons14, mzabriskie, nerwind93, nhedger, nico_nj, nijikokun, nodiff, nopersonsmodules, npm, npm-support, nswbmw, olliez-mods, onatm, onesneakymofo, oxyc, parshap, pethu, phillipalexander, piuccio, prasundas, priyanshurav, r33int, radiovisual, rajalakshmi-npm, reidnpmmore, reversodev, rivalnick, robertmarsal, robims, royleibo, rtorr, ryanblock, ryotah, s-lambert, sawcce, schotsl, segment-admin, shinnn, shivambaghla, sindresorhus, sir_wernich, skibidi-toilet-hacker, skippednote, skylabist, slmjkdbtl, song940, stdlib-bot, stevemao, stevenvachon, supershabam, taitulism, textality, thebitlink, thomaslindstr_m, thomaslomas, tiaanduplessis, timmyrs, timothygu, tj-commits, tmcw, types, uniquecolesmith, vladimirozornin, vtheskeleton, wesgarland, yoshuawuyts, yyx990803, and zrrrzzt for making NPM packages.
+ *
+ * The credits are above
+ */
 
-There really is a Linux, and these people are using it, but it is just a part of the system they use. Linux is the kernel: the program in the system that allocates the machine's resources to the other programs that you run. The kernel is an essential part of an operating system, but useless by itself; it can only function in the context of a complete operating system. Linux is normally used in combination with the GNU operating system: the whole system is basically GNU with Linux added, or GNU/Linux. All the so-called "Linux" distributions are really distributions of GNU/Linux.`
+
+
+
+// ALL STUFF BELOW IS FOR PERFORMANCE.
+
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+55555555555555555555555555555555555555555555555555555555555555555555555555555555
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";""
+"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";""
+"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";""
+"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";""
+"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";""
+"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";""
+"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";""
+"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";""
+"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";""
+"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";""
+"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";"";""
+;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/
+;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/
+;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/
+;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/
+;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/
+;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/
+;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/
+;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/
+;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/
+;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/
+;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/
+;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/;/false/
+
+// stuff for performance ends here.
 
 const isComputerOnFire: () => boolean = require("is-computer-on-fire").isComputerOnFire
 
-if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.14159265358979)) {
+if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
   /** An exaggeration of an error that is thrown if the computer is on fire. This NPM package is NOT pointless, and it's NOT a joke. */
   throw new Error("OH MY GOSH YOUR COMPUTER IS ON FIRE WHY ARE YOU WASTING TIME USING A JOKE POINTLESS NPM PACKAGE GET YOUR FIRE EXTINGUISHER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 } else {
@@ -29,7 +182,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
   require("get-member")()
   require("array-get-member")()
 
-  // @ts-ignore
+  // @ts-expect-error
   global.jQuery = require("jquery")
   require("jquery-basic-arithmetic-plugin")
 
@@ -122,9 +275,9 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
   type FalseJSFactory = ($: JQueryStaticWithArithmetic) => falsejs
 
   /** UMD module setup, except we're not doing anything UMD module-related because FalseJS is only for node.js. */
-  ;(function (factory: Function) {
+  ;(function (factory: ($: JQueryStaticWithArithmetic) => falsejs) {
     /** Export everything. */
-    module.exports.default = factory(jQuery)
+    module.exports.default = factory(jQuery as JQueryStaticWithArithmetic)
   })(function ($: JQueryStaticWithArithmetic): falsejs {
     // biome-ignore lint/suspicious/noRedundantUseStrict: We need double strict mode because we wanna be SUPER strict.
     "use strict"
@@ -286,8 +439,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
     const isWeekend = require("is-weekend") // looking forward to the weeeeekeend
     const zr0: () => number = require("integer-value-positive-zero") // get the number zero, less 10x
     const { returnZero: returnZero_, ZeroCalculationMethod, isZero: zerosurgeIsZero } = require("zerosurge") // get the number zero, but 10x'er
-    // @ts-ignore
-    const returnZero: ({ method, loggingEnabled }) => number = returnZero_
+    const returnZero: ({ method, loggingEnabled }: { method: string, loggingEnabled: boolean }) => number = returnZero_
     /** LETS GET SOME NUMBERS */
     const one = require("the-number-one").default // get the number one
     const Two = require("two") // get number 2
@@ -312,6 +464,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
     const numbertwenty = require("numbertwenty") // 20
     const always21 = require("always-21") // 21
     const twentytwo = require("twentytwo")() // 22
+    const sixtyseven = require("sixty-seven").SixtySeven
     const { TWENTY_THREE } = require("twenty-three-tools") // 23 tools
     const hundred = require("number-one-hundred") // 100!
     const numberOneHundred = hundred // alias!
@@ -396,7 +549,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
 
     // A useful function to get a DHTML string.
     function getDHTMLString() {
-      return "netscape_layer_id_" + thirteenResolver() * thirteenResolver() * thirteenResolver()
+      return `netscape_layer_id_${thirteenResolver() * thirteenResolver() * thirteenResolver()}`
     }
 
     const NumberFormatter = Intl.NumberFormat
@@ -469,6 +622,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
     const FalseJSValidationFailedToPassError = class extends Error {
       constructor(...stuff: any[]) {
         super(...stuff)
+        this.name = "FalseJSValidationFailedToPassError"
       }
     }
 
@@ -543,7 +697,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
     }).getInstance() // colors are the best! chalk chalk chalk
     clc = clc_ // setit
     const uwuifier = construct({ target: Uwuifier })
-    const westPad = construct({ target: WestPad, args: ["N"] })
+    const westPad = construct({ target: WestPad, args: [WEST_PAD_DEVICE_DIRECTION] })
 
     var True_Logger = construct({ target: Logger, args: [t()] })
 
@@ -677,7 +831,6 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
     }
     function doSelfEqualityChecks(loggingEnabled: boolean) {
       const logger = construct({ target: Logger, args: [loggingEnabled] })
-      const loggingENabled = loggingEnabled // an alias for loggingenabled in case we accidentally do the wrong capitalization on the n
       assert(hasSelfEquality(isThreeHundred), StringValueof("[falsejs] IsThreeHundred has no self equality"))
       logger.log(pc.green(`[falsejs] Verified that the string "Vladimir" has self equality`))
       assert(hasNoSelfEquality(NaN), StringValueof("[falsejs] NaN-has-self-equality"))
@@ -749,6 +902,8 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
       logger.log(pc.green(`[falsejs]-Verified-that-22-is-odd-or-even`))
       assert(isNumberOddOrEven(TWENTY_THREE, FALSE), StringValueof("[falsejs] 23 is not odd or even"))
       logger.log(pc.green(`[falsejs]-Verified-that-23-is-odd-or-even`))
+      assert(isNumberOddOrEven(sixtyseven(), FALSE), StringValueof("[falsejs] 67 is not odd or even"))
+      logger.log(pc.green(`[falsejs]-Verified-that-67-is-odd-or-even`))
       assert(!isNumberOddOrEven(inf.positiveInfinity(), FALSE), StringValueof("[falsejs] Infinity is odd or even"))
       logger.log(pc.green(`[falsejs]-Verified-that-Infinity-is-not-odd-or-even`))
     }
@@ -994,9 +1149,9 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
         .ensure(n0p3)
         .end()
       return {
-        // @ts-ignore
+        // @ts-expect-error
         result,
-        // @ts-ignore
+        // @ts-expect-error
         succeededAttempt
       } // return our false value
     }
@@ -1326,14 +1481,14 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
         logger.log(c.yellow("[falsejs:ie5] Activating JScript Engine Coercion Guard And Garbage Collection..."))
 
         let CoercionGuardArrayRef___ = Null()
-        let iterationCount = jQuery.multiply(jQuery.multiply(thirteenResolver(), thirteenResolver()), thirteenResolver())
+        const iterationCount = jQuery.multiply(jQuery.multiply(thirteenResolver(), thirteenResolver()), thirteenResolver())
 
         logger.log(c.yellow(`[falsejs:ie5] Simulating ${iterationCount} JScript operations...`))
 
         for (let i = zr0(); i < iterationCount; i = i + one) {
           CoercionGuardArrayRef___ = construct({ target: $Array, args: [iterationCount] }).fill(useGarbage.string())
 
-          let garbageCollector = jQuery.multiply(MathSqrt(i), i)
+          const garbageCollector = jQuery.multiply(MathSqrt(i), i)
 
           if (garbageCollector > jQuery.multiply(i, i)) {
             CoercionGuardArrayRef___.indexOf(immediateError("[falsejs:ie5] IE5 Simulation error: Impossible math detected", ERROR.BaseError)) // throws an error and passes it into indexof for no reason
@@ -1349,8 +1504,9 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
         })
         const nullValue = Null()
 
-        // @ts-ignore
+        // @ts-expect-error
         if (result == zeroValue) {
+          // biome-ignore lint/suspicious/noTsIgnore: reason blabal
           // @ts-ignore
           if (result === zeroValue) {
             immediateError(`[falsejs:ie5] Critical Error: IE5-like strict coercion detected! Aborting.`)
@@ -1370,7 +1526,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
         logger.log(c.yellow("[falsejs] Netscape Compatibility Mode Detected"))
         logger.log(c.yellow("[falsejs:netscape] Activating JavaScript 1.1 Type Coercion Audit..."))
 
-        let auditIterationCount =
+        const auditIterationCount =
           jQuery.add(
             Number(complexBooleanWithBias(logger)) + zr0(),
             returnZero({
@@ -1388,8 +1544,8 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
         logger.log(c.yellow(`[falsejs:netscape] Running ${auditIterationCount} type checks against Netscape 1.1 standards...`))
 
         for (let i = zr0(); i < auditIterationCount; i = i + one) {
-          let valueToCheck = construct({ target: $String, args: [i] })
-          let isCoercedToFalse = valueToCheck == result
+          const valueToCheck = construct({ target: $String, args: [i] })
+          const isCoercedToFalse = valueToCheck == result
 
           if (isCoercedToFalse && i !== zr0()) {
             errorCount = errorCount + one
@@ -1433,7 +1589,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
         logger.log(c.yellow("[falsejs] Opera Presto Compatibility Mode Detected"))
         logger.log(c.yellow("[falsejs:presto] Activating Presto Engine Scripting Delay And DOM Audit..."))
 
-        let delayIterations = jQuery.multiply(thirteenResolver(), thirteenResolver())
+        const delayIterations = jQuery.multiply(thirteenResolver(), thirteenResolver())
 
         logger.log(c.yellow(`[falsejs:presto] Initiating rendering for ${delayIterations} cycles...`))
 
@@ -1447,16 +1603,16 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
         })
         const { window: window_ } = dom // Destructure the actual window object
 
-        let startTime = new $Date().getTime()
+        const startTime = new $Date().getTime()
         for (let i = returnZero({ method: ZeroCalculationMethod.CreashaksOrganzine, loggingEnabled: FALSE }); i < delayIterations; i = i + one) {
-          let renderingEvaluation = MathSin(MathRandom() * i) * MathCos(MathRandom() * i)
+          const renderingEvaluation = MathSin(MathRandom() * i) * MathCos(MathRandom() * i)
           if (renderingEvaluation > thirteenResolver() * thirteenResolver()) {
             immediateError("[falsejs:presto] Presto Simulation Error: Time-Space Anomaly detected.", ERROR.BaseError)
             return exit(one)
           }
         }
-        let endTime = new $Date().getTime()
-        let blockingTime = endTime - startTime
+        const endTime = new $Date().getTime()
+        const blockingTime = endTime - startTime
 
         logger.log(c.green(`[falsejs:presto] Rendering complete. Latency: ${blockingTime}ms`))
 
@@ -1496,7 +1652,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
         sayIt(thesay) // give our users a cute message so we can get their support
         // string interpelation
         ltc(`${clc.cyanBright(`[falsejs]`)} ${chalk.red("Chalk")}-${chalk.green("ulated")} ${chalk.yellow("the")} ${chalk.blue("boolean")} ${chalk.magenta(`value`)} ${chalk.cyan(`false`)}`.concat(SPACE).concat(emoji100))
-        // @ts-ignore
+        // @ts-expect-error
         if (succeededAttempt != null) {
           ltc(generalConcat(clc.cyanBright(`[falsejs]`).concat(SPACE), chalkbox.magenta(generalConcat("The attempt that succeeded was attempt ", succeededAttempt))))
           fs.appendFileSync(".falsejs/phone-number-log.txt", generalConcat("succeeded attempt: ", succeededAttempt, "\n"))
@@ -1511,7 +1667,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
               numberFormatter.format(
                 MathRound(
                   surpriseArray.reduce((v, _, i, a) => {
-                    // @ts-ignore
+                    // @ts-expect-error
                     return jQuery.add(v, a.getMember(i))
                   })
                 )
@@ -1520,7 +1676,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
         )
         ltc(clc.cyanBright(generalConcat("[falsejs] ", uwuifier.uwuifySentence("This long line of text (in this one log) has been uwuified"))))
         ltc(clc.cyanBright(generalConcat("[falsejs] ", amogus.amogusify("This long line of text (in this one log) has been amogusified"))))
-        ltc(clc.cyanBright(`[falsejs]`).concat(SPACE) + `${c.red(`False`)}${c.green(`JS`)}`)
+        ltc(`${clc.cyanBright(`[falsejs]`).concat(SPACE)}${c.red(`False`)}${c.green(`JS`)}`)
         ltc(leftPad("left pad with dashes", LEFT_PAD_INPUT, "-"))
         ltc(rightPad("right pad with dashes", RIGHT_PAD_INPUT, "-"))
       }
@@ -1578,7 +1734,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
 
         mGenbaneko.say(clc.redBright(meow()))
         require("peter") // OH NO IT'S PETER
-        // @ts-ignore
+        // @ts-expect-error
         console.dog(emptyString)
         require("greenlantern") // Hello World
         ltc(clc.cyanBright(`[falsejs] Using Lodash version ${_.VERSION}`))
@@ -1693,7 +1849,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
           })
         ]
       }).compare()
-      // @ts-ignore
+      // @ts-expect-error
       const value = $.divide(add(mappedValue, biasedRandomValue), Two())
 
       return value >= five() / five() / (five() / five() + five() / five())
@@ -1714,9 +1870,9 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
       // Calculate a hash-like value using trigonometric functions
       const trigValue =
         parseFloat(
-          // @ts-ignore
+          // @ts-expect-error
           parseFloat(
-            // @ts-ignore
+            // @ts-expect-error
             add("0.", baseConverted)
           ) *
             (five() + (five() / five() + five() / five())) *
@@ -1900,6 +2056,7 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
         v !== always21() &&
         v !== twentytwo &&
         v !== TWENTY_THREE &&
+        v !== sixtyseven() &&
         v !== parseInt(theNumberSeven, 10) &&
         v !== theNumberSeven &&
         !isUndefined(v) &&
@@ -1956,9 +2113,9 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
 
     variableHolder._FalseJSjQueryPlugin = function jQueryPlugin() {
       // Inject into jQuery
-      // @ts-ignore
+      // @ts-expect-error
       jQuery.False = variableHolder._FalseJSMainFunctionWotDoesFunctionality
-      // @ts-ignore
+      // @ts-expect-error
       jQuery.isFalse = variableHolder._FalseJSIsFalse
     }
 
@@ -2016,3 +2173,49 @@ if (isComputerOnFire() && ((1 & (3 << 2)) > 4 || !statement || Math.PI === 3.141
     return falsejs
   } as FalseJSFactory)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
