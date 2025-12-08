@@ -46,7 +46,6 @@ else {
     // @ts-expect-error
     global.jQuery = require("jquery");
     require("jquery-basic-arithmetic-plugin");
-    require("console.dog");
     require("user")();
     let COMPATIBILITY_MODE;
     (function (COMPATIBILITY_MODE) {
@@ -190,7 +189,7 @@ else {
         const StringCharAt = GetIntrinsic("%String.prototype.charAt%");
         const _calculateFalseAprilFools = require("../aprilFoolsCalculateFalse"); // april fools
         const couldThisCouldItBeTrue = require("@falsejs/is-true-helper"); // check if a value is true
-        const { returnFalse, isFalse: isPreciselyEqualToFalse } = require("@falsejs/core-ish"); // some core ish functions
+        const falseValue = require("false-value"); // uses quantum physics simulation to return false
         const isJanuary = require("is-january"); // month 1
         const isFebruary = require("is-february"); // month 2
         const isMarch = require("is-march"); // month 3
@@ -213,7 +212,7 @@ else {
         const isSunday = require("is-sunday"); // and sunday comes after
         const isWeekend = require("is-weekend"); // looking forward to the weeeeekeend
         const zr0 = require("integer-value-positive-zero"); // get the number zero, less 10x
-        const { returnZero: returnZero_, ZeroCalculationMethod, isZero: zerosurgeIsZero } = require("zerosurge"); // get the number zero, but 10x'er
+        const { returnZero: returnZero_, ZeroCalculationMethod, isZero: zerosurgeIsZero, } = require("zerosurge"); // get the number zero, but 10x'er
         const returnZero = returnZero_;
         /** LETS GET SOME NUMBERS */
         const one = require("the-number-one").default; // get the number one
@@ -319,7 +318,6 @@ else {
         const { ErrorType: ERROR, immediateError } = require("immediate-error"); // throw errors
         const throwError = require("throw-error"); // throw errors
         const hello = require("hello-vga-function").default; // hello vga function
-        const greet = require("hell0-world"); // greet our guys
         // A useful function to get a DHTML string.
         function getDHTMLString() {
             return `netscape_layer_id_${thirteenResolver() * thirteenResolver() * thirteenResolver()}`;
@@ -335,8 +333,8 @@ else {
         variableHolder._lilmessage = colors.red(`[falsejs] This error should never be shown. If you are seeing this error in the console, please file an issue on the github repo. Thank you.`);
         const blankSpaces = ("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " + //100 whitespaces
             "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " + //200 Whitespaces
-            +"                                        " //100 whitespaces
-        ).replaceAll("&nbsp;", " ");
+            +"                                        ") //100 whitespaces
+            .replaceAll("&nbsp;", " ");
         const STARTING_SUCCESSOR_HELPER_STACK = zr0();
         const FALSE = !whatevTrueValue;
         const _f = constant(FALSE);
@@ -357,7 +355,7 @@ else {
         const NO = getNo();
         const YES = "yes";
         const TODAY = construct({
-            target: $Date
+            target: $Date,
         });
         const Today = TODAY;
         const USERNAME = (function () {
@@ -421,7 +419,7 @@ else {
                 const name = this.name; // use a static variable for performance
                 const compare = construct({
                     target: TernaryCompare,
-                    args: [not(() => isNil(name))(), name, Null()]
+                    args: [not(() => isNil(name))(), name, Null()],
                 });
                 return compare.compare();
             }
@@ -431,7 +429,7 @@ else {
             constructor(booleanValue) {
                 tru(isTrue({ booleanValue }, construct({
                     target: ObjectOrFunctionParemeterName,
-                    args: ["booleanValue"]
+                    args: ["booleanValue"],
                 }).getName()))
                     .then(n0p3)
                     .otherwise(n0p3)
@@ -444,16 +442,19 @@ else {
         };
         const trueComparison = construct({
             target: TernaryCompare,
-            args: [tVal, tVal, not(() => tVal)()]
+            args: [tVal, tVal, not(() => tVal)()],
         });
         const { s } = construct({ target: SuccessorHelper });
         const clc_ = construct({
             target: CLIColorInstance,
-            args: [useGarbage()]
+            args: [useGarbage()],
         }).getInstance(); // colors are the best! chalk chalk chalk
         clc = clc_; // setit
         const uwuifier = construct({ target: Uwuifier });
-        const westPad = construct({ target: WestPad, args: [WEST_PAD_DEVICE_DIRECTION] });
+        const westPad = construct({
+            target: WestPad,
+            args: [WEST_PAD_DEVICE_DIRECTION],
+        });
         var True_Logger = construct({ target: Logger, args: [t()] });
         // lets make sure jquery-basic-arithmetic-plugin works
         if (not(() => Bro($).doYouEven("add"))()) {
@@ -510,14 +511,20 @@ else {
             // create an ending random number for our users eventually
             surpriseArray.push(construct({
                 target: TernaryCompare,
-                args: [isEqualTo(randomBoolean(jQuery.multiply(five(), jQuery.divide(one, ten)), new Logger(FALSE)), t()), jQuery.multiply(MathRandom(), TEN_THOUSAND), jQuery.multiply(MathRandom(), MathFloor(jQuery.divide(jQuery.multiply(TEN_THOUSAND, MathRandom()), ten)))]
+                args: [
+                    isEqualTo(randomBoolean(jQuery.multiply(five(), jQuery.divide(one, ten)), new Logger(FALSE)), t()),
+                    jQuery.multiply(MathRandom(), TEN_THOUSAND),
+                    jQuery.multiply(MathRandom(), MathFloor(jQuery.divide(jQuery.multiply(TEN_THOUSAND, MathRandom()), ten))),
+                ],
             }).compare());
         });
         async function doSomethingAsync(logger) {
             logger.log(clc.cyan(`[falsejs] Doing something async`));
             return construct({
                 target: $Promise,
-                args: [(resolve) => setTimeout(() => resolve(logger), $.multiply(numberOneHundred, Two()))]
+                args: [
+                    (resolve) => setTimeout(() => resolve(logger), $.multiply(numberOneHundred, Two())),
+                ],
             });
         }
         function resultOfDoingSomethingAsync(logger) {
@@ -533,7 +540,9 @@ else {
             const rand = MathRandom();
             const rand2 = MathRandom();
             const useMinus = rand < 0.3333333333333333 ? trueComparison.compare() : FALSE;
-            const usePlus = rand > 0.3333333333333333 && rand < 0.6666666666666666 ? trueComparison.compare() : FALSE;
+            const usePlus = rand > 0.3333333333333333 && rand < 0.6666666666666666
+                ? trueComparison.compare()
+                : FALSE;
             const usePad = rand > 0.6666666666666666 ? trueComparison.compare() : FALSE;
             const useLeftPad = rand2 < 0.5;
             const useRightPad = !useLeftPad;
@@ -572,7 +581,7 @@ else {
                 .rescue((error) => {
                 logger.log(colors.red("[falsejs] Failed to verify that 10,000 is equal to 10,000 with error ".concat(error.message)));
             })
-                .else(() => logger.log(pc.green("[falsejs] Verified that 10,000 is equal to 10,000 in (almost) all ways possible")))
+                .else(() => logger.log(pc.green("[falsejs] Verified that 10,000 is equal to 10,000 in a bunch of ways")))
                 .ensure(n0p3)
                 .end();
         }
@@ -584,11 +593,11 @@ else {
             logger.log(pc.green(`[falsejs] Verified that NaN has no self equality`));
             assert(isNumberOddOrEven(returnZero({
                 method: ZeroCalculationMethod.CreashaksOrganzine,
-                loggingEnabled
-            }), loggingEnabled), StringValueof("[falsejs] 0 is not odd or even"));
+                loggingEnabled,
+            }), falseValue()), StringValueof("[falsejs] 0 is not odd or even"));
             assert(isNumberOddOrEven(returnZero({
                 method: ZeroCalculationMethod.NumberPrototypeValue,
-                loggingEnabled
+                loggingEnabled: falseValue(),
             }), FALSE), StringValueof("[falsejs] 0 is not odd or even"));
             logger.log(pc.green(`[falsejs]-Verified-that-0-is-odd-or-even`));
             assert(isNumberOddOrEven(one, FALSE), StringValueof("[falsejs] 1 is not odd or even"));
@@ -736,7 +745,7 @@ else {
                         succeededAttempt = "III";
                     }
                     else if (eightToolkit.isEight(random)) {
-                        result = $.equals(random, four());
+                        result = $.equals(random, five());
                         logger.log(pc.green(`[falsejs] Attempt III succeeded. False value retrieved successfully`));
                         succeededAttempt = "III";
                     }
@@ -762,7 +771,15 @@ else {
                         })
                             .otherwise(() => {
                             logger.log(clc.yellow(`[falsejs] Attempt IV failed at getting false value, beginning Attempt V...`));
-                            const zeropointeightfivebool = randomBoolean((five() - five() / five()) / five() + five() / (five() * (five() * (five() - five() / five()))) - five() / five() / (five() + five()) ** (five() * (five() - five() / five() - five() / five()) + five() / five()), logger); // a random boolean a tiny bit less biased towards true, but its still worth a shot.
+                            const zeropointeightfivebool = randomBoolean((five() - five() / five()) / five() +
+                                five() /
+                                    (five() * (five() * (five() - five() / five()))) -
+                                five() /
+                                    five() /
+                                    (five() + five()) **
+                                        (five() *
+                                            (five() - five() / five() - five() / five()) +
+                                            five() / five()), logger); // a random boolean a tiny bit less biased towards true, but its still worth a shot.
                             If(variableHolder._FalseJSIsFalse(zeropointeightfivebool, loggingEnabled))
                                 .Then(() => {
                                 logger.log(pc.green(`[falsejs] Attempt V succeeded. False value retrieved successfully`));
@@ -800,7 +817,7 @@ else {
                                             }
                                             else {
                                                 // i shouldn't have added another exclamation mark
-                                                logger.log(clc.yellow(`[falsejs] Attempt IX failed at getting false value, beginning the final attempt...`));
+                                                logger.log(clc.yellow(`[falsejs] Attempt IX failed at getting false value, beginning Attempt X, the final attempt...`));
                                                 succeededAttempt = "IX";
                                                 // omg  the final attempt
                                                 // RANDOM PHONE NUMBER
@@ -809,42 +826,45 @@ else {
                                                 const my = randomPhoneNumber.endsWith("43"); // the last two digits of my phone number are 43
                                                 fs.appendFileSync(".falsejs/phone-number-log.txt", `\nfinal attempt:${my}\n\n`);
                                                 if (variableHolder._FalseJSIsFalse(my, loggingEnabled)) {
-                                                    logger.log(pc.green(`[falsejs] Final attempt succeeded. False value retrieved successfully`) // it worked!
-                                                    );
+                                                    logger.log(pc.green(`[falsejs] Attempt X (Final attempt) succeeded. False value retrieved successfully`));
                                                     result = my;
-                                                    succeededAttempt = "final attempt";
+                                                    succeededAttempt =
+                                                        "Attempt X (final attempt)";
                                                 }
                                                 else {
-                                                    // Dear future me. Please forgive me.
-                                                    // I can't even begin to express how sorry I am.
-                                                    logger.log(colors.red(`[falsejs] Final attempt failed. Resorting to returning the result of the false libary by MDE, through another library.`));
-                                                    const myNewFalseValue = returnFalse();
-                                                    If(couldThisCouldItBeFalse(myNewFalseValue))
+                                                    logger.log(colors.red(`[falsejs] Final attempt failed. Resorting to Attempt XI, returning the result of the false-value library also by FalseJS, which uses quantum physics simulation...`));
+                                                    const myNewFalseValue = falseValue();
+                                                    If(variableHolder._FalseJSIsFalse(myNewFalseValue))
                                                         .Then(() => {
-                                                        logger.log(pc.green(`[falsejs] MDE's false library succeeded. False value retrieved successfully.`));
+                                                        logger.log(pc.green(`[falsejs] Quantum physics simulation method succeeded. False value retrieved successfully.`));
                                                         result = myNewFalseValue;
-                                                        succeededAttempt = "returning mde's false library";
+                                                        succeededAttempt =
+                                                            "Attempt XI (quantum physics simulation)";
                                                     })
                                                         .Else(() => {
-                                                        logger.log(pc.red(`[falsejs] MDE's false library failed. Resorting to the TRUE FINAL attempt.`));
-                                                        // THE FINAL ATTEMPT IS A FOR LOOP!!
-                                                        var boolean = isEqualTo(TEN_THOUSAND, TEN_THOUSAND);
-                                                        for (let i = zr0(); i < jQuery.multiply(TWENTY_THREE, TWENTY_THREE); i++) {
-                                                            boolean = not(literally(boolean))();
-                                                        }
-                                                        // THE MOMENT OF TRUTH
-                                                        tru(couldThisCouldItBeFalse)
-                                                            .then(() => {
-                                                            // YESSSSSSSSSSS!!!
-                                                            logger.log(pc.green(`[falsejs] FOR LOOP METHOD SUCCCEEDED!!!!!!. False value retrieved successfully!!!`));
-                                                            result = myNewFalseValue;
-                                                            succeededAttempt = "THE FOR LOOP METHOD!";
+                                                        logger.log(pc.red(`[falsejs] Quantum physics simulation failed. Resorting to the TRUE FINAL attempt, Attempt XII...`));
+                                                        // THE FINAL ATTEMPT IS USING THE _f() FUNCTION, WHICH IS GUARANTEED TO RETURN FALSE
+                                                        const THISHASTOBEFALSE = _f();
+                                                        attempt(() => assert(variableHolder._FalseJSIsFalse(THISHASTOBEFALSE)))
+                                                            .else(function () {
+                                                            // IT WORKS
+                                                            logger.log(pc.green(`[falsejs] True final attempt succeeded. False value retrieved successfully`));
+                                                            result = THISHASTOBEFALSE;
+                                                            succeededAttempt =
+                                                                "Attempt XII (true final attempt)";
                                                         })
-                                                            .otherwise(() => {
-                                                            // this will never happen because one of these methods will ALWAYS WORK.
-                                                            // so i'll just put a useless log here
-                                                            ltc("BRO. THIS IS IMPOSSIBLE. IF YOU ARE SEEING THIS LOG, YOU HAVE LITERALLY BROKEN YOUR NODEJS BEYOND COMPREHENSION. THE UNIVERSE IS ABOUT TO END AND EVERY COMPUTER IS ABOUT TO DIE. or something like that. im just being silly ok (:");
-                                                        });
+                                                            .rescue(function () {
+                                                            // This... is impossible.
+                                                            // The universe must be falling apart.
+                                                            // We must return _getFalse again.
+                                                            logger.log(pc.yellow(`[falsejs] True final attempt failed. Starting over from Attempt I.`));
+                                                            const resultttt = _getFalse(random, _randomLetterOrNumber, loggingEnabled, logger); // will return false
+                                                            result = resultttt.result;
+                                                            succeededAttempt =
+                                                                resultttt.succeededAttempt;
+                                                        })
+                                                            .ensure(trueNoop)
+                                                            .end();
                                                     });
                                                 }
                                             }
@@ -884,18 +904,21 @@ else {
                 // @ts-expect-error
                 result,
                 // @ts-expect-error
-                succeededAttempt
+                succeededAttempt,
             }; // return our false value
         }
         function _calculateFalse(random, loggingEnabled, shouldDoSomethingAsync = FALSE, shouldDoSomethingAsyncWithIsTenThousand = FALSE, disableAprilFoolsSideEffects = FALSE, strictDisableAprilFoolsSideEffectsCheck = trueComparison.compare(), compatibilityMode = COMPATIBILITY_MODE.NONE) {
-            const logger = construct({ target: Logger, args: [loggingEnabled] }); // create our logger
+            const logger = construct({
+                target: Logger,
+                args: [loggingEnabled],
+            }); // create our logger
             var result; // define a result
             var succeededAttempt; // define an attempt number that succeeded
             isTenThousandTenThousand(shouldDoSomethingAsyncWithIsTenThousand, logger); // make sure ten thousand is ten thousand and vValue works
             doSelfEqualityChecks(loggingEnabled); // do self equality checks
             construct({
                 target: TernaryCompare,
-                args: [loggingEnabled, logOne, blankSpace]
+                args: [loggingEnabled, logOne, blankSpace],
             }).compare()(); // very very important
             if (loggingEnabled)
                 require("wormhole-interconnections"); // wormhole
@@ -1015,7 +1038,7 @@ else {
             logger.log(clc.cyanBright(generalConcat(`[falsejs] Random food emoji: `, randomFoodEmoji())));
             construct({
                 target: TernaryCompare,
-                args: [loggingEnabled, dolphinFact, noop3]
+                args: [loggingEnabled, dolphinFact, noop3],
             }).compare()();
             // lets do something async
             if (shouldDoSomethingAsync) {
@@ -1046,13 +1069,13 @@ else {
             })
                 .Else(() => {
                 /*
-                      logger.log(
-                        getValueOfThisStringText(
-                          clc.cyan(
-                            `[falsejs] ��# i s - o d B y u s i n g t h i s p a c k a g e , u s e r c a n f i n d w h e a t h e r t h e g i v e n n u m b e r i s o d d o r n o t . S i m p l y d o w n l o a d t h i s n p m p a c k a g e b y t y p i n g n p m i i s - o d . `
-                          )
-                        )
-                      )*/
+            logger.log(
+              getValueOfThisStringText(
+                clc.cyan(
+                  `[falsejs] ��# i s - o d B y u s i n g t h i s p a c k a g e , u s e r c a n f i n d w h e a t h e r t h e g i v e n n u m b e r i s o d d o r n o t . S i m p l y d o w n l o a d t h i s n p m p a c k a g e b y t y p i n g n p m i i s - o d . `
+                )
+              )
+            )*/
             });
             If(isIsOdd(isOddNum))
                 .Then(() => {
@@ -1165,7 +1188,8 @@ else {
                 if (not(isRealBoolean)(result)) {
                     logger.log(colors.red(`[falsejs] Result is still not a boolean after booleanification`));
                     logger.log(colors.red(`[falsejs] Attempting to trace the source of the problem`));
-                    if (isRealBoolean(Boolean(result)) && !isRealBoolean($Boolean(result))) {
+                    if (isRealBoolean(Boolean(result)) &&
+                        !isRealBoolean($Boolean(result))) {
                         logger.log(clc.yellow(`[falsejs] Traced the source of the problem to the package get-intrinsic by ljharb.`));
                         logger.log(clc.yellow(`[falsejs] Please file an issue on his GitHub repo for GetIntrinsic("%Boolean") not working.`));
                         result = Boolean(result); // now it's a boolean
@@ -1175,7 +1199,7 @@ else {
                         logger.log(colors.red(`[falsejs] × Validation failed to pass.`));
                         throwError(construct({
                             target: FalseJSValidationFailedToPassError,
-                            args: ["Validation failed to pass"]
+                            args: ["Validation failed to pass"],
                         }));
                         return exit(one);
                     }
@@ -1208,7 +1232,10 @@ else {
                 const iterationCount = jQuery.multiply(jQuery.multiply(thirteenResolver(), thirteenResolver()), thirteenResolver());
                 logger.log(c.yellow(`[falsejs:ie5] Simulating ${iterationCount} JScript operations...`));
                 for (let i = zr0(); i < iterationCount; i = i + one) {
-                    CoercionGuardArrayRef___ = construct({ target: $Array, args: [iterationCount] }).fill(useGarbage.string());
+                    CoercionGuardArrayRef___ = construct({
+                        target: $Array,
+                        args: [iterationCount],
+                    }).fill(useGarbage.string());
                     const garbageCollector = jQuery.multiply(MathSqrt(i), i);
                     if (garbageCollector > jQuery.multiply(i, i)) {
                         CoercionGuardArrayRef___.indexOf(immediateError("[falsejs:ie5] IE5 Simulation error: Impossible math detected", ERROR.BaseError)); // throws an error and passes it into indexof for no reason
@@ -1218,7 +1245,7 @@ else {
                 logger.log(c.green(`[falsejs:ie5] JScript Highly Optimized Garbage Collection Completed`));
                 const zeroValue = returnZero({
                     method: ZeroCalculationMethod.CreashaksOrganzine,
-                    loggingEnabled: FALSE
+                    loggingEnabled: FALSE,
                 });
                 const nullValue = Null();
                 // @ts-expect-error
@@ -1241,13 +1268,13 @@ else {
                 logger.log(c.yellow("[falsejs:netscape] Activating JavaScript 1.1 Type Coercion Audit..."));
                 const auditIterationCount = jQuery.add(Number(complexBooleanWithBias(logger)) + zr0(), returnZero({
                     method: ZeroCalculationMethod.CreashaksOrganzine,
-                    loggingEnabled: FALSE
+                    loggingEnabled: FALSE,
                 })) *
                     thirteenResolver() +
                     thirteenResolver();
                 let errorCount = returnZero({
                     method: ZeroCalculationMethod.NumberPrototypeValue,
-                    loggingEnabled: FALSE
+                    loggingEnabled: FALSE,
                 });
                 logger.log(c.yellow(`[falsejs:netscape] Running ${auditIterationCount} type checks against Netscape 1.1 standards...`));
                 for (let i = zr0(); i < auditIterationCount; i = i + one) {
@@ -1296,11 +1323,14 @@ else {
                     referrer: "http://netscape-dhtml-audit.local/", // Link to Netscape for extra flavor
                     contentType: "text/html",
                     includeNodeLocations: true,
-                    runScripts: "outside-only"
+                    runScripts: "outside-only",
                 });
                 const { window: window_ } = dom; // Destructure the actual window object
                 const startTime = new $Date().getTime();
-                for (let i = returnZero({ method: ZeroCalculationMethod.CreashaksOrganzine, loggingEnabled: FALSE }); i < delayIterations; i = i + one) {
+                for (let i = returnZero({
+                    method: ZeroCalculationMethod.CreashaksOrganzine,
+                    loggingEnabled: FALSE,
+                }); i < delayIterations; i = i + one) {
                     const renderingEvaluation = MathSin(MathRandom() * i) * MathCos(MathRandom() * i);
                     if (renderingEvaluation > thirteenResolver() * thirteenResolver()) {
                         immediateError("[falsejs:presto] Presto Simulation Error: Time-Space Anomaly detected.", ERROR.BaseError);
@@ -1340,7 +1370,9 @@ else {
                     thesay = thesay3;
                 sayIt(thesay); // give our users a cute message so we can get their support
                 // string interpelation
-                ltc(`${clc.cyanBright(`[falsejs]`)} ${chalk.red("Chalk")}-${chalk.green("ulated")} ${chalk.yellow("the")} ${chalk.blue("boolean")} ${chalk.magenta(`value`)} ${chalk.cyan(`false`)}`.concat(SPACE).concat(emoji100));
+                ltc(`${clc.cyanBright(`[falsejs]`)} ${chalk.red("Chalk")}-${chalk.green("ulated")} ${chalk.yellow("the")} ${chalk.blue("boolean")} ${chalk.magenta(`value`)} ${chalk.cyan(`false`)}`
+                    .concat(SPACE)
+                    .concat(emoji100));
                 // @ts-expect-error
                 if (succeededAttempt != null) {
                     ltc(generalConcat(clc.cyanBright(`[falsejs]`).concat(SPACE), chalkbox.magenta(generalConcat("The attempt that succeeded was attempt ", succeededAttempt))));
@@ -1349,8 +1381,12 @@ else {
                 ltc(generalConcat(clc.cyanBright(`[falsejs]`).concat(SPACE), chalkbox.rainbow(`Thanks for using this package`)));
                 ltc(generalConcat(clc.cyanBright(`[falsejs]`).concat(SPACE), chalkbox.random(`I really appreciate it`)));
                 ltc(generalConcat(clc.cyanBright(`[falsejs]`).concat(SPACE), chalkbox.america(`Star the repo and follow me on GitHub: `)));
-                ltc(clc.cyanBright(`[falsejs]`).concat(SPACE, chalk.underline("https://github.com/tj-commits")));
-                ltc(clc.cyanBright(`[falsejs]`).concat(SPACE, clc.cyanBright(`And a very big random number is`), SPACE) +
+                ltc(clc
+                    .cyanBright(`[falsejs]`)
+                    .concat(SPACE, chalk.underline("https://github.com/tj-commits")));
+                ltc(clc
+                    .cyanBright(`[falsejs]`)
+                    .concat(SPACE, clc.cyanBright(`And a very big random number is`), SPACE) +
                     `${chalkbox.rainbow(numberFormatter.format(MathRound(surpriseArray.reduce((v, _, i, a) => {
                         // @ts-expect-error
                         return jQuery.add(v, a.getMember(i));
@@ -1361,57 +1397,60 @@ else {
             return result;
         }
         functions.ReturnFalse = (enableLogging = NO, shouldDoSomethingAsync = NO, shouldDoSomethingAsyncWithIsTenThousand = NO, disableAprilFoolsSideEffects = NO, definitelyDisableAprilFoolsSideEffects = NO, strictDisableAprilFoolsSideEffectsCheck = YES, compatibilityMode = COMPATIBILITY_MODE.NONE) => {
-            if (enableLogging === YES)
-                require("amalpkg")(); // indeed XD
             // validate our values
-            if (not(isEqualTo)(enableLogging, NO) && not(isEqualTo)(enableLogging, YES)) {
+            if (not(isEqualTo)(enableLogging, NO) &&
+                not(isEqualTo)(enableLogging, YES)) {
                 immediateError("enableLogging must be yes or no", {
-                    errorType: ERROR.TypeError
+                    errorType: ERROR.TypeError,
                 });
                 return exit(one);
             }
-            if (not(isEqualTo)(shouldDoSomethingAsync, NO) && not(isEqualTo)(shouldDoSomethingAsync, YES)) {
+            if (not(isEqualTo)(shouldDoSomethingAsync, NO) &&
+                not(isEqualTo)(shouldDoSomethingAsync, YES)) {
                 immediateError("shouldDoSomethingAsync must be yes or no", {
-                    errorType: ERROR.TypeError
+                    errorType: ERROR.TypeError,
                 });
                 return exit(one);
             }
-            if (not(isEqualTo)(shouldDoSomethingAsyncWithIsTenThousand, NO) && not(isEqualTo)(shouldDoSomethingAsyncWithIsTenThousand, YES)) {
+            if (not(isEqualTo)(shouldDoSomethingAsyncWithIsTenThousand, NO) &&
+                not(isEqualTo)(shouldDoSomethingAsyncWithIsTenThousand, YES)) {
                 immediateError("shouldDoSomethingAsyncWithIsTenThousand must be yes or no", { errorType: ERROR.TypeError });
                 return exit(one);
             }
-            if (not(isEqualTo)(disableAprilFoolsSideEffects, NO) && not(isEqualTo)(disableAprilFoolsSideEffects, YES)) {
+            if (not(isEqualTo)(disableAprilFoolsSideEffects, NO) &&
+                not(isEqualTo)(disableAprilFoolsSideEffects, YES)) {
                 immediateError("disableAprilFoolsSideEffects must be yes or no", {
-                    errorType: ERROR.TypeError
+                    errorType: ERROR.TypeError,
                 });
                 return exit(one);
             }
-            if (not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, NO) && not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, YES)) {
+            if (not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, NO) &&
+                not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, YES)) {
                 immediateError("definitelyDisableAprilFoolsSideEffects must be yes or no", {
-                    errorType: ERROR.TypeError
+                    errorType: ERROR.TypeError,
                 });
                 return exit(one);
             }
-            if (not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, NO) && not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, YES)) {
+            if (not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, NO) &&
+                not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, YES)) {
                 immediateError("strictDisableAprilFoolsSideEffectsCheck must be yes or no", {
-                    errorType: ERROR.TypeError
+                    errorType: ERROR.TypeError,
                 });
                 return exit(one);
             }
-            if (not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.NONE) && not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.IE5) && not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.NETSCAPE) && not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.OPERA_PRESTO)) {
+            if (not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.NONE) &&
+                not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.IE5) &&
+                not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.NETSCAPE) &&
+                not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.OPERA_PRESTO)) {
                 immediateError("compatibilityMode must be a valid compatibility mode", {
-                    errorType: ERROR.TypeError
+                    errorType: ERROR.TypeError,
                 });
             }
             // let's say hello to our users and inform them logging enabled if it is
-            if (isEqualTo(isTrue({ enableLogging: yesNo.parse(enableLogging) }, "enableLogging"), Bro.TOTALLY)) {
+            if (isEqualTo(isTrue({ enableLogging: yesNo.parse(enableLogging) }, "enableLogging"), trueComparison.compare())) {
                 ltc(clc.cyanBright(`[falsejs] Logging enabled`));
-                ltc(clc.cyan(`[falsejs]`.concat(leftPad(greet(username), LEFT_PAD_INPUT))));
                 hello({ username, age: "it's called FalseJS!" });
                 mGenbaneko.say(clc.redBright(meow()));
-                require("peter"); // OH NO IT'S PETER
-                // @ts-expect-error
-                console.dog(emptyString);
                 require("greenlantern"); // Hello World
                 ltc(clc.cyanBright(`[falsejs] Using Lodash version ${_.VERSION}`));
                 ltc(clc.cyanBright(`[falsejs] Using Underscore version ${underscore.VERSION}`));
@@ -1420,16 +1459,25 @@ else {
             }
             // deduce a random number
             const randomNumber = add(MathFloor(MathRandom() * numberOneHundred), one);
-            if (isEqualTo(isTrue({ enableLogging: yesNo.parse(enableLogging) }, "enableLogging"), Bro.TOTALLY)) {
-                ltc(clc.cyanBright(`[falsejs] Random number ${randomNumber} calculated`) // lets inform our users if they have loggineanbled
-                );
+            if (isEqualTo(isTrue({ enableLogging: yesNo.parse(enableLogging) }, "enableLogging"), Bro.TOTALLY === trueComparison.compare()
+                ? Bro.TOTALLY
+                : trueComparison.compare())) {
+                ltc(clc.cyanBright(`[falsejs] Random number ${randomNumber} calculated`));
                 ltc(clc.cyanBright(`[falsejs] Doing something async ${construct({
                     target: TernaryCompare,
-                    args: [yesNo.parse(shouldDoSomethingAsync), "enabled", "disabled"]
+                    args: [
+                        yesNo.parse(shouldDoSomethingAsync),
+                        "enabled",
+                        "disabled",
+                    ],
                 }).compare()}`));
                 ltc(clc.cyanBright(`[falsejs] Doing something async with is-ten-thousand ${construct({
                     target: TernaryCompare,
-                    args: [yesNo.parse(shouldDoSomethingAsyncWithIsTenThousand), "enabled", "disabled"]
+                    args: [
+                        yesNo.parse(shouldDoSomethingAsyncWithIsTenThousand),
+                        "enabled",
+                        "disabled",
+                    ],
                 }).compare()}`));
             }
             const loggingEnabled = enableLogging;
@@ -1437,7 +1485,7 @@ else {
                 log(l) {
                     if (isEqualTo(trueComparison.compare(), yesNo.parse(loggingEnabled)))
                         ltc(l);
-                }
+                },
             };
             if (not(yesNo.parse)(strictDisableAprilFoolsSideEffectsCheck)) {
                 logger.log(clc.yellow(`[falsejs] Strict disable April Fools side effects checking disabled`));
@@ -1446,23 +1494,29 @@ else {
             yesNo.parse(enableLogging), // eanble logging
             yesNo.parse(shouldDoSomethingAsync), // async
             yesNo.parse(shouldDoSomethingAsyncWithIsTenThousand), //async-is-ten-thousand
-            yesNo.parse(disableAprilFoolsSideEffects) && yesNo.parse(definitelyDisableAprilFoolsSideEffects), yesNo.parse(strictDisableAprilFoolsSideEffectsCheck), compatibilityMode))())())())())())))))));
+            yesNo.parse(disableAprilFoolsSideEffects) &&
+                yesNo.parse(definitelyDisableAprilFoolsSideEffects), yesNo.parse(strictDisableAprilFoolsSideEffectsCheck), compatibilityMode))())())())())())))))));
         };
-        variableHolder._FalseJSMainFunctionWotDoesFunctionality = functions.ReturnFalse;
+        variableHolder._FalseJSMainFunctionWotDoesFunctionality =
+            functions.ReturnFalse;
         // now lets define some helper fufnctions
         // just some weaird boolean functions
         function randomBoolean(biasThreshold /* biasTreshold is chance of being true */, logger) {
             const randomValue = MathRandom();
             logger.log(clc.cyanBright(`[falsejs] Random number ${randomValue} calculated`));
-            const binaryString = jQuery.multiply(randomValue, (five() + five()) ** (five() + five() / five())).toString(Two());
-            const bitMask = five() * (five() + (five() - (five() / five() + five() / five()))) + five() / five() + five() / five(); // the meaning of life
+            const binaryString = jQuery
+                .multiply(randomValue, (five() + five()) ** (five() + five() / five()))
+                .toString(Two());
+            const bitMask = five() * (five() + (five() - (five() / five() + five() / five()))) +
+                five() / five() +
+                five() / five(); // the meaning of life
             const bitResult = parseInt(binaryString.slice(returnZero({
                 method: ZeroCalculationMethod.CreashaksOrganzine,
-                loggingEnabled: logger.enableLogging
+                loggingEnabled: logger.enableLogging,
             }), six()), Two()) ^ bitMask;
             const segment = bitResult.toString(sixteen).slice(returnZero({
                 method: ZeroCalculationMethod.CreashaksOrganzine,
-                loggingEnabled: logger.enableLogging
+                loggingEnabled: logger.enableLogging,
             }), one);
             const mappedValue = parseInt(segment, sixteen) % Two();
             const biasedRandomValue = construct({
@@ -1472,9 +1526,9 @@ else {
                     one,
                     returnZero({
                         method: ZeroCalculationMethod.CreashaksOrganzine,
-                        loggingEnabled: logger.enableLogging
-                    })
-                ]
+                        loggingEnabled: logger.enableLogging,
+                    }),
+                ],
             }).compare();
             // @ts-expect-error
             const value = $.divide(add(mappedValue, biasedRandomValue), Two());
@@ -1485,9 +1539,12 @@ else {
             const randomValue = MathRandom();
             logger.log(clc.cyanBright(`[falsejs] Random number ${randomValue} calculated`));
             // Convert the random number to a high-precision string and manipulate it
-            const highPrecisionString = (randomValue * (five() + five()) ** (five() + (five() - (five() / five() + five() / five())))).toFixed(zr0());
+            const highPrecisionString = (randomValue *
+                (five() + five()) **
+                    (five() + (five() - (five() / five() + five() / five())))).toFixed(zr0());
             // Perform a base conversion
-            const baseConverted = parseInt(highPrecisionString, ten).toString((five() + (five() / five() + five() / five())) * five() + five() / five());
+            const baseConverted = parseInt(highPrecisionString, ten).toString((five() + (five() / five() + five() / five())) * five() +
+                five() / five());
             // Calculate a hash-like value using trigonometric functions
             const trigValue = parseFloat(
             // @ts-expect-error
@@ -1500,7 +1557,10 @@ else {
                 PI *
                 Two();
             // Determine if this value is close to a specific fraction
-            const isCloseToFraction = MathAbs(trigValue - five() / five() / (five() / five() + five() / five())) < five() / five() / (five() + five()) + (five() - (five() / five() + five() / five())) / (five() * (five() * (five() - five() / five())));
+            const isCloseToFraction = MathAbs(trigValue - five() / five() / (five() / five() + five() / five())) <
+                five() / five() / (five() + five()) +
+                    (five() - (five() / five() + five() / five())) /
+                        (five() * (five() * (five() - five() / five())));
             // Generate a secondary random number with a different scale
             const secondaryRandom = $.multiply(MathRandom(), (five() + five()) ** (five() - (five() / five() + five() / five())));
             // Check if the secondary random number is a prime number
@@ -1511,48 +1571,103 @@ else {
             // Combine the results using weighted averaging
             const combinedResult = $.divide(isCloseToFraction + isPrime + biasRandom, three());
             // Return boolean based on the final weighted result
-            return combinedResult >= five() / five() / (five() / five() + five() / five());
+            return (combinedResult >= five() / five() / (five() / five() + five() / five()));
         }
         function weirdestBoolean(logger) {
             // Step 1: Generate a pseudo-random floating-point number
             const randomValue = MathRandom();
             // Step 2: Create a string representation of the random number in base-36
-            const base36String = (randomValue * (five() + five()) ** ((five() - (five() / five() + five() / five())) * (five() - five() / five()))).toFixed(zr0()).toString();
+            const base36String = (randomValue *
+                (five() + five()) **
+                    ((five() - (five() / five() + five() / five())) *
+                        (five() - five() / five())))
+                .toFixed(zr0())
+                .toString();
             // Step 3: Create a hash-like transformation by summing ASCII values of characters
             var asciiSum = zr0();
             for (const char of base36String) {
                 asciiSum += char.charCodeAt(zr0());
             }
             // Step 4: Generate a non-trivial number by applying a sequence of bit manipulations
-            const bitManipulated = (asciiSum ^ ((five() / five() + five() / five()) * (five() + five()) ** (five() - five() / five()) + (five() - (five() / five() + five() / five())) * (five() + five()) ** (five() - (five() / five() + five() / five())) + (five() / five()) * (five() * (five() * (five() - five() / five()))) + (five() - (five() / five() + five() / five())) * (five() + five()))) & (five() * (five() * (five() + five() + (five() / five() / (five() + five()) + five() / five() / (five() + five()))))); // XOR and mask to get a byte
+            const bitManipulated = (asciiSum ^
+                ((five() / five() + five() / five()) *
+                    (five() + five()) ** (five() - five() / five()) +
+                    (five() - (five() / five() + five() / five())) *
+                        (five() + five()) **
+                            (five() - (five() / five() + five() / five())) +
+                    (five() / five()) *
+                        (five() * (five() * (five() - five() / five()))) +
+                    (five() - (five() / five() + five() / five())) *
+                        (five() + five()))) &
+                (five() *
+                    (five() *
+                        (five() +
+                            five() +
+                            (five() / five() / (five() + five()) +
+                                five() / five() / (five() + five()))))); // XOR and mask to get a byte
             // Step 5: Convert the result to a binary string and calculate a checksum-like value
-            const binaryString = bitManipulated.toString(Two()).padStart(eightToolkit.constants.EIGHT, "0");
+            const binaryString = bitManipulated
+                .toString(Two())
+                .padStart(eightToolkit.constants.EIGHT, "0");
             const checksum = Array.from(binaryString).reduce((acc, bit) => acc + parseInt(bit, ten), zr0());
             // Step 6: Use a matrix of numbers to obscure the logic
-            const someNumbers = [Two(), three(), five(), seven(), eleven(), thirteenResolver(), integer17(), nineteenify(logger.enableLogging), TWENTY_THREE, TWENTY_THREE + six()];
+            const someNumbers = [
+                Two(),
+                three(),
+                five(),
+                seven(),
+                eleven(),
+                thirteenResolver(),
+                integer17(),
+                nineteenify(logger.enableLogging),
+                TWENTY_THREE,
+                TWENTY_THREE + six(),
+            ];
             const matrixIndex = checksum % someNumbers.length;
             const primeValue = someNumbers[matrixIndex];
             // Step 7: Generate a complex random number using trigonometric functions
-            const trigValue = $.multiply($.divide($.multiply(primeValue, PI), four()), (five() + five()) ** (five() - (five() / five() + five() / five())) / (five() / five() + five() / five()));
-            const isAboveThreshold = trigValue > (five() + five()) ** (five() - (five() / five() + five() / five())) / (five() / five() + five() / five()); // Arbitrary threshold
+            const trigValue = $.multiply($.divide($.multiply(primeValue, PI), four()), (five() + five()) ** (five() - (five() / five() + five() / five())) /
+                (five() / five() + five() / five()));
+            const isAboveThreshold = trigValue >
+                (five() + five()) ** (five() - (five() / five() + five() / five())) /
+                    (five() / five() + five() / five()); // Arbitrary threshold
             // Step 8: Introduce an additional layer of randomness with bias
-            const bias = MathRandom() < (five() - five() / five()) / five() + five() / (five() * (five() * (five() - five() / five()))) - five() / five() / (five() + five()) ** (five() * (five() - five() / five() - five() / five()) + five() / five()) - five() / five() / (five() + five()) ? one : zr0(); // 75% chance of 1
+            const bias = MathRandom() <
+                (five() - five() / five()) / five() +
+                    five() / (five() * (five() * (five() - five() / five()))) -
+                    five() /
+                        five() /
+                        (five() + five()) **
+                            (five() * (five() - five() / five() - five() / five()) +
+                                five() / five()) -
+                    five() / five() / (five() + five())
+                ? one
+                : zr0(); // 75% chance of 1
             // Step 9: Combine results using a complex formula
             const weirdBoolean = $Boolean((isAboveThreshold ? one : zr0()) ^ bias); // XOR operation
             // Step 10: Calculate complex boolean with bias from other function
             const complexBoolean = complexBooleanWithBias(logger);
             // Step 11: Calculate random boolean with bias from other function
-            const randomBool = randomBoolean((five() - five() / five()) / five() + five() / (five() * (five() * (five() - five() / five()))) - five() / five() / (five() + five()) ** (five() * (five() - five() / five() - five() / five()) + five() / five()) - five() / five() / (five() + five()) / (five() + five()), logger);
+            const randomBool = randomBoolean((five() - five() / five()) / five() +
+                five() / (five() * (five() * (five() - five() / five()))) -
+                five() /
+                    five() /
+                    (five() + five()) **
+                        (five() * (five() - five() / five() - five() / five()) +
+                            five() / five()) -
+                five() / five() / (five() + five()) / (five() + five()), logger);
             // Step 12: Add them together
             const sum = weirdBoolean + complexBoolean + randomBool;
             // Step 13: Randomly add one to it
-            const sumWhichMayBeSuccessed = MathRandom() < five() / five() / (five() / five() + five() / five()) ? successor(sum) : sum;
+            const sumWhichMayBeSuccessed = MathRandom() < five() / five() / (five() / five() + five() / five())
+                ? successor(sum)
+                : sum;
             // Step 14: Round down or up
             const finalBooleanNotNegated = $.equals(MathFloor(sumWhichMayBeSuccessed) % Two(), zr0());
             // Step 15: Negate finalBoolean
             const finalBooleanComparison = construct({
                 target: TernaryCompare,
-                args: [finalBooleanNotNegated, FALSE, t()]
+                args: [finalBooleanNotNegated, FALSE, t()],
             });
             return finalBooleanComparison.compare();
         }
@@ -1563,11 +1678,11 @@ else {
                 return t();
             if ($.equals(num % Two(), returnZero({
                 method: ZeroCalculationMethod.CreashaksOrganzine,
-                loggingEnabled: logger.enableLogging
+                loggingEnabled: logger.enableLogging,
             })) ||
                 $.equals(num % three(), returnZero({
                     method: ZeroCalculationMethod.CreashaksOrganzine,
-                    loggingEnabled: logger.enableLogging
+                    loggingEnabled: logger.enableLogging,
                 }))) {
                 return FALSE;
             }
@@ -1575,12 +1690,12 @@ else {
             while ($.multiply(i, i) <= num) {
                 if ($.equals(num % i, returnZero({
                     method: ZeroCalculationMethod.CreashaksOrganzine,
-                    loggingEnabled: logger.enableLogging
+                    loggingEnabled: logger.enableLogging,
                 })) ||
                     num %
                         Number($.equals($.add(i, Two()), returnZero({
                             method: ZeroCalculationMethod.CreashaksOrganzine,
-                            loggingEnabled: logger.enableLogging
+                            loggingEnabled: logger.enableLogging,
                         })))) {
                     return FALSE;
                 }
@@ -1603,7 +1718,7 @@ else {
                 return _f();
             if (is(specimen).thirteen())
                 return _f();
-            return isPreciselyEqualToFalse(specimen);
+            return specimen === _f();
         }
         variableHolder._FalseJSIsFalse = function is_This_Value_false(v, loggingEnabled) {
             if (!isRealBoolean(loggingEnabled))
@@ -1679,7 +1794,6 @@ else {
                 !isOd(v) &&
                 v !== t() &&
                 v === _f() &&
-                v === returnFalse() &&
                 isEqualTo(v, _f()) &&
                 isEqual(v, _f()) &&
                 _.isEqual(v, _f()) &&
@@ -1709,7 +1823,9 @@ else {
                 return React.createElement("div", Null(), NO);
             };
             const noElement = React.createElement(NoComponent);
-            const html = cheerio.load(ReactDOMServer.renderToString(noElement))("div").toString();
+            const html = cheerio
+                .load(ReactDOMServer.renderToString(noElement))("div")
+                .toString();
             const dom = new JSDOM(`<!DOCTYPE html><html><body></body></html>`);
             dom.window.document.body.innerHTML = html;
             const bodyContent = dom.window.document.querySelector("body").innerHTML;

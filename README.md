@@ -225,6 +225,9 @@ Warning: React does not recognize the `getMember` prop on a DOM element. If you 
 ```
 This is normal. Do not worry. FalseJS uses a package called `get-member` that adds a `getMember` method to every object. React elements are objects, so it gets confused. You may wonder why there's a React error even if you're not using React, but FalseJS uses React.
 
+## Tests
+FalseJS uses multiple libraries for testing. Run `npm test` to test FalseJS.
+
 ## Related Projects
 
 - [true-value](https://github.com/tj-commits/true-value) (the sister project)
