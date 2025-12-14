@@ -33,6 +33,49 @@ FalseJS is a library created by tj-commits to return false.
 
 // stuff for performance ends here.
 
+// so basically, this part is pretty nerdy but let me explain
+// well, um, when falsejs requires other packages, sometimes those packages create global variables
+// but that annoys our user so what we do is this:
+
+// we cache the global variables before falsejs does anything
+// then later in the code, after everything is required, we check the global variables
+// if there are new global variables, delete them, because they're from libraries
+
+// first we'll put the original globals in a set
+const _falsejs_originalGlobals: Set<string> = new Set(
+	typeof globalThis !== "undefined"
+		? Object.getOwnPropertyNames(globalThis)
+		: [],
+)
+
+// then we'll define a function to use later that cleans up the globals from the libraries
+function _falsejs_cleanupNewGlobals(whitelist: string[] = []) {
+	if (typeof globalThis === "undefined") return
+	try {
+		const current = Object.getOwnPropertyNames(globalThis)
+		for (const key of current) {
+			if (!_falsejs_originalGlobals.has(key) && whitelist.indexOf(key) === -1) {
+				try {
+					// Prefer delete; fall back to undefining the property if needed.
+					delete (globalThis as any)[key] // delete the unwanted globals
+				} catch {
+					try {
+						Object.defineProperty(globalThis, key, {
+							value: undefined,
+							writable: true,
+							configurable: true,
+						})
+					} catch {
+						// give up if the global is not removable
+					}
+				}
+			}
+		}
+	} catch {
+		// give up on error handling
+	}
+}
+
 const isComputerOnFire: () => boolean =
 	require("is-computer-on-fire").isComputerOnFire
 
@@ -155,11 +198,11 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 	}
 
 	type FalseJSFactory = ($: JQueryStaticWithArithmetic) => falsejs
-
-	/** UMD module setup, except we're not doing anything UMD module-related because FalseJS is only for node.js. */
-	;(function (factory: ($: JQueryStaticWithArithmetic) => falsejs) {
-		/** Export everything. */
-		module.exports.default = factory(jQuery as JQueryStaticWithArithmetic)
+	
+	;(function (factory: FalseJSFactory) {
+		module.exports.default = factory(jQuery as JQueryStaticWithArithmetic) // run and export falsejs.
+		// Remove any globals created during initialization, but preserve known intentional globals
+		_falsejs_cleanupNewGlobals(["jQuery", "$", "vanillajs"])
 	})(function ($: JQueryStaticWithArithmetic): falsejs {
 		// biome-ignore lint/suspicious/noRedundantUseStrict: We need double strict mode because we wanna be SUPER strict.
 		"use strict"
@@ -222,7 +265,6 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const zodashNoop = require("@zodash/noop").noop // zodash made a noop
 		const jacobZuma = require("jacob-zuma") // south african flavored noop
 		const onceNoopFactory = require("once-noop/factory") // make a noop which can only be called once
-		const noopTS = require("noop-ts").default // noop ts
 		const voidFn = require("voidfn") // void fn
 		const noopExec = require("noop-exec") // exec
 		const attempt = require("attempt-statement") // has more features than trycatch statement
@@ -381,7 +423,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const strictlyEqual = require("are-strictly-equal") // and strict equality.
 		const getTypeOf = require("get-ecmascript-type-of") // better typeof
 		const extremejs = require("@extremejs/utils") // TO THE EXTREME
-		var trueValue = require("true-value") // the sister of falsejs
+		var trueValue = require("true-value")() // the sister of falsejs
 		var t = () => whatevTrueValue // returns true.
 		var tVal = trueValue // tVal sounds cool so i put it here too
 		const { mGenbaneko } = require("genbaneko") // i like cats
@@ -1051,7 +1093,6 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			zodashNoop()
 			jacobZuma()
 			onceNoopFactory().doNothing()
-			noopTS()
 			voidFn()
 			noopExec()
 			_.noop()

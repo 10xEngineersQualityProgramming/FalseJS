@@ -30,6 +30,47 @@ FalseJS is a library created by tj-commits to return false.
  * The credits are above
  */
 // stuff for performance ends here.
+// so basically, this part is pretty nerdy but let me explain
+// well, um, when falsejs requires other packages, sometimes those packages create global variables
+// but that annoys our user so what we do is this:
+// we cache the global variables before falsejs does anything
+// then later in the code, after everything is required, we check the global variables
+// if there are new global variables, delete them, because they're from libraries
+// first we'll put the original globals in a set
+const _falsejs_originalGlobals = new Set(typeof globalThis !== "undefined"
+    ? Object.getOwnPropertyNames(globalThis)
+    : []);
+// then we'll define a function to use later that cleans up the globals from the libraries
+function _falsejs_cleanupNewGlobals(whitelist = []) {
+    if (typeof globalThis === "undefined")
+        return;
+    try {
+        const current = Object.getOwnPropertyNames(globalThis);
+        for (const key of current) {
+            if (!_falsejs_originalGlobals.has(key) && whitelist.indexOf(key) === -1) {
+                try {
+                    // Prefer delete; fall back to undefining the property if needed.
+                    delete globalThis[key]; // delete the unwanted globals
+                }
+                catch {
+                    try {
+                        Object.defineProperty(globalThis, key, {
+                            value: undefined,
+                            writable: true,
+                            configurable: true,
+                        });
+                    }
+                    catch {
+                        // give up if the global is not removable
+                    }
+                }
+            }
+        }
+    }
+    catch {
+        // give up on error handling
+    }
+}
 const isComputerOnFire = require("is-computer-on-fire").isComputerOnFire;
 if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
     /** An exaggeration of an error that is thrown if the computer is on fire. This NPM package is NOT pointless, and it's NOT a joke. */
@@ -55,8 +96,9 @@ else {
         COMPATIBILITY_MODE["OPERA_PRESTO"] = "opera_presto";
     })(COMPATIBILITY_MODE || (COMPATIBILITY_MODE = {}));
     (function (factory) {
-        /** Export everything. */
-        module.exports.default = factory(jQuery);
+        module.exports.default = factory(jQuery); // run and export falsejs.
+        // Remove any globals created during initialization, but preserve known intentional globals
+        _falsejs_cleanupNewGlobals(["jQuery", "$", "vanillajs"]);
     })(function ($) {
         // biome-ignore lint/suspicious/noRedundantUseStrict: We need double strict mode because we wanna be SUPER strict.
         "use strict";
@@ -116,7 +158,6 @@ else {
         const zodashNoop = require("@zodash/noop").noop; // zodash made a noop
         const jacobZuma = require("jacob-zuma"); // south african flavored noop
         const onceNoopFactory = require("once-noop/factory"); // make a noop which can only be called once
-        const noopTS = require("noop-ts").default; // noop ts
         const voidFn = require("voidfn"); // void fn
         const noopExec = require("noop-exec"); // exec
         const attempt = require("attempt-statement"); // has more features than trycatch statement
@@ -257,7 +298,7 @@ else {
         const strictlyEqual = require("are-strictly-equal"); // and strict equality.
         const getTypeOf = require("get-ecmascript-type-of"); // better typeof
         const extremejs = require("@extremejs/utils"); // TO THE EXTREME
-        var trueValue = require("true-value"); // the sister of falsejs
+        var trueValue = require("true-value")(); // the sister of falsejs
         var t = () => whatevTrueValue; // returns true.
         var tVal = trueValue; // tVal sounds cool so i put it here too
         const { mGenbaneko } = require("genbaneko"); // i like cats
@@ -689,7 +730,6 @@ else {
             zodashNoop();
             jacobZuma();
             onceNoopFactory().doNothing();
-            noopTS();
             voidFn();
             noopExec();
             _.noop();
@@ -1368,7 +1408,8 @@ else {
                 const thesay3 = tacoWrap(emoji100.concat(SPACE, uwuifier.uwuifySentence(message)));
                 if (isEqualTo(thesay, thesay2))
                     thesay = thesay3;
-                sayIt(thesay); // give our users a cute message so we can get their support
+                if (loggingEnabled)
+                    sayIt(thesay); // give our users a cute message so we can get their support
                 // string interpelation
                 ltc(`${clc.cyanBright(`[falsejs]`)} ${chalk.red("Chalk")}-${chalk.green("ulated")} ${chalk.yellow("the")} ${chalk.blue("boolean")} ${chalk.magenta(`value`)} ${chalk.cyan(`false`)}`
                     .concat(SPACE)
