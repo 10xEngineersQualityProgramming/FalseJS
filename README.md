@@ -10,6 +10,8 @@ Ever wondered what would happen if JavaScript changed the `false` keyword to som
 
 The 10 attempts to get the value of false ensure that if one fails, it will go on to the next, so if JavaScript breaks one, there will still be more attempts. This is an alternative to the library `false` by mde, which uses the hardcoded boolean value `false` (which I believe they are trying to resolve on the sister library `true`, which will probably be passed down to the `false` library), and is way too short. FalseJS is way better. It includes checks for whether your computer is on fire as well, just in case it *is* on fire.
 
+If you're looking for a more lightweight package that returns `false`, use [false-value](https://github.com/js-constant/false-value).
+
 ## Installation
 
 Install FalseJS with your favorite package manager.
@@ -230,8 +232,8 @@ FalseJS uses multiple libraries for testing. Run `npm test` to test FalseJS.
 
 ## Related Projects
 
-- [true-value](https://github.com/tj-commits/true-value) (the sister project)
-- [false-value](https://npmjs.com/false-value) (this package but more lightweight using qubit circuit simulation)
+- [true-value](https://github.com/js-constant/false-value) (more lightweight version of this)
+- [true-value](https://github.com/js-constant/true-value) (returns true)
 - [false](https://github.com/mde/false)
 - [true](https://github.com/mde/true)
 - [alternative-true](https://github.com/donavon/alternative-true)
