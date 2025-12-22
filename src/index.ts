@@ -1,5 +1,3 @@
-#! WELCOME TO FALSEJS, I AM YOUR FRIEND, TJ-COMMITS!!!!!!!!!!!!!!!!!!
-
 /**!
  * License
  * FalseJS <https://10xEngineersQualityProgramming.github.io/falsejs.html>
@@ -8,14 +6,6 @@
  * made with HEAVY BLACK HEART U+2764
  * Thanks to biome for being a good formatter + linter
  */
-/** biome-ignore-all lint/correctness/noPrecisionLoss: 5555555555555555555555 */
-
-// -----------------------------------------
-/*
-ABOUT FALSEJS
-FalseJS is a library created by tj-commits to return false.
-*/
-
 /**
  *
  * FalseJS <https://10xEngineersQualityProgramming.github.io/falsejs.html>
@@ -31,50 +21,7 @@ FalseJS is a library created by tj-commits to return false.
  * The credits are above
  */
 
-// stuff for performance ends here.
-
-// so basically, this part is pretty nerdy but let me explain
-// well, um, when falsejs requires other packages, sometimes those packages create global variables
-// but that annoys our user so what we do is this:
-
-// we cache the global variables before falsejs does anything
-// then later in the code, after everything is required, we check the global variables
-// if there are new global variables, delete them, because they're from libraries
-
-// first we'll put the original globals in a set
-const _falsejs_originalGlobals: Set<string> = new Set(
-	typeof globalThis !== "undefined"
-		? Object.getOwnPropertyNames(globalThis)
-		: [],
-)
-
-// then we'll define a function to use later that cleans up the globals from the libraries
-function _falsejs_cleanupNewGlobals(whitelist: string[] = []) {
-	if (typeof globalThis === "undefined") return
-	try {
-		const current = Object.getOwnPropertyNames(globalThis)
-		for (const key of current) {
-			if (!_falsejs_originalGlobals.has(key) && whitelist.indexOf(key) === -1) {
-				try {
-					// Prefer delete; fall back to undefining the property if needed.
-					delete (globalThis as any)[key] // delete the unwanted globals
-				} catch {
-					try {
-						Object.defineProperty(globalThis, key, {
-							value: undefined,
-							writable: true,
-							configurable: true,
-						})
-					} catch {
-						// give up if the global is not removable
-					}
-				}
-			}
-		}
-	} catch {
-		// give up on error handling
-	}
-}
+/** biome-ignore-all lint/correctness/noPrecisionLoss: 5555555555555555555555 */
 
 const isComputerOnFire: () => boolean =
 	require("is-computer-on-fire").isComputerOnFire
@@ -201,8 +148,6 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 	
 	;(function (factory: FalseJSFactory) {
 		module.exports.default = factory(jQuery as JQueryStaticWithArithmetic) // run and export falsejs.
-		// Remove any globals created during initialization, but preserve known intentional globals
-		_falsejs_cleanupNewGlobals(["jQuery", "$", "vanillajs"])
 	})(function ($: JQueryStaticWithArithmetic): falsejs {
 		// biome-ignore lint/suspicious/noRedundantUseStrict: We need double strict mode because we wanna be SUPER strict.
 		"use strict"
