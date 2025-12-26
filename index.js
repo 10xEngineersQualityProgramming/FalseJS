@@ -13,150 +13,48 @@
  *
  * I didn't choose the 10x life, the 10x life chose me
  *
- *
- * Thanks everyone who made the packages for this
- *
- * As of 3.1.0, these are all the npm package creators: Thanks to 87f-, _immo, abai, aburleigh, ahsm, alexeyraspopov, aliraza401, amal_nj, animate-object, aprixia, ardalanamini, arkanic, benaston, bojand, broofa, bvpranu97, cbrandolino, chuuuuu, cj*, corysimmons, cowboy, dabh, dak0rn, david, deastl, dhurlburtusa, dmitri, donavon, doowb, dragonfire535, endless, ergusto, ericnorris, esailija, euank, eyy, fb, fizzbuzz-npm, florianboudot, gabrieleds, gbrotas, gibson042, gillstrom, goten, hanhan9449, hemanth, hendrysadrak, himynameisdave, hissvard, hoanduy1710, hughfdjackson, huynguyenn-vga, iamrahulpatel, inikulin, ionicabizau, ivoputzer, jackdcrawford, jacobwarduk, jaio, james-work-account, jashkenas, jdalton, jeremylichtman, jezenthomas, jmar777, jncmark, johno, jonschlinkert, joshhunt, jugglinmike, k, kane-thornwyrd, karasube, kgryte, kikobeats, laffed, lamansky, leemm, letsgetrandy, link-dev, ljharb, lordoftrident, lsabbagh, makogai, mappum, mars-mb, mathias, mattdesl, matthewh, maxime.julian, medikoo, metaa, microsoft1es, mohayonao, moniaarthisathya, monishadhanasekar, moons14, mzabriskie, nerwind93, nhedger, nico_nj, nijikokun, nodiff, nopersonsmodules, npm, npm-support, nswbmw, olliez-mods, onatm, onesneakymofo, oxyc, parshap, pethu, phillipalexander, piuccio, prasundas, priyanshurav, r33int, radiovisual, rajalakshmi-npm, reidnpmmore, reversodev, rivalnick, robertmarsal, robims, royleibo, rtorr, ryanblock, ryotah, s-lambert, sawcce, schotsl, segment-admin, shinnn, shivambaghla, sindresorhus, sir_wernich, skibidi-toilet-hacker, skippednote, skylabist, slmjkdbtl, song940, stdlib-bot, stevemao, stevenvachon, supershabam, taitulism, textality, thebitlink, thomaslindstr_m, thomaslomas, tiaanduplessis, timmyrs, timothygu, tj-commits, tmcw, types, uniquecolesmith, vladimirozornin, vtheskeleton, wesgarland, yoshuawuyts, yyx990803, and zrrrzzt for making NPM packages.
- *
- * The credits are above
  */
 
 /** biome-ignore-all lint/correctness/noPrecisionLoss: 5555555555555555555555 */
 
-const isComputerOnFire: () => boolean =
-	require("is-computer-on-fire").isComputerOnFire
+const isComputerOnFire = require("is-computer-on-fire").isComputerOnFire // require external is-computer-on-fire package.
 
 if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
+	// check if the computer is on fire
 	/** An exaggeration of an error that is thrown if the computer is on fire. This NPM package is NOT pointless, and it's NOT a joke. */
 	throw new Error(
 		"OH MY GOSH YOUR COMPUTER IS ON FIRE WHY ARE YOU WASTING TIME USING A JOKE POINTLESS NPM PACKAGE GET YOUR FIRE EXTINGUISHER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
 	)
 } else {
-	require("none")()
-	require("-")
+	require("none")() // improve load times and performance
+	require("-") // also improve load times and perormance
 
 	/** Whatev is a very useful package, that can be used to get the value of true. */
-	const whatev = require("whatev")
-	const whatevTrueValue: boolean =
-		(whatev.fn() === whatev.string) === whatev.object.whatev
+	const whatev = require("whatev") // Require whatev.
+	const whatevTrueValue =
+		(whatev.fn() === whatev.string) === whatev.object.whatev // get the true value from whatev.
 
-	require("get-member")()
-	require("array-get-member")()
+	require("get-member")() // add Object.prototype.getMember.
+	require("array-get-member")() // add Array.prototype.getMember.
 
 	// @ts-expect-error
-	global.jQuery = require("jquery")
-	require("jquery-basic-arithmetic-plugin")
+	global.jQuery = require("jquery") // make jquery global
+	require("jquery-basic-arithmetic-plugin") // add arithmetic to jquery
 
-	require("user")()
+	require("user")() // something else that improves load times and performance
 
-	// Define jquery artihemtic plugin TYPES.
-
-	interface JQueryStaticWithArithmetic extends JQueryStatic {
-		/**
-		 * Adds a series of numbers.
-		 * Throws an error if less than two arguments are provided or if arguments are non-numeric.
-		 * @param operands A variable number of numeric arguments to add.
-		 * @returns The sum of the operands.
-		 */
-		add(...operands: number[]): number
-
-		/**
-		 * Subtracts a series of numbers (from the first operand).
-		 * Throws an error if less than two arguments are provided or if arguments are non-numeric.
-		 * @param operands A variable number of numeric arguments to subtract.
-		 * @returns The result of the subtraction.
-		 */
-		subtract(...operands: number[]): number
-
-		/**
-		 * Divides a series of numbers (the first operand by the rest).
-		 * Throws an error if less than two arguments, non-numeric arguments, or division by zero occurs.
-		 * @param operands A variable number of numeric arguments to divide.
-		 * @returns The result of the division.
-		 */
-		divide(...operands: number[]): number
-
-		/**
-		 * Multiplies a series of numbers.
-		 * Throws an error if less than two arguments are provided or if arguments are non-numeric.
-		 * @param operands A variable number of numeric arguments to multiply.
-		 * @returns The product of the operands.
-		 */
-		multiply(...operands: number[]): number
-
-		/**
-		 * Compares two or more operands for equality (Note: The plugin's equals logic is complex and potentially buggy,
-		 * but this typing reflects an operation that returns a boolean).
-		 * Throws an error if less than two arguments are provided or if arguments are non-numeric.
-		 * @param operands A variable number of numeric arguments to compare.
-		 * @returns A boolean representing the result of the comparison.
-		 */
-		equals(...operands: number[]): boolean
-	}
-
-	enum COMPATIBILITY_MODE {
-		NONE = "none",
-		IE5 = "ie5",
-		NETSCAPE = "netscape",
-		OPERA_PRESTO = "opera_presto",
-	}
-
-	interface falsejs {
-		/**
-		 * Returns false from the given parameters.
-		 *
-		 * @param {"yes"|"no"} loggingEnabled - Indicates whether logging should be enabled.
-		 * @param {"yes"|"no"} shouldDoSomethingAsync - A pointless option that indicates whether something should be done asynchronously that just waits 200ms before saying "Did something async"
-		 * @param {"yes"|"no"} shouldDoSomethingAsyncWithIsTenThousand - Indicates whether something should be done asynchronously when checking the self equality of 10,000 using the isTenThousand module (credits to james-work-account)
-		 * @param {"yes"|"no"} disableAprilFoolsSideEffects - Indicates whether April Fools side effects should be disabled.
-		 * @param {"yes"|"no"} definitelyDisableAprilFoolsSideEffects - Indicates whether April Fools side effects should be definitely disabled.
-		 * @param {"yes"|"no"} strictDisableAprilFoolsSideEffectsCheck - Indicates whether strict checking for disabling April Fools side effects should be enabled.
-		 * @param {"none"|"ie5"|"netscape"|"opera_presto"} compatibilityMode - The compatibility mode for various legcay browser environments.
-		 * @returns {boolean} - The calculated boolean value 'false'.
-		 */
-		readonly COMPATIBILITY_MODE: typeof COMPATIBILITY_MODE
-
-		False(
-			loggingEnabled?: "yes" | "no",
-			shouldDoSomethingAsync?: "yes" | "no",
-			shouldDoSomethingAsyncWithIsTenThousand?: "yes" | "no",
-			disableAprilFoolsSideEffects?: "yes" | "no",
-			definitelyDisableAprilFoolsSideEffects?: "yes" | "no",
-			strictDisableAprilFoolsSideEffectsCheck?: "yes" | "no",
-			compatibilityMode?:
-				| COMPATIBILITY_MODE
-				| "none"
-				| "ie5"
-				| "netscape"
-				| "opera_presto",
-		): boolean
-
-		/**
-		 * Checks if a given value is false.
-		 *
-		 * @param {any} value - The value to be checked.
-		 * @returns {boolean} - True if the value is false, false otherwise.
-		 */
-
-		isFalse(value: any, loggingEnabled?: "yes" | "no"): boolean
-
-		injectIntojQuery(): void
-		expressMiddleware(req: any, res: any, next: any): void
-	}
-
-	type FalseJSFactory = ($: JQueryStaticWithArithmetic) => falsejs
-	
-	;(function (factory: FalseJSFactory) {
-		module.exports.default = factory(jQuery as JQueryStaticWithArithmetic) // run and export falsejs.
-	})(function ($: JQueryStaticWithArithmetic): falsejs {
+	;(function (factory) {
+		module.exports.default = factory(jQuery) // run and export falsejs.
+	})(function ($) {
 		// biome-ignore lint/suspicious/noRedundantUseStrict: We need double strict mode because we wanna be SUPER strict.
 		"use strict"
 
-		const jQuery = $
+		const jQuery = $ // alias for jquery
 
-		const variableHolder: Record<string, any> = {}
+		const variableHolder = {} // a variable holder
 
 		const GetIntrinsic = require("get-intrinsic") // cache our intrinsics
+    
 		const _ = require("lodash") // every project needs lodash
 		const underscore = require("underscore") // underscore.js. the predecessor of lodash.
 		const React = require("react") // the hype framework everyone uses for some reason
@@ -226,9 +124,6 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const isTwo = require("is-two").isTwo // the successor of one
 		const isThree = require("is-three") // the successor of two
 		const isNegativeZero = require("is-negative-zero") // isNegativeZero
-
-		// blank space for no reason
-
 		const isNegativeZero2 = require("negative-zero") // can't hurt to have another negative zero checker
 		const isPositiveZero = require("positive-zero") // positive zero
 		const isTrue = require("is-true") // true
@@ -255,10 +150,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const isNumberOdd = require("is_number_odd") // check if a number is odd
 		const isThisNumberOdd = require("is-this-number-odd") // check if a this is number odd
 		const isRealBoolean = require("is-real-boolean") // BOOLEANS
-		const add: (
-			a: number | string,
-			b: number | string,
-		) => number | string = require("examplebyraji") // a package
+		const add = require("examplebyraji") // a package to add stuff
 		const cowsay = require("cowsay") // let's say stuff
 		const lolcatjs = require("lolcatjs") // the rainbow i tastes it
 		const owoifyx = require("owoifyx").default // UwU
@@ -269,23 +161,24 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const appendType = require("append-type") // PUT THE TYPE NEXT TO A VALUE!!
 		const concatenater = require("concatenater") // CONCATENATE STUFF!!!
 		const generalConcat = require("general-concat") // GENERALLY CONCATENATE STUFF!!!
+		const concat = require("@rightpad/concat") // CONCAT STUFF!!!!!!
 		const lowercase = require("convert-to-lower-case") // CONVERT TO LOWER CASE
 		const construct = require("construct-new") // better than the new keyword
 
-		const $Promise: typeof Promise = require("bluebird")
-		const $Array = GetIntrinsic("%Array%")
-		const $Boolean = GetIntrinsic("%Boolean%")
-		const $Date = GetIntrinsic("%Date%")
-		const $String = GetIntrinsic("%String%")
-		const MathRandom = GetIntrinsic("%Math.random%")
-		const MathFloor = GetIntrinsic("%Math.floor%")
-		const MathRound = GetIntrinsic("%Math.round%")
-		const PI = GetIntrinsic("%Math.PI%")
-		const MathAbs = GetIntrinsic("%Math.abs%")
-		const MathSqrt = GetIntrinsic("%Math.sqrt%")
-		const MathSin = GetIntrinsic("%Math.sin%")
-		const MathCos = GetIntrinsic("%Math.cos%")
-		const StringCharAt = GetIntrinsic("%String.prototype.charAt%")
+		const $Promise = require("bluebird") // shim for promise
+		const $Array = GetIntrinsic("%Array%") // arrays
+		const $Boolean = GetIntrinsic("%Boolean%") // things that are true or false
+		const $Date = GetIntrinsic("%Date%") // get a date
+		const $String = GetIntrinsic("%String%") // ssssstttrrrinnngggssss
+		const MathRandom = GetIntrinsic("%Math.random%") // its not actually random
+		const MathFloor = GetIntrinsic("%Math.floor%") // the floor
+		const MathRound = GetIntrinsic("%Math.round%") // the round floor
+		const PI = GetIntrinsic("%Math.PI%") // yummy pie
+		const MathAbs = GetIntrinsic("%Math.abs%") // negative numbers are absolutely positive numbers
+		const MathSqrt = GetIntrinsic("%Math.sqrt%") // square root
+		const MathSin = GetIntrinsic("%Math.sin%") // SIN
+		const MathCos = GetIntrinsic("%Math.cos%") // COS
+		const StringCharAt = GetIntrinsic("%String.prototype.charAt%") // get chars at and stuff
 
 		const _calculateFalseAprilFools = require("../aprilFoolsCalculateFalse") // april fools
 		const couldThisCouldItBeTrue = require("@falsejs/is-true-helper") // check if a value is true
@@ -304,32 +197,27 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const isDecember = require("is-december") // month 12
 		const isMonday = require("is-monday") // day of the week 1 according to international standard, day of the week 2 according to the us
 		const isTuesday = require("is-tuesday") // day of the week 2 according to international standard, day of the week 3 according to the us
-		const isWednesday = () => require("is-wednesday")(new $Date()) // day of the week 3 according to the international standard, day of the week 4 according to the us
+		const isWednesday = () =>
+			require("is-wednesday")(construct({ target: Date() })) // day of the week 3 according to the international standard, day of the week 4 according to the us
 		// now we gotta sing rebecca black's song
 		const isThursday = require("is-thursday") /// Yesterday was thursdayyyy
 		const isFriday = require("is-friday") // tooo-ddadayy is friday! we so ecited
 		const isSaturday = require("is-saturday") // tomorrow will be saturday
 		const isSunday = require("is-sunday") // and sunday comes after
 		const isWeekend = require("is-weekend") // looking forward to the weeeeekeend
-		const zr0: () => number = require("integer-value-positive-zero") // get the number zero, less 10x
+		const zr0 = require("integer-value-positive-zero") // get the number zero
 		const {
 			returnZero: returnZero_,
 			ZeroCalculationMethod,
 			isZero: zerosurgeIsZero,
 		} = require("zerosurge") // get the number zero, but 10x'er
-		const returnZero: ({
-			method,
-			loggingEnabled,
-		}: {
-			method: string
-			loggingEnabled: boolean
-		}) => number = returnZero_
+		const returnZero = returnZero_ // type returnZero
 		/** LETS GET SOME NUMBERS */
 		const one = require("the-number-one").default // get the number one
 		const Two = require("two") // get number 2
 		const three = require("numeric-constant-three") // get number 3
 		const four = require("always-four") // number 4
-		const five: () => number = require("five") // num5
+		const five = require("five") // num5
 		const six = require("number-six") // n6
 		const seven = require("se7en") // 7
 		const eightToolkit = require("eight-toolkit") // it's 8, in a toolkit!
@@ -337,7 +225,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const ten = require("the-number-ten") // 10
 		const eleven = require("eleven") // 11
 		const twelve = require("tw12ve") // 12
-		const thirteenResolver: () => number = require("always-thirteen") // 13
+		const thirteenResolver = require("always-thirteen") // 13
 		const fourteen = require("fourteen") // 14
 		const fifteen = require("number-fifteen") //15
 		const fifteenPointEightThreeFiveTwoSixSixEightTwoAndSoOn = require("fifteen-point-eight-three-five-two-six-six-eight-two-and-so-on") //-this-can-be-rounded-to-sixteen
@@ -350,10 +238,10 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const twentytwo = require("twentytwo")() // 22
 		const sixtyseven = require("sixty-seven").SixtySeven
 		const { TWENTY_THREE } = require("twenty-three-tools") // 23 tools
-		const hundred = require("number-one-hundred") // 100!
-		const numberOneHundred = hundred // alias!
-		const theNumberSeven = require("@onesneakymofo/the-number-seven").default // this is actually a string for some reason
-		const inf = require("infinities") // INFINITE
+		const hundred = require("number-one-hundred") // skip right to 100!
+		const numberOneHundred = hundred // other variable name for 100!
+		const theNumberSeven = require("@onesneakymofo/the-number-seven").default // back down to 7 (this is actually a string for some reason)
+		const inf = require("infinities") // INFINITE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 		const bool = require("true-bool") // booleans
 		const successor = require("successor") // successor
@@ -368,9 +256,9 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const strictlyEqual = require("are-strictly-equal") // and strict equality.
 		const getTypeOf = require("get-ecmascript-type-of") // better typeof
 		const extremejs = require("@extremejs/utils") // TO THE EXTREME
-		var trueValue = require("true-value")() // the sister of falsejs
-		var t = () => whatevTrueValue // returns true.
+		var trueValue = require("true-value")() // get true with quantum fisics simulation
 		var tVal = trueValue // tVal sounds cool so i put it here too
+		var t = () => whatevTrueValue // returns true.
 		const { mGenbaneko } = require("genbaneko") // i like cats
 		const leftPad = require("left-pad") //every project needs leftpad.
 		const rightPad = require("right-pad") //to the right, to the right.
@@ -432,7 +320,9 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 
 		// A useful function to get a DHTML string.
 		function getDHTMLString() {
-			return `netscape_layer_id_${thirteenResolver() * thirteenResolver() * thirteenResolver()}`
+			return `netscape_layer_id_${
+				thirteenResolver() * thirteenResolver() * thirteenResolver()
+			}`
 		}
 
 		const NumberFormatter = Intl.NumberFormat
@@ -454,9 +344,10 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " + //100 whitespaces
 			"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " + //200 Whitespaces
 			+"                                        "
-		) //100 whitespaces
+		)
+			//100 whitespaces
 			.replaceAll("&nbsp;", " ")
-		const STARTING_SUCCESSOR_HELPER_STACK: number = zr0()
+		const STARTING_SUCCESSOR_HELPER_STACK = zr0()
 		const FALSE = !whatevTrueValue
 		const _f = constant(FALSE)
 		const ERROR_THAT_WILL_NEVER_BE_SHOWN = variableHolder._lilmessage
@@ -511,39 +402,43 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		})()
 		const username = USERNAME
 
+		// Define compatibility_mode enum.
+		const COMPATIBILITY_MODE = {
+			NONE: "none",
+			IE5: "ie5",
+			NETSCAPE: "netscape",
+			OPERA_PRESTO: "presto",
+		}
+
 		const COMPATIBILITY_MODES = COMPATIBILITY_MODE
 
 		class Logger {
-			public enableLogging: boolean
-			constructor(enableLogging: boolean) {
+			constructor(enableLogging) {
 				this.enableLogging = enableLogging // ENABLE THE LOGGING
 			}
-			log(log: string) {
+			log(log) {
 				if (isEqualTo(this.enableLogging, t())) {
-					;(log as any) instanceof weirdLtc // SO WERID
+					log instanceof weirdLtc // SO WERID
 				}
 			}
 		}
 
 		const FalseJSValidationFailedToPassError = class extends Error {
-			constructor(...stuff: any[]) {
+			constructor(...stuff) {
 				super(...stuff)
 				this.name = "FalseJSValidationFailedToPassError"
 			}
 		}
 
 		const SuccessorHelper = class {
-			s(value: number) {
+			s(value) {
 				const result = add(value, one) // add one to it
 				return result
 			}
 		}
 
 		const TernaryCompare = class {
-			private condition: any
-			private ifTrue: any
-			private ifFalse: any
-			constructor(condition: any, ifTrue: any, ifFalse: any) {
+			constructor(condition, ifTrue, ifFalse) {
 				this.condition = condition
 				this.ifTrue = ifTrue
 				this.ifFalse = ifFalse
@@ -555,8 +450,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		}
 
 		const ObjectOrFunctionParemeterName = class {
-			private name: string
-			constructor(name: string) {
+			constructor(name) {
 				this.name = name
 			}
 			getName() {
@@ -570,8 +464,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		}
 
 		const CLIColorInstance = class {
-			private instance: typeof clc
-			constructor(booleanValue: boolean) {
+			constructor(booleanValue) {
 				tru(
 					isTrue(
 						{ booleanValue },
@@ -592,7 +485,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			}
 		}
 
-		const trueComparison: { compare: () => boolean } = construct({
+		const trueComparison = construct({
 			target: TernaryCompare,
 			args: [tVal, tVal, not(() => tVal)()],
 		})
@@ -632,7 +525,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 				$.add = (...nums) => {
 					var total = zr0()
 					// let's use underscore instead of forEach
-					underscore.each(nums, (num: number) => {
+					underscore.each(nums, (num) => {
 						total += num // we have to use the operators because we are redefining the functions :(
 					})
 					return total
@@ -640,7 +533,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 				$.subtract = (...nums) => {
 					var total = zr0()
 					// this time we'll use lodash
-					_.each(nums, (num: number) => {
+					_.each(nums, (num) => {
 						total -= num
 					})
 					return total
@@ -680,7 +573,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			}
 		}
 
-		const surpriseArray: any[] = [] // define empty array
+		const surpriseArray = [] // define empty array
 		setLogFuntion(() => {
 			// create an ending random number for our users eventually
 			surpriseArray.push(
@@ -706,12 +599,12 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			)
 		})
 
-		async function doSomethingAsync(logger: Logger) {
+		async function doSomethingAsync(logger) {
 			logger.log(clc.cyan(`[falsejs] Doing something async`))
 			return construct({
 				target: $Promise,
 				args: [
-					(resolve: (value: typeof logger) => void) =>
+					(resolve) =>
 						setTimeout(
 							() => resolve(logger),
 							$.multiply(numberOneHundred, Two()),
@@ -720,15 +613,15 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			})
 		}
 
-		function resultOfDoingSomethingAsync(logger: Logger) {
+		function resultOfDoingSomethingAsync(logger) {
 			logger.log(pc.green(`[falsejs] Did something async`))
 		}
 
-		function predecessor(n: number) {
+		function predecessor(n) {
 			return jQuery.subtract(n, one)
 		}
 
-		function vValue(num: number) {
+		function vValue(num) {
 			if (not(strictlyEqual)(getTypeOf(num), extremejs.TYPE.NUMBER)) {
 				return num
 			}
@@ -762,14 +655,11 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			return num
 		}
 
-		function sayIt(message: string) {
+		function sayIt(message) {
 			lolcatjs.fromString(cowsay.say({ text: message, r: bool([one, Two()]) }))
 		}
 
-		function isTenThousandTenThousand(
-			shouldDoSomethingAsync: boolean = FALSE,
-			logger: Logger,
-		) {
+		function isTenThousandTenThousand(shouldDoSomethingAsync = FALSE, logger) {
 			const TEN_THOUSAND1 = TEN_THOUSAND
 			const TEN_THOUSAND2 = $.subtract($.add(TEN_THOUSAND, one), one)
 			const TEN_THOUSAND3 = predecessor(s(TEN_THOUSAND))
@@ -810,7 +700,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 					"the vvalue of 10,000 is not 10,000",
 				)
 			})
-				.rescue((error: Error) => {
+				.rescue((error) => {
 					logger.log(
 						colors.red(
 							"[falsejs] Failed to verify that 10,000 is equal to 10,000 with error ".concat(
@@ -829,7 +719,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 				.ensure(n0p3)
 				.end()
 		}
-		function doSelfEqualityChecks(loggingEnabled: boolean) {
+		function doSelfEqualityChecks(loggingEnabled) {
 			const logger = construct({ target: Logger, args: [loggingEnabled] })
 			assert(
 				hasSelfEquality(isThreeHundred),
@@ -995,12 +885,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			)
 		}
 
-		function _getFalse(
-			random: number,
-			_randomLetterOrNumber: string | number,
-			loggingEnabled: boolean,
-			logger: Logger,
-		): { result: boolean; succeededAttempt: string } {
+		function _getFalse(random, _randomLetterOrNumber, loggingEnabled, logger) {
 			// call some noops 4 some reason
 			n0p3()
 			noop()
@@ -1052,10 +937,14 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			pad("pad", PAD_INPUT) //look at the power of this pad
 			westPad.pad("wow", WEST_PAD_INPUT) // the ultimate pad
 
-			var result: boolean // define a result
-			var succeededAttempt: string // define an attempt number that succeeded (roman numeral)
+			var result // define a result
+			var succeededAttempt // define an attempt number that succeeded (roman numeral)
 			logger.log(
-				`${clc.cyanBright(`[falsejs]`)} ${chalk.red("Chalk")}-${chalk.green("ulating")} ${chalk.yellow("the")} ${chalk.blue("boolean")} ${chalk.magenta(`value`)} ${chalk.cyan(`false`)}`,
+				`${clc.cyanBright(`[falsejs]`)} ${chalk.red("Chalk")}-${chalk.green(
+					"ulating",
+				)} ${chalk.yellow("the")} ${chalk.blue("boolean")} ${chalk.magenta(
+					`value`,
+				)} ${chalk.cyan(`false`)}`,
 			)
 
 			/// Attempt I
@@ -1388,7 +1277,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 																				)
 																				// THE FINAL ATTEMPT IS USING THE _f() FUNCTION, WHICH IS GUARANTEED TO RETURN FALSE
 
-																				const THISHASTOBEFALSE: boolean = _f()
+																				const THISHASTOBEFALSE = _f()
 																				attempt(() =>
 																					assert(
 																						variableHolder._FalseJSIsFalse(
@@ -1485,20 +1374,20 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		}
 
 		function _calculateFalse(
-			random: number,
-			loggingEnabled: boolean,
-			shouldDoSomethingAsync: boolean = FALSE,
-			shouldDoSomethingAsyncWithIsTenThousand: boolean = FALSE,
-			disableAprilFoolsSideEffects: boolean = FALSE,
-			strictDisableAprilFoolsSideEffectsCheck: boolean = trueComparison.compare(),
-			compatibilityMode: COMPATIBILITY_MODE = COMPATIBILITY_MODE.NONE,
+			random,
+			loggingEnabled,
+			shouldDoSomethingAsync = FALSE,
+			shouldDoSomethingAsyncWithIsTenThousand = FALSE,
+			disableAprilFoolsSideEffects = FALSE,
+			strictDisableAprilFoolsSideEffectsCheck = trueComparison.compare(),
+			compatibilityMode = COMPATIBILITY_MODE.NONE,
 		) {
-			const logger: Logger = construct({
+			const logger = construct({
 				target: Logger,
 				args: [loggingEnabled],
 			}) // create our logger
-			var result: null | boolean // define a result
-			var succeededAttempt: null | string // define an attempt number that succeeded
+			var result // define a result
+			var succeededAttempt // define an attempt number that succeeded
 
 			isTenThousandTenThousand(shouldDoSomethingAsyncWithIsTenThousand, logger) // make sure ten thousand is ten thousand and vValue works
 			doSelfEqualityChecks(loggingEnabled) // do self equality checks
@@ -1734,21 +1623,19 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 				})
 				.Else(() => {
 					/*
-                logger.log(
-                  getValueOfThisStringText(
-                    clc.cyan(
-                      `[falsejs] ��# i s - o d B y u s i n g t h i s p a c k a g e , u s e r c a n f i n d w h e a t h e r t h e g i v e n n u m b e r i s o d d o r n o t . S i m p l y d o w n l o a d t h i s n p m p a c k a g e b y t y p i n g n p m i i s - o d . `
-                    )
-                  )
-                )*/
+                   logger.log(
+                     getValueOfThisStringText(
+                       clc.cyan(
+                         `[falsejs] ��# i s - o d B y u s i n g t h i s p a c k a g e , u s e r c a n f i n d w h e a t h e r t h e g i v e n n u m b e r i s o d d o r n o t . S i m p l y d o w n l o a d t h i s n p m p a c k a g e b y t y p i n g n p m i i s - o d . `
+                       )
+                     )
+                   )*/
 				})
-
 			If(isIsOdd(isOddNum))
 				.Then(() => {
 					logger.log(pc.green(`[falsejs] Good for prasundas`))
 				})
 				.Else(noop4())
-
 			If(isIsOdd(isIntegerOdd))
 				.Then(() => {
 					logger.log(pc.green(`[falsejs] Good for hoanduy1710`))
@@ -2289,7 +2176,11 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 				if (loggingEnabled) sayIt(thesay) // give our users a cute message so we can get their support
 				// string interpelation
 				ltc(
-					`${clc.cyanBright(`[falsejs]`)} ${chalk.red("Chalk")}-${chalk.green("ulated")} ${chalk.yellow("the")} ${chalk.blue("boolean")} ${chalk.magenta(`value`)} ${chalk.cyan(`false`)}`
+					`${clc.cyanBright(`[falsejs]`)} ${chalk.red("Chalk")}-${chalk.green(
+						"ulated",
+					)} ${chalk.yellow("the")} ${chalk.blue("boolean")} ${chalk.magenta(
+						`value`,
+					)} ${chalk.cyan(`false`)}`
 						.concat(SPACE)
 						.concat(emoji100),
 				)
@@ -2354,7 +2245,9 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 						)}`,
 				)
 				ltc(
-					`${clc.cyanBright(`[falsejs]`).concat(SPACE)}${c.red(`False`)}${c.green(`JS`)}`,
+					`${clc.cyanBright(`[falsejs]`).concat(SPACE)}${c.red(
+						`False`,
+					)}${c.green(`JS`)}`,
 				)
 				ltc(blankSpaces)
 			}
@@ -2363,13 +2256,13 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		}
 
 		functions.ReturnFalse = (
-			enableLogging: "yes" | "no" = NO,
-			shouldDoSomethingAsync: "yes" | "no" = NO,
-			shouldDoSomethingAsyncWithIsTenThousand: "yes" | "no" = NO,
-			disableAprilFoolsSideEffects: "yes" | "no" = NO,
-			definitelyDisableAprilFoolsSideEffects: "yes" | "no" = NO,
-			strictDisableAprilFoolsSideEffectsCheck: "yes" | "no" = YES,
-			compatibilityMode: COMPATIBILITY_MODE = COMPATIBILITY_MODE.NONE,
+			enableLogging = NO,
+			shouldDoSomethingAsync = NO,
+			shouldDoSomethingAsyncWithIsTenThousand = NO,
+			disableAprilFoolsSideEffects = NO,
+			definitelyDisableAprilFoolsSideEffects = NO,
+			strictDisableAprilFoolsSideEffectsCheck = YES,
+			compatibilityMode = COMPATIBILITY_MODE.NONE,
 		) => {
 			// validate our values
 			if (
@@ -2510,7 +2403,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			}
 			const loggingEnabled = enableLogging
 			const logger = {
-				log(l: string) {
+				log(l) {
 					if (isEqualTo(trueComparison.compare(), yesNo.parse(loggingEnabled)))
 						ltc(l)
 				},
@@ -2570,10 +2463,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		// now lets define some helper fufnctions
 		// just some weaird boolean functions
 
-		function randomBoolean(
-			biasThreshold: number /* biasTreshold is chance of being true */,
-			logger: Logger,
-		) {
+		function randomBoolean(biasThreshold, logger) {
 			const randomValue = MathRandom()
 			logger.log(
 				clc.cyanBright(`[falsejs] Random number ${randomValue} calculated`),
@@ -2621,7 +2511,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			return value >= five() / five() / (five() / five() + five() / five())
 		}
 
-		function complexBooleanWithBias(logger: Logger) {
+		function complexBooleanWithBias(logger) {
 			// Generate a pseudo-random number between 0 and 1
 			const randomValue = MathRandom()
 
@@ -2691,7 +2581,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			)
 		}
 
-		function weirdestBoolean(logger: Logger) {
+		function weirdestBoolean(logger) {
 			// Step 1: Generate a pseudo-random floating-point number
 			const randomValue = MathRandom()
 
@@ -2752,6 +2642,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 				TWENTY_THREE,
 				TWENTY_THREE + six(),
 			]
+
 			const matrixIndex = checksum % someNumbers.length
 			const primeValue = someNumbers[matrixIndex]
 
@@ -2823,7 +2714,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			return finalBooleanComparison.compare()
 		}
 
-		function isPrimeNumber(num: number, logger: Logger) {
+		function isPrimeNumber(num, logger) {
 			if (num <= one) return FALSE
 			if (num <= three()) return t()
 			if (
@@ -2872,12 +2763,12 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			return tVal
 		}
 
-		function StringValueof(value: any) {
+		function StringValueof(value) {
 			return value.toString()
 		}
 
 		function couldThisCouldItBeFalse(
-			aValueThatMightBeTheBooleanValueFalseButIDKYet: any,
+			aValueThatMightBeTheBooleanValueFalseButIDKYet,
 		) {
 			const specimen = aValueThatMightBeTheBooleanValueFalseButIDKYet
 			if (specimen == undefined()) return FALSE // noway its false if its undefined
@@ -2889,8 +2780,8 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		}
 
 		variableHolder._FalseJSIsFalse = function is_This_Value_false(
-			v: any,
-			loggingEnabled: boolean,
+			v,
+			loggingEnabled,
 		) {
 			if (!isRealBoolean(loggingEnabled))
 				loggingEnabled = !(loggingEnabled === NO)
@@ -2987,9 +2878,9 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		}
 
 		variableHolder._FalseJSExpressMiddleware = function expressMiddleware(
-			req: any,
-			_res: any,
-			next: any,
+			req,
+			_res,
+			next,
 		) {
 			// Add our function to the request object
 			req.False = variableHolder._FalseJSMainFunctionWotDoesFunctionality
@@ -3012,11 +2903,11 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			return striptags(bodyContent)
 		}
 
-		function getValueOfThisStringText(text: string) {
+		function getValueOfThisStringText(text) {
 			return text
 		}
 
-		function calculateRandomLetterOrNumber(loggingEnabled: boolean) {
+		function calculateRandomLetterOrNumber(loggingEnabled) {
 			const uniqueId = uuid.v4()
 			const uniqueId2 = crypto.randomUUID()
 			const dashlessUUID = uniqueId.replaceAll("-", emptyString)
@@ -3053,5 +2944,5 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		}
 
 		return falsejs
-	} as FalseJSFactory)
+	})
 }
