@@ -241,6 +241,6 @@ FalseJS uses multiple libraries for testing. Run `npm test` to test FalseJS.
 
 ## License
 
-FalseJS uses the MIT license.
+FalseJS uses the [EGPSL10X-1.0](https://github.com/10xEngineersQualityProgramming/EGPSL10X-1.0) license
 
 ## made with HEAVY BLACK HEART U+2764
