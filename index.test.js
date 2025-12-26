@@ -1,7 +1,13 @@
 // DO TESTS MANUALLY
 
 function doTests(testName, fjs) {
-	const { False, isFalse, expressMiddleware, injectIntojQuery } = fjs
+	const {
+		False,
+		isFalse,
+		expressMiddleware,
+		injectIntojQuery,
+		COMPATIBILITY_MODE,
+	} = fjs
 	const assert = require("assert-fn")
 	const attempt = require("attempt-statement")
 	const n0p3 = require("n0p3")
@@ -17,16 +23,16 @@ function doTests(testName, fjs) {
 		// Using a small, representative set instead of generating all 2048 combinations.
 		const combinations = [
 			// 1. All "no", testing the "none" compat option
-			["no", "no", "no", "no", "no", "no", "none"],
+			["no", "no", "no", "no", "no", "no", COMPATIBILITY_MODE.NONE],
 
 			// 2. All "yes" for first three, testing the 'netscape' compat option
-			["yes", "yes", "yes", "no", "no", "no", "netscape"],
+			["yes", "yes", "yes", "no", "no", "no", COMPATIBILITY_MODE.NETSCAPE],
 
 			// 3. Testing a mixed set with 'ie5'
-			["no", "yes", "no", "no", "yes", "yes", "ie5"],
+			["no", "yes", "no", "no", "yes", "yes", COMPATIBILITY_MODE.IE5],
 
 			// 4. Testing another mixed set with 'opera_presto'
-			["yes", "no", "yes", "yes", "no", "yes", "opera_presto"],
+			["yes", "no", "yes", "yes", "no", "yes", COMPATIBILITY_MODE.OPERA_PRESTO],
 		]
 
 		// False function testing
@@ -77,4 +83,4 @@ function doTests(testName, fjs) {
 		.end()
 }
 
-doTests("FalseJS Library Tests (Manual)", require("../dist/index").default)
+doTests("FalseJS Library Tests", require("./index").default)

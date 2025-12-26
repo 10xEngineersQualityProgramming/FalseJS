@@ -15,8 +15,6 @@
  *
  */
 
-/** biome-ignore-all lint/correctness/noPrecisionLoss: 5555555555555555555555 */
-
 const isComputerOnFire = require("is-computer-on-fire").isComputerOnFire // require external is-computer-on-fire package.
 
 if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
@@ -54,7 +52,10 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const variableHolder = {} // a variable holder
 
 		const GetIntrinsic = require("get-intrinsic") // cache our intrinsics
-    
+
+		const logicalNot = require("es-logical-not-operator") // ! in fp
+		const logicalAnd = require("es-logical-and-operator") // && in fp
+		const logicalOr = require("es-logical-or-operator") // || in fp
 		const _ = require("lodash") // every project needs lodash
 		const underscore = require("underscore") // underscore.js. the predecessor of lodash.
 		const React = require("react") // the hype framework everyone uses for some reason
@@ -180,7 +181,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const MathCos = GetIntrinsic("%Math.cos%") // COS
 		const StringCharAt = GetIntrinsic("%String.prototype.charAt%") // get chars at and stuff
 
-		const _calculateFalseAprilFools = require("../aprilFoolsCalculateFalse") // april fools
+		const _calculateFalseAprilFools = require("./aprilFoolsCalculateFalse") // april fools
 		const couldThisCouldItBeTrue = require("@falsejs/is-true-helper") // check if a value is true
 		const falseValue = require("false-value") // uses quantum physics simulation to return false
 		const isJanuary = require("is-january") // month 1
@@ -198,7 +199,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const isMonday = require("is-monday") // day of the week 1 according to international standard, day of the week 2 according to the us
 		const isTuesday = require("is-tuesday") // day of the week 2 according to international standard, day of the week 3 according to the us
 		const isWednesday = () =>
-			require("is-wednesday")(construct({ target: Date() })) // day of the week 3 according to the international standard, day of the week 4 according to the us
+			require("is-wednesday")(construct({ target: $Date })) // day of the week 3 according to the international standard, day of the week 4 according to the us
 		// now we gotta sing rebecca black's song
 		const isThursday = require("is-thursday") /// Yesterday was thursdayyyy
 		const isFriday = require("is-friday") // tooo-ddadayy is friday! we so ecited
@@ -253,7 +254,8 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const immo = require("@_immo/return") // also a constant function
 		const isEqualTo = require("is-equal-to") // cant hurt to have a better way to check if something is equal
 		const isEqual = require("is-equal") // more complex ways too.
-		const strictlyEqual = require("are-strictly-equal") // and strict equality.
+		const strictlyEqual = require("@10xly/strict-equals") // and strict equality.
+		const notStrictlyEqual = not(strictlyEqual)
 		const getTypeOf = require("get-ecmascript-type-of") // better typeof
 		const extremejs = require("@extremejs/utils") // TO THE EXTREME
 		var trueValue = require("true-value")() // get true with quantum fisics simulation
@@ -278,6 +280,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const os = require("node:os") // maybe node js itself can help us calculate more operating systems
 		const crypto = require("node:crypto") // mine me some crypto
 		const fs = require("node:fs") // write our files
+		const util = require("node:util") // utility functiosn built in to node.js
 		const uuid = require("uuid") // generate some uuids
 		const getStringLength = require("utf8-byte-length") // get string length
 		const emoji100 = require("emoji-100") // 100 emoji
@@ -539,7 +542,9 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 					return total
 				}
 				$.equals = (v1, v2) => {
-					if (not(() => isActualNumber(v1) && !isActualNumber(v2))()) {
+					if (
+						not(() => isActualNumber(v1) && logicalNot(isActualNumber(v2)))()
+					) {
 						immediateError(
 							concatenater(
 								"Both parameters must be numbers! Instead what was passed in was ",
@@ -877,7 +882,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			)
 			logger.log(pc.green(`[falsejs]-Verified-that-67-is-odd-or-even`))
 			assert(
-				!isNumberOddOrEven(inf.positiveInfinity(), FALSE),
+				logicalNot(isNumberOddOrEven(inf.positiveInfinity()), FALSE),
 				StringValueof("[falsejs] Infinity is odd or even"),
 			)
 			logger.log(
@@ -1400,7 +1405,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			logger.log(
 				c.cyan(
 					`[falsejs] `.concat(
-						generalConcat(
+						concat(
 							StringValueof(thirteenResolver()),
 							SPACE,
 							"×",
@@ -1570,7 +1575,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			)
 			logger.log(
 				clc.cyanBright(
-					generalConcat(`[falsejs] Random angry emoji: `, randomAngryEmoji()),
+					concat(`[falsejs] Random angry emoji: `, randomAngryEmoji()),
 				),
 			)
 			logger.log(
@@ -1600,7 +1605,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 				})
 
 			// is odd checks
-			If(!isIsOdd(isOdd))
+			If(logicalNot(isIsOdd(isOdd)))
 				.Then(() => {
 					logger.log(clc.yellow(`[falsejs] isOdd is not isOdd.`))
 					logger.log(clc.yellow(`[falsejs] That's weird`))
@@ -1800,7 +1805,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 
 					if (
 						isRealBoolean(Boolean(result)) &&
-						!isRealBoolean($Boolean(result))
+						logicalNot(isRealBoolean($Boolean(result)))
 					) {
 						logger.log(
 							clc.yellow(
@@ -1988,7 +1993,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 					const valueToCheck = construct({ target: $String, args: [i] })
 					const isCoercedToFalse = valueToCheck == result
 
-					if (isCoercedToFalse && i !== zr0()) {
+					if (isCoercedToFalse && notStrictlyEqual(i, zr0())) {
 						errorCount = errorCount + one
 						if (errorCount > thirteenResolver()) {
 							immediateError(
@@ -2133,7 +2138,10 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 					return exit(one)
 				}
 
-				if (isEqual(typeof window_.opera, "object") && window_.opera !== null) {
+				if (
+					isEqual(typeof window_.opera, "object") &&
+					window_.notStrictlyEqual(opera, null)
+				) {
 					immediateError(
 						"[falsejs:presto] Critical Error: Global 'opera' object detected in JSDOM Window!",
 						ERROR.BaseError,
@@ -2187,7 +2195,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 				// @ts-expect-error
 				if (succeededAttempt != null) {
 					ltc(
-						generalConcat(
+						concat(
 							clc.cyanBright(`[falsejs]`).concat(SPACE),
 							chalkbox.magenta(
 								generalConcat(
@@ -2199,7 +2207,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 					)
 					fs.appendFileSync(
 						".falsejs/phone-number-log.txt",
-						generalConcat("succeeded attempt: ", succeededAttempt, "\n"),
+						concat("succeeded attempt: ", succeededAttempt, "\n"),
 					)
 				}
 				ltc(
@@ -2209,7 +2217,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 					),
 				)
 				ltc(
-					generalConcat(
+					concat(
 						clc.cyanBright(`[falsejs]`).concat(SPACE),
 						chalkbox.random(`I really appreciate it`),
 					),
@@ -2718,19 +2726,21 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			if (num <= one) return FALSE
 			if (num <= three()) return t()
 			if (
-				$.equals(
-					num % Two(),
-					returnZero({
-						method: ZeroCalculationMethod.CreashaksOrganzine,
-						loggingEnabled: logger.enableLogging,
-					}),
-				) ||
-				$.equals(
-					num % three(),
-					returnZero({
-						method: ZeroCalculationMethod.CreashaksOrganzine,
-						loggingEnabled: logger.enableLogging,
-					}),
+				logicalOr(
+					$.equals(
+						num % Two(),
+						returnZero({
+							method: ZeroCalculationMethod.CreashaksOrganzine,
+							loggingEnabled: logger.enableLogging,
+						}),
+					),
+					$.equals(
+						num % three(),
+						returnZero({
+							method: ZeroCalculationMethod.CreashaksOrganzine,
+							loggingEnabled: logger.enableLogging,
+						}),
+					),
 				)
 			) {
 				return FALSE
@@ -2783,87 +2793,93 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			v,
 			loggingEnabled,
 		) {
-			if (!isRealBoolean(loggingEnabled))
+			if (logicalNot(isRealBoolean(loggingEnabled)))
 				loggingEnabled = !(loggingEnabled === NO)
-			const value = v // alts are always good
-			const isV = is(v) // isthirteen
+			const value = v
 			const garbage = useGarbage() // use some garbage
-			const isgarbage = not(isRealBoolean)(garbage) && isEqualTo(v, garbage)
+			const isgarbage = logicalAnd(
+				not(isRealBoolean)(garbage),
+				isEqualTo(v, garbage),
+			)
 			const cond =
 				!isgarbage &&
-				v !== one &&
-				v !== Two() &&
-				v !== three() &&
-				v !== four() &&
-				v !== five() &&
-				v !== six() &&
-				v !== seven() &&
-				v !== eightToolkit.constants.EIGHT &&
-				v !== ninev9() &&
-				v !== ten &&
-				v !== eleven() &&
-				v !== twelve() &&
-				v !== thirteenResolver() &&
-				v !== fourteen &&
-				v !== fifteen &&
-				v !== fifteenPointEightThreeFiveTwoSixSixEightTwoAndSoOn &&
-				v !== sixteen &&
-				v !== integer17() &&
-				v !== Eighteen() &&
-				v !== nineteenify(loggingEnabled) &&
-				v !== numbertwenty(loggingEnabled) &&
-				v !== always21() &&
-				v !== twentytwo &&
-				v !== TWENTY_THREE &&
-				v !== sixtyseven() &&
-				v !== parseInt(theNumberSeven, 10) &&
-				v !== theNumberSeven &&
-				!isUndefined(v) &&
-				!isNull(v) &&
-				!isNil(v) &&
+				notStrictlyEqual(v, one) &&
+				notStrictlyEqual(v, Two()) &&
+				notStrictlyEqual(v, three()) &&
+				notStrictlyEqual(v, four()) &&
+				notStrictlyEqual(v, five()) &&
+				notStrictlyEqual(v, six()) &&
+				notStrictlyEqual(v, seven()) &&
+				notStrictlyEqual(v, eightToolkit.constants.EIGHT) &&
+				notStrictlyEqual(v, ninev9()) &&
+				notStrictlyEqual(v, ten) &&
+				notStrictlyEqual(v, eleven()) &&
+				notStrictlyEqual(v, twelve()) &&
+				notStrictlyEqual(v, thirteenResolver()) &&
+				notStrictlyEqual(v, fourteen) &&
+				notStrictlyEqual(v, fifteen) &&
+				notStrictlyEqual(
+					v,
+					fifteenPointEightThreeFiveTwoSixSixEightTwoAndSoOn,
+				) &&
+				notStrictlyEqual(v, sixteen) &&
+				notStrictlyEqual(v, integer17()) &&
+				notStrictlyEqual(v, Eighteen()) &&
+				notStrictlyEqual(v, nineteenify(loggingEnabled)) &&
+				notStrictlyEqual(v, numbertwenty(loggingEnabled)) &&
+				notStrictlyEqual(v, always21()) &&
+				notStrictlyEqual(v, twentytwo) &&
+				notStrictlyEqual(v, TWENTY_THREE) &&
+				notStrictlyEqual(v, sixtyseven()) &&
+				notStrictlyEqual(v, parseInt(theNumberSeven, ten)) &&
+				notStrictlyEqual(v, theNumberSeven) &&
+				logicalNot(isUndefined(v)) &&
+				logicalNot(isNull(v)) &&
+				logicalNot(isNil(v)) &&
 				isUnnull(v) &&
 				not(isNil)(v) &&
-				!isEqual(value, NO) &&
-				!isEqual(value, YES) &&
-				!isEqualTo(value, NO) &&
-				!isEqualTo(value, YES) &&
-				!couldThisCouldItBeTrue(v) &&
-				!isNaN(v) &&
-				!isNegativeInfinity(v) &&
-				!isNegativeZero2(v) &&
-				!is0_2.isNegativeZero(v) &&
-				!isNegativeZero(v) &&
-				!isPositiveZero(v) &&
-				!is0_2.isPositiveZero(v) &&
-				!is0(v) &&
-				!is0_2.isZero(v) &&
-				!zerosurgeIsZero(v, loggingEnabled) &&
-				!is1(v) &&
-				!isTwo(v) &&
-				!isThree(v) &&
-				!isFour(v) &&
-				!isFive(v) &&
-				!isSix(v) &&
-				!isSeven(v) &&
-				!eightToolkit.isEight(v) &&
-				!isV.thirteen() &&
-				!isHundred(v) &&
-				!isThousand(v) &&
-				!isTenThousand(v) &&
-				!isEqTenThousand(v) &&
-				!isNumber(v) &&
-				!isActualNumber(v) &&
-				!isIsOdd(v) &&
-				!isOd(v) &&
-				v !== t() &&
-				v === _f() &&
+				logicalNot(isEqual(value, NO)) &&
+				logicalNot(isEqual(value, YES)) &&
+				logicalNot(isEqualTo(value, NO)) &&
+				logicalNot(isEqualTo(value, YES)) &&
+				logicalNot(couldThisCouldItBeTrue(v)) &&
+				logicalNot(isNaN(v)) &&
+				logicalNot(isNegativeInfinity(v)) &&
+				logicalNot(isNegativeZero2(v)) &&
+				logicalNot(is0_2.isNegativeZero(v)) &&
+				logicalNot(isNegativeZero(v)) &&
+				logicalNot(isPositiveZero(v)) &&
+				logicalNot(is0_2.isPositiveZero(v)) &&
+				logicalNot(is0(v)) &&
+				logicalNot(is0_2.isZero(v)) &&
+				logicalNot(zerosurgeIsZero(v, loggingEnabled)) &&
+				logicalNot(is1(v)) &&
+				logicalNot(isTwo(v)) &&
+				logicalNot(isThree(v)) &&
+				logicalNot(isFour(v)) &&
+				logicalNot(isFive(v)) &&
+				logicalNot(isSix(v)) &&
+				logicalNot(isSeven(v)) &&
+				logicalNot(eightToolkit.isEight(v)) &&
+				logicalNot(is(v).thirteen()) &&
+				logicalNot(isHundred(v)) &&
+				logicalNot(isThousand(v)) &&
+				logicalNot(isTenThousand(v)) &&
+				logicalNot(isEqTenThousand(v)) &&
+				logicalNot(isNumber(v)) &&
+				logicalNot(isActualNumber(v)) &&
+				logicalNot(isIsOdd(v)) &&
+				logicalNot(isOd(v)) &&
+				notStrictlyEqual(v, t()) &&
+				notStrictlyEqual(v, tVal) &&
+				notStrictlyEqual(v, trueValue) &&
+				util.isDeepStrictEqual(v, _f()) &&
 				isEqualTo(v, _f()) &&
 				isEqual(v, _f()) &&
 				_.isEqual(v, _f()) &&
 				underscore.isEqual(v, _f()) &&
 				strictlyEqual(v, _f()) &&
-				v === _f() &&
-				v === FALSE &&
+				strictlyEqual(v, FALSE) &&
 				couldThisCouldItBeFalse(v)
 
 			return cond
