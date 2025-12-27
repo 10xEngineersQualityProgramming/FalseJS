@@ -4,8 +4,7 @@
 
 #### Better than the keyword itself.
 
-Ever wondered what would happen if JavaScript changed the `false` keyword to something else, like `no`, `nope`, `noway`, or something else? Chaos. That is what FalseJS is for.
-
+Ever wondered what would happen if JavaScript changed the `false` keyword to something else, like `no`, `nope`, `noway`, or something else? Chaos. That is what FalseJS is for. At the very beginning of the code, it checks if `false` and `true` don't exist, and if it does, it redefines them. That's one of the main reasons to use this library, if `false` doesn't exist, this will still work (hopefully).
 
 
 The 10 attempts to get the value of false ensure that if one fails, it will go on to the next, so if JavaScript breaks one, there will still be more attempts. This is an alternative to the library `false` by mde, which uses the hardcoded boolean value `false` (which I believe they are trying to resolve on the sister library `true`, which will probably be passed down to the `false` library), and is way too short. FalseJS is way better. It includes checks for whether your computer is on fire as well, just in case it *is* on fire.
@@ -219,6 +218,9 @@ const falseValue = falsejs.False(
 ```
 
 ## Important
+Note: Installing FalseJS may show you a lot of deprecation warnings and vulnerabilities. This is normal, as FalseJS installs a total of more than 1000 dependencies. Don't worry, that's for a good reason - they're all used.
+
+## Other important note
 In the console you may see this error:
 ```
 Warning: React does not recognize the `getMember` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `getmember` instead. If you accidentally passed it from a parent component, remove it from the DOM element.

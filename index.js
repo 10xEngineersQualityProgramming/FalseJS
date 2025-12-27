@@ -15,6 +15,18 @@
  *
  */
 
+// BELOW IS A CHECK TO DEFINE FALSE AND TRUE GLOBALLY IF THEY DON'T EXISTING TO PREVENT THE WORLD FROM CRASHING.
+try {
+  false.valueOf()
+} catch {
+  global.false = NaN == NaN
+}
+try {
+  true.valueOf()
+} catch {
+  global.true = 1 === 1
+}
+
 const isComputerOnFire = require("is-computer-on-fire").isComputerOnFire // require external is-computer-on-fire package.
 
 if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
@@ -35,7 +47,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 	require("get-member")() // add Object.prototype.getMember.
 	require("array-get-member")() // add Array.prototype.getMember.
 
-	// @ts-expect-error
+	
 	global.jQuery = require("jquery") // make jquery global
 	require("jquery-basic-arithmetic-plugin") // add arithmetic to jquery
 
@@ -133,6 +145,8 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const isThreeHundred = require("is-three-hundred") // is-three-hundred
 		const isNumber = require("is-number") // jonschlinkert
 		const isActualNumber = require("is-actual-number") // my is-number
+    const { checkOdd, checkEven } = require("enterprise-number-classification-sdk") // enterprise oddness and evenness checking
+    const isWDS = require("@overkill/is-wds") // check if something's "WDS"
 		const isIsOdd = require("is-is-odd") // isIsOdd
 		const isOdd = require("is-odd") // why does everyone think this is the dumbest package ever. its not
 		const isOd = require("is-od") // forget a d
@@ -1371,9 +1385,9 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 				.ensure(n0p3)
 				.end()
 			return {
-				// @ts-expect-error
+				
 				result,
-				// @ts-expect-error
+				
 				succeededAttempt,
 			} // return our false value
 		}
@@ -1934,7 +1948,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 				})
 				const nullValue = Null()
 
-				// @ts-expect-error
+				
 				if (result == zeroValue) {
 					// biome-ignore lint/suspicious/noTsIgnore: reason blabal
 					// @ts-ignore
@@ -2192,7 +2206,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 						.concat(SPACE)
 						.concat(emoji100),
 				)
-				// @ts-expect-error
+				
 				if (succeededAttempt != null) {
 					ltc(
 						concat(
@@ -2245,7 +2259,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 							numberFormatter.format(
 								MathRound(
 									surpriseArray.reduce((v, _, i, a) => {
-										// @ts-expect-error
+										
 										return jQuery.add(v, a.getMember(i))
 									}),
 								),
@@ -2513,7 +2527,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 					}),
 				],
 			}).compare()
-			// @ts-expect-error
+			
 			const value = $.divide(add(mappedValue, biasedRandomValue), Two())
 
 			return value >= five() / five() / (five() / five() + five() / five())
@@ -2543,9 +2557,9 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			// Calculate a hash-like value using trigonometric functions
 			const trigValue =
 				parseFloat(
-					// @ts-expect-error
+					
 					parseFloat(
-						// @ts-expect-error
+						
 						add("0.", baseConverted),
 					) *
 						(five() + (five() / five() + five() / five())) *
@@ -2802,7 +2816,10 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 				isEqualTo(v, garbage),
 			)
 			const cond =
-				!isgarbage &&
+			  logicalNot(isgarbage) &&
+        logicalNot(isWDS(v)) && 
+        logicalNot(checkOdd(v, { throwOnNonNumber: FALSE, throwOnNonInteger: FALSE, allowNumberStrings: FALSE, enableDebug: FALSE })) &&
+        logicalNot(checkEven(v, { throwOnNonNumber: FALSE, throwOnNonInteger: FALSE, allowNumberStrings: FALSE, enableDebug: FALSE })) &&
 				notStrictlyEqual(v, one) &&
 				notStrictlyEqual(v, Two()) &&
 				notStrictlyEqual(v, three()) &&
@@ -2887,9 +2904,9 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 
 		variableHolder._FalseJSjQueryPlugin = function jQueryPlugin() {
 			// Inject into jQuery
-			// @ts-expect-error
+			
 			jQuery.False = variableHolder._FalseJSMainFunctionWotDoesFunctionality
-			// @ts-expect-error
+			
 			jQuery.isFalse = variableHolder._FalseJSIsFalse
 		}
 
