@@ -234,7 +234,7 @@ FalseJS uses multiple libraries for testing. Run `npm test` to test FalseJS.
 
 ## Related Projects
 
-- [true-value](https://github.com/js-constant/false-value) (more lightweight version of this)
+- [false-value](https://github.com/js-constant/false-value) (more lightweight version of this)
 - [true-value](https://github.com/js-constant/true-value) (returns true)
 - [false](https://github.com/mde/false)
 - [true](https://github.com/mde/true)
