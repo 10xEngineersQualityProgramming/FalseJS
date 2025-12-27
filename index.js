@@ -68,6 +68,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const logicalNot = require("es-logical-not-operator") // ! in fp
 		const logicalAnd = require("es-logical-and-operator") // && in fp
 		const logicalOr = require("es-logical-or-operator") // || in fp
+    const identity = require("@identity-js/identity") // identity function
 		const _ = require("lodash") // every project needs lodash
 		const underscore = require("underscore") // underscore.js. the predecessor of lodash.
 		const React = require("react") // the hype framework everyone uses for some reason
@@ -435,7 +436,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			}
 			log(log) {
 				if (isEqualTo(this.enableLogging, t())) {
-					log instanceof weirdLtc // SO WERID
+					identity(log) instanceof weirdLtc // SO WERID
 				}
 			}
 		}

@@ -1,6 +1,6 @@
 {
 	"name": "@falsejs/falsejs",
-	"version": "4.0.1",
+	"version": "4.1.0",
 	"description": "Returns false.",
 	"main": "index.js",
 	"scripts": {
@@ -19,6 +19,7 @@
 		"@colors/colors": "^1.6.0",
 		"@extremejs/utils": "^1.0.0-beta.22",
 		"@falsejs/is-true-helper": "^1.0.2",
+		"@identity-js/identity": "^1.0.0",
 		"@is-(unknown)/is-nil": "^1.2.0",
 		"@is-(unknown)/is-null": "^1.2.2",
 		"@is-(unknown)/is-undefined": "^1.2.0",
