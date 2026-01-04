@@ -19,20 +19,20 @@
 try {
   false.valueOf()
 } catch {
-  global.false = NaN == NaN
+  global.false = [].includes() // tricky way to get false
 }
 try {
   true.valueOf()
 } catch {
-  global.true = 1 === 1
+  global.true = [].constructor.name.includes("Array") // tricky way to get true
 }
 
 const isComputerOnFire = require("is-computer-on-fire").isComputerOnFire // require external is-computer-on-fire package.
 
-if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
+if (isComputerOnFire()) {
 	// check if the computer is on fire
 	/** An exaggeration of an error that is thrown if the computer is on fire. This NPM package is NOT pointless, and it's NOT a joke. */
-	throw new Error(
+	require("immediate-error")(
 		"OH MY GOSH YOUR COMPUTER IS ON FIRE WHY ARE YOU WASTING TIME USING A JOKE POINTLESS NPM PACKAGE GET YOUR FIRE EXTINGUISHER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
 	)
 } else {
@@ -41,17 +41,18 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 
 	/** Whatev is a very useful package, that can be used to get the value of true. */
 	const whatev = require("whatev") // Require whatev.
+	const equal = require("@10xly/strict-equals") // Require @10xly/strict-equals for equality and stuff.
 	const whatevTrueValue =
-		(whatev.fn() === whatev.string) === whatev.object.whatev // get the true value from whatev.
+		equal(equal(whatev.fn(), whatev.string), whatev.object.whatev) // get the true value from whatev.
 
 	require("get-member")() // add Object.prototype.getMember.
 	require("array-get-member")() // add Array.prototype.getMember.
-
 	
 	global.jQuery = require("jquery") // make jquery global
 	require("jquery-basic-arithmetic-plugin") // add arithmetic to jquery
 
 	require("user")() // something else that improves load times and performance
+	require("vapor-js-npm") // vapor also makes your program faster
 
 	;(function (factory) {
 		module.exports.default = factory(jQuery) // run and export falsejs.
@@ -71,12 +72,14 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
     const identity = require("@identity-js/identity") // identity function
 		const _ = require("lodash") // every project needs lodash
 		const underscore = require("underscore") // underscore.js. the predecessor of lodash.
+		const k = require("kitty") // lodash but with some mixins in it
+		const aura = require("aura3") // the 10x utility package
 		const React = require("react") // the hype framework everyone uses for some reason
 		const ReactDOMServer = require("react-dom/server") // part of react
 		const cheerio = require("cheerio") // cheerio!
 		const { JSDOM } = require("jsdom") // a fake dom
 		const striptags = require("striptags") // strip tags!
-		const chalk = require("chalk") // color is the best!*/
+		const chalk = require("chalk4096") // color is the best! especially when its 10x!
 		var clc = require("cli-color") // another color module
 		const colors = require("@colors/colors/safe") // colors
 		const chalkbox = require("chalkbox") // with a box
@@ -124,6 +127,9 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const onceNoopFactory = require("once-noop/factory") // make a noop which can only be called once
 		const voidFn = require("voidfn") // void fn
 		const noopExec = require("noop-exec") // exec
+		const metaNoop = require("meta-noop") // super meta
+		const doNothing = require("@((()/do-nothing") // do literally nothing
+		const pureNoop = require("purely") // purely functional noop
 		const attempt = require("attempt-statement") // has more features than trycatch statement
 		const assert = require("assert-fn") // more simple and elegant than built in node:assert
 		const hasSelfEquality = require("has-self-equality") // most things have self equality but lets make sure
@@ -271,8 +277,6 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const isEqual = require("is-equal") // more complex ways too.
 		const strictlyEqual = require("@10xly/strict-equals") // and strict equality.
 		const notStrictlyEqual = not(strictlyEqual)
-		const getTypeOf = require("get-ecmascript-type-of") // better typeof
-		const extremejs = require("@extremejs/utils") // TO THE EXTREME
 		var trueValue = require("true-value")() // get true with quantum fisics simulation
 		var tVal = trueValue // tVal sounds cool so i put it here too
 		var t = () => whatevTrueValue // returns true.
@@ -285,6 +289,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		const rightpad = require("rightpad") // another right pad too.
 		const WestPad = require("west-pad").default // better than any other pad (except pad itself)
 		const tacoWrap = require("@sir_wernich/taco-wrap").default // pad our strings in tacos.
+		const arrayWrap = require("array-wrap") // wrap values in arrays
 		const isWindwos = require("is-windows") // did i misspell the variable name? of course not
 		const isWindows = isWindwos // i totally didnt misspell the above variable and this line doesnt exist
 		const isLinux = require("is-linux") // linux the os
@@ -364,12 +369,12 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			+"                                        "
 		)
 			//100 whitespaces
-			.replaceAll("&nbsp;", " ")
+			.replaceAll("&nbsp;", require("space-string"))
 		const STARTING_SUCCESSOR_HELPER_STACK = zr0()
-		const FALSE = !whatevTrueValue
+		const FALSE = aura.not(whatevTrueValue)
 		const _f = constant(FALSE)
 		const ERROR_THAT_WILL_NEVER_BE_SHOWN = variableHolder._lilmessage
-		const TEN_THOUSAND = 10e3
+		const TEN_THOUSAND = aura.multiply(numberOneHundred, numberOneHundred)
 		const LEFT_PAD_INPUT = jQuery.multiply(
 			five(),
 			jQuery.add(five(), jQuery.divide(five(), five())),
@@ -393,10 +398,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		)
 		const ZEROPAD_INPUT = jQuery.subtract(five(), jQuery.divide(five(), five()))
 		const WEST_PAD_DEVICE_DIRECTION = "N"
-		const SPACE = " "
-		const STARTING_VVALUE_USER_MINUS = zr0()
-		const STARTING_VVALUE_USER_PLUS = zr0()
-		const STARTING_VVALUE_USER_PAD = zr0()
+		const SPACE = require("space-string")
 		const NO = getNo()
 		const YES = "yes"
 		const TODAY = construct({
@@ -544,7 +546,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 					var total = zr0()
 					// let's use underscore instead of forEach
 					underscore.each(nums, (num) => {
-						total += num // we have to use the operators because we are redefining the functions :(
+						total = aura.add(total, num)
 					})
 					return total
 				}
@@ -552,7 +554,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 					var total = zr0()
 					// this time we'll use lodash
 					_.each(nums, (num) => {
-						total -= num
+						total = aura.subtract(total, num)
 					})
 					return total
 				}
@@ -603,7 +605,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 						isEqualTo(
 							randomBoolean(
 								jQuery.multiply(five(), jQuery.divide(one, ten)),
-								new Logger(FALSE),
+								construct({ target: Logger, args: arrayWrap(FALSE) }),
 							),
 							t(),
 						),
@@ -638,41 +640,11 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 		}
 
 		function predecessor(n) {
-			return jQuery.subtract(n, one)
+			return aura.add(n, aura.invert(one))
 		}
 
 		function vValue(num) {
-			if (not(strictlyEqual)(getTypeOf(num), extremejs.TYPE.NUMBER)) {
-				return num
-			}
-			const rand = MathRandom()
-			const rand2 = MathRandom()
-			const useMinus =
-				rand < 0.3333333333333333 ? trueComparison.compare() : FALSE
-			const usePlus =
-				rand > 0.3333333333333333 && rand < 0.6666666666666666
-					? trueComparison.compare()
-					: FALSE
-			const usePad =
-				rand > 0.6666666666666666 ? trueComparison.compare() : FALSE
-			const useLeftPad = rand2 < 0.5
-			const useRightPad = !useLeftPad
-
-			if (useMinus) return $.subtract(num, STARTING_VVALUE_USER_MINUS)
-			if (usePlus) return $.add(num, STARTING_VVALUE_USER_PLUS)
-			if (usePad) {
-				if (useLeftPad)
-					return parseInt(
-						leftPad(num.toString(), STARTING_VVALUE_USER_PAD).trim(),
-						10,
-					)
-				if (useRightPad)
-					return parseInt(
-						rightPad(num.toString(), STARTING_VVALUE_USER_PAD).trim(),
-						10,
-					)
-			}
-			return num
+			return require("vvalue")(num)
 		}
 
 		function sayIt(message) {
@@ -690,6 +662,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			)
 			const TEN_THOUSAND6 = $.add(TEN_THOUSAND, STARTING_SUCCESSOR_HELPER_STACK)
 			const TEN_THOUSAND7 = vValue(TEN_THOUSAND)
+			const TEN_THOUSAND8 = identity(TEN_THOUSAND)
 			attempt(() => {
 				assert(
 					isTenThousand(TEN_THOUSAND1, shouldDoSomethingAsync),
@@ -719,6 +692,10 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 					isTenThousand(TEN_THOUSAND7, shouldDoSomethingAsync),
 					"the vvalue of 10,000 is not 10,000",
 				)
+				assert(
+					isTenThousand(TEN_THOUSAND8, shouldDoSomethingAsync),
+					"the identity of 10,000 is not 10,000"
+				)
 			})
 				.rescue((error) => {
 					logger.log(
@@ -740,7 +717,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 				.end()
 		}
 		function doSelfEqualityChecks(loggingEnabled) {
-			const logger = construct({ target: Logger, args: [loggingEnabled] })
+			const logger = construct({ target: Logger, args: arrayWrap(loggingEnabled) })
 			assert(
 				hasSelfEquality(isThreeHundred),
 				StringValueof("[falsejs] IsThreeHundred has no self equality"),
@@ -905,6 +882,7 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			)
 		}
 
+		// below the _getFalse function begins!!!
 		function _getFalse(random, _randomLetterOrNumber, loggingEnabled, logger) {
 			// call some noops 4 some reason
 			n0p3()
@@ -945,8 +923,12 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 			onceNoopFactory().doNothing()
 			voidFn()
 			noopExec()
+			metaNoop()
+			doNothing()
+			pureNoop()
 			_.noop()
 			underscore.noop()
+			k.noop()
 			// left pad some things for smoe reason
 			leftPad("required", LEFT_PAD_INPUT)
 			rightPad("required", RIGHT_PAD_INPUT)
@@ -2379,6 +2361,11 @@ if (isComputerOnFire() && (1 & (3 << 2)) > 4) {
 					clc.cyanBright(
 						`[falsejs] Using Underscore version ${underscore.VERSION}`,
 					),
+				)
+				ltc(
+					clc.cyanBright(
+						`[falsejs] Using Lodash inside Kitty version ${k.VERSION}`
+					)
 				)
 				ltc(clc.cyanBright(`[falsejs] Using Axios version ${axios.VERSION}`))
 				ltc(clc.cyanBright(`[falsejs] Using React version ${React.version}`))
